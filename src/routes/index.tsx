@@ -1,11 +1,15 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import Home from '../pages/Home';
 
 function AppRoutes() {
     return (
         <Routes>
-            <Route path='/Home' element={<p>Home</p>} />
+            <Route path='/Home' element={<Home />} />
+
+        
+            <Route path='*' element={<Navigate to='/Home' />} />
         </Routes>
     );
 }
-Route
+
 export default AppRoutes;
