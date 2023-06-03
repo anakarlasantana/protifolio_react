@@ -1,8 +1,10 @@
-import { Stack } from "@mui/material";
+import { Button } from "@mui/material";
+import Header from "../components/Header";
 
 function Home() {
     return (
-        <Stack>Hello</Stack>
+        <><Header />
+        <Button variant="contained" color="primary">Hello</Button></>
     );
 }
 

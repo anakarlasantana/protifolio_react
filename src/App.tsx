@@ -1,15 +1,16 @@
 import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes";
-import { ThemeProvider } from "@emotion/react";
 import { DarkTheme} from './shared/themes/';
+import { ThemeProvider } from "@mui/material";
+import { AppThemeProvider } from "./context/ThemeContext";
 
 function App() {
   return (
-    <ThemeProvider theme={DarkTheme} >
+    <AppThemeProvider>
       <BrowserRouter>
         <AppRoutes />
       </BrowserRouter>
-    </ThemeProvider>
+    </AppThemeProvider>
   );
 }
 
