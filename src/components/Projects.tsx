@@ -15,18 +15,6 @@ function Projects() {
     const [isHoveredItemTwo, setIsHoveredItemTwo] = useState(false);
     const [isHoveredItemTree, setIsHoveredItemTree] = useState(false);
 
-    const handleMouseEnter = () => {
-        setIsHoveredItemOne(true);
-        setIsHoveredItemTwo(true);
-        setIsHoveredItemTree(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsHoveredItemOne(false);
-        setIsHoveredItemTwo(false);
-        setIsHoveredItemTree(false);
-    };
-
     const customButton = {
         border: '1px solid #42a96d',
         borderRadius: '0',
@@ -37,7 +25,7 @@ function Projects() {
     const customCardProject = {
         border: '1px solid #ABB2BF',
         borderRadius: '0',
-        maxWidth: 400,
+        maxWidth: 390,
         transition: 'transform 0.3s ease',
     }
 
@@ -56,7 +44,7 @@ function Projects() {
                     <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>View all ~~{">"}</Button>
                 </Stack>
             </Stack>
-            <Grid container style={{ display: 'flex', border: '1px solid black', paddingTop: '50px', marginLeft: '15vw', justifyContent: 'center', padding: '30px' }}>
+            <Grid container style={{ display: 'flex', border: '1px solid black', paddingTop: '50px', marginLeft: '15vw', justifyContent: 'center', padding: '30px', maxWidth: '84rem' }}>
                 <Grid item xs={12} sm={6} md={4} sx={{ marginBottom: '10px' }} >
                     <Card sx={{ ...customCardProject, transform: isHoveredItemOne ? 'scale(1.1)' : 'scale(1)' }} onMouseEnter={() => setIsHoveredItemOne(true)} onMouseLeave={() => setIsHoveredItemOne(false)}>
                         <CardActionArea >
