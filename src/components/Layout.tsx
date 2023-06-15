@@ -55,7 +55,7 @@ const customPhrases = {
     height: '12rem',
     width: '50rem',
     alignSelf: 'center',
-    margin: '7rem',
+    margin: '6rem',
 }
 
 
@@ -79,7 +79,7 @@ function Layout() {
                     <img src={elementDots} alt="foto" style={{ width: '84px', height: '84px' }} />
                 </Stack>
                 <Stack sx={{ position: 'absolute', top: '10rem', right: '30rem' }}>
-                    <img src={foto} alt="foto" style={{ width: '300px', height: '360px' }} />
+                    <img src={foto} alt="foto" style={{ width: '300px', height: '375px' }} />
                 </Stack>
                 <Stack direction={'row'} sx={{ border: '1px solid #ABB2BF', width: '24rem', height: '2rem', marginLeft: '50rem' }}>
                     <Paper sx={{ border: '1px solid #ABB2BF', borderRadius: '0', backgroundColor: 'green', height: '15px', width: '15px', marginLeft: '30px', alignSelf: 'center' }}></Paper>
