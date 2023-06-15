@@ -52,7 +52,6 @@ const settings = {
 
 const customPhrases = {
     fontFamily: 'Fira Code',
-    border: '1px solid #ABB2BF',
     height: '12rem',
     width: '50rem',
     alignSelf: 'center',
@@ -87,17 +86,29 @@ function Layout() {
                     <Typography sx={{ fontFamily: 'Fira Code', color: '#ABB2BF', margin: '5px' }}>Trabalhando em novos projetos</Typography>
                 </Stack>
             </Box>
-            <Stack style={customPhrases}  >
+            <Stack style={customPhrases} >
                 <Slider {...settings}>
                     {phrasesLayout.map((phraseObj, index) => (
                         <div key={index}>
-                            <Typography fontSize={'24px'} color={white} align="center">
-                            <FormatQuoteIcon style={{ transform: 'scaleX(-1)' }} />
+                            <Typography fontSize={'24px'} color={white} align="center"
+                             style={{
+                                display: 'inline-block',
+                                border: '1px solid #ABB2BF',
+
+                            }} >
+                                <FormatQuoteIcon style={{ transform: 'scaleX(-1)' }} />
                                 {phraseObj.phrase}
-                            </Typography>
-                            <Typography fontSize={'24px'} color={"grey"} align="center">
-                                - {phraseObj.author}
                                 <FormatQuoteIcon style={{ color: 'white' }} />
+
+                            </Typography>
+                            <Typography fontSize={'24px'} color={"grey"} 
+                            style={{
+                                display: 'inline-block',
+                                border: '1px solid #ABB2BF',
+                                padding: '5px',
+                                marginLeft: '34rem'
+                            }} >
+                                - {phraseObj.author}
                             </Typography>
 
 
