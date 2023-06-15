@@ -1,10 +1,13 @@
-import { Button } from "@mui/material";
+import { Grid } from "@mui/material";
 import Header from "../components/Header";
+import Layout from "../components/Layout";
 
 function Home() {
     return (
-        <><Header />
-        <Button variant="contained" color="primary">Hello</Button></>
+        <Grid >
+        <Header />
+        <Layout />
+      </Grid>
     );
 }
 

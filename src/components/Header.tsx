@@ -1,11 +1,13 @@
 import { Typography, Stack, Button } from '@mui/material';
-import React from 'react';
+
 
 const simbolHead = () => {
   return (
-    <Typography color={'#42A96D'}>#</Typography>
+    <Typography color={'#42a96d'}>#</Typography>
   );
+
 };
+
 
 function Header() {
   return (

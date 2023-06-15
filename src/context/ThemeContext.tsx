@@ -1,6 +1,5 @@
 import { createContext, useCallback, useContext, useMemo, useState } from 'react';
 import { Grid, ThemeProvider } from '@mui/material';
-import { Box } from '@mui/system';
 
 import { DarkTheme, LightTheme } from '../shared/themes';
 
@@ -37,9 +36,9 @@ export const AppThemeProvider: React.FC<IAppThemeProviderProps> = ({ children })
   return (
     <ThemeContext.Provider value={{ themeName, toggleTheme }}>
       <ThemeProvider theme={theme}>
-        <Box width="100vw" height="100vh" bgcolor={theme.palette.background.paper}>
+        <Grid container width="100vw" height="100vh" bgcolor={theme.palette.background.paper}>
           {children}
-        </Box>
+        </Grid>
       </ThemeProvider>
     </ThemeContext.Provider>
   );
