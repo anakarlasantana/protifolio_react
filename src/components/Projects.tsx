@@ -1,5 +1,6 @@
 import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Divider, Grid, Paper, Stack, Typography } from "@mui/material";
 import { useState } from "react";
+import cloneNetflix from "../assets/cloneNetflix.png"
 
 
 
@@ -30,8 +31,6 @@ function Projects() {
     }
 
 
-
-
     return (
         <Grid>
             <Stack spacing={1} direction={'row'} style={{ display: 'flex', alignItems: 'center', border: '1px solid black', marginLeft: '15vw' }}>
@@ -51,21 +50,29 @@ function Projects() {
                             <CardMedia
                                 component="img"
                                 height="140"
-                                image="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png"
+                                image={cloneNetflix}
                                 alt="foto"
                             />
                             <CardContent sx={customCardProject}>
-                                <Typography gutterBottom variant="h5" component="div" >
-                                    Lizard 1
+                                <Typography gutterBottom variant="h5" component="div" color={'white'}>
+                                    Clone Netflix
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica.
+                                <Typography variant="body2" color="white">
+                                    Esse foi o meu primeiro projeto, que consiste na clonagem da página principa da Netflix usando somente JavaScript, HTML e CSS.
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <Button variant="contained" sx={customButton} color="primary">
-                                Share
+                            <Button
+                                variant="contained"
+                                sx={customButton}
+                                color="primary"
+                                href="https://netflix-clone-9l2uyq3sv-anakarlasantana.vercel.app/#"
+                                component="a"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Link
                             </Button>
                         </CardActions>
                     </Card>
