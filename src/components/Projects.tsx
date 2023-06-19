@@ -1,6 +1,9 @@
 import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Divider, Grid, Paper, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import cloneNetflix from "../assets/cloneNetflix.png"
+import pin from "../assets/pin+.png"
+import AddLinkIcon from '@mui/icons-material/AddLink';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 
 
@@ -72,7 +75,10 @@ function Projects() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                Link
+                                <Stack direction="row" spacing={1} alignItems="center" >
+                                    <Typography sx={{ fontFamily: 'Fira Code' }}>Link</Typography>
+                                    <AddLinkIcon fontSize="small" />
+                                </Stack>
                             </Button>
                         </CardActions>
                     </Card>
@@ -83,21 +89,41 @@ function Projects() {
                             <CardMedia
                                 component="img"
                                 height="140"
-                                image="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png"
+                                image={pin}
                                 alt="foto"
                             />
                             <CardContent sx={customCardProject}>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    Lizard 1
+                                <Typography gutterBottom variant="h5" component="div" color={'white'}>
+                                    Projeto pin+
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica.
+                                <Typography variant="body2" color="white">
+                                    O pin+ é um projeto que apoia a construção da cultura organizacional, através de feedbacks, incentivos, interatividade e ranking colaborativos.
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <Button variant="contained" sx={customButton} color="primary">
-                                Share
+                            <Button
+                                variant="contained"
+                                sx={customButton}
+                                color="primary"
+                                href="https://pinmais2-web-homo.azurewebsites.net/#/"
+                                component="a"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                <Stack direction="row" spacing={1} alignItems="center" >
+                                    <Typography sx={{ fontFamily: 'Fira Code' }}>Link</Typography>
+                                    <AddLinkIcon fontSize="small" />
+                                </Stack>
+                            </Button>
+                            <Button
+                                variant="contained"
+                                sx={customButton}
+                                color="primary"
+                                href="https://grupoportfolio.com.br/portfolio-tech/pin-mais/"
+                                component="a"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                Saiba Mais
                             </Button>
                         </CardActions>
                     </Card>
@@ -113,7 +139,7 @@ function Projects() {
                             />
                             <CardContent sx={customCardProject}>
                                 <Typography gutterBottom variant="h5" component="div">
-                                    Lizard 1
+                                    API REST
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary">
                                     Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica.
