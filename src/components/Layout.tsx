@@ -1,7 +1,10 @@
-import { Box, Button, Paper, Stack, Typography } from "@mui/material";
-import logo from '../../src/assets/logo.svg'
-import foto from '../../src/assets/foto.png'
-import elementDots from '../../src/assets/elementDots.svg'
+import { Box, Button, IconButton, Paper, Stack, Typography } from "@mui/material";
+import logo from '../../src/assets/logo.svg';
+import foto from '../../src/assets/foto.png';
+import elementDots from '../../src/assets/elementDots.svg';
+import githubIcon from '../../src/assets/github.svg';
+import emailIcon from '../../src/assets/emailIcon.svg';
+import linedingIcon from '../../src/assets/linkedinIcon.svg';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
@@ -47,7 +50,7 @@ const settings = {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 5000,
 };
 
 const customPhrases = {
@@ -62,28 +65,23 @@ const customPhrases = {
 function Layout() {
 
     return (
-        <Stack spacing={2} width={'70vw'} height={'40vw'} marginLeft={'15vw'} border={1} >
-            <Box margin={10} marginTop={20} width={'40rem'}>
+        <Stack spacing={2} width={'70vw'} height={'43vw'} marginLeft={'15vw'} border={1} >
+            <Box margin={15} marginTop={20} width={'40rem'} maxHeight={'10rem'}>
                 <Typography fontSize={'32px'}>
                     <span style={white}>Ana Karla é uma</span>
                     <span style={green}> fullstack developer</span>
                 </Typography>
                 <Typography marginBottom={2} sx={description}>Ela cria sites responsivos onde a tecnologia encontra a criatividade</Typography>
                 <Button variant="contained" sx={customButton} color="primary">Entre em contato</Button>
+                <Stack direction={'row'} paddingLeft={2}>
+                <IconButton href=" https://github.com/anakarlasantana" target="_blank"><img src={githubIcon} alt=""/></IconButton>
+                <IconButton href="mailto:anakarla.p.santana@gmail.com" target="_blank"><img src={emailIcon} alt=""/></IconButton>
+                <IconButton href="https://www.linkedin.com/in/anakarlasantana/" target="_blank"><img src={linedingIcon} alt=""/></IconButton>
+                </Stack>
             </Box>
             <Box>
-                <Stack sx={{ position: 'absolute', top: '16rem', right: '45rem' }}>
-                    <img src={logo} alt="logo" width={134} height={119} />
-                </Stack>
-                <Stack sx={{ position: 'absolute', top: '24rem', right: '27rem' }}>
-                    <img src={elementDots} alt="foto" style={{ width: '84px', height: '84px' }} />
-                </Stack>
-                <Stack sx={{ position: 'absolute', top: '10rem', right: '30rem' }}>
-                    <img src={foto} alt="foto" style={{ width: '300px', height: '375px' }} />
-                </Stack>
-                <Stack direction={'row'} sx={{ border: '1px solid #ABB2BF', width: '24rem', height: '2rem', marginLeft: '50rem' }}>
-                    <Paper sx={{ border: '1px solid #ABB2BF', borderRadius: '0', backgroundColor: 'green', height: '15px', width: '15px', marginLeft: '30px', alignSelf: 'center' }}></Paper>
-                    <Typography sx={{ fontFamily: 'Fira Code', color: '#ABB2BF', margin: '5px' }}>Trabalhando em novos projetos</Typography>
+                <Stack sx={{ position: 'absolute', top: '10rem', right: '30rem'}}>
+                    <img src={foto}  alt="foto" style={{ width: '300px', height: '375px', borderRadius:'200px' }} />
                 </Stack>
             </Box>
             <Stack style={customPhrases} >
@@ -110,8 +108,6 @@ function Layout() {
                             }} >
                                 - {phraseObj.author}
                             </Typography>
-
-
                         </div>
                     ))}
                 </Slider>

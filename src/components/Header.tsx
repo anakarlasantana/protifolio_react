@@ -1,4 +1,6 @@
 import { Typography, Stack, Button } from '@mui/material';
+import logo from '../../src/assets/logo.svg';
+
 
 
 const simbolHead = () => {
@@ -13,6 +15,7 @@ function Header() {
   return (
     <Stack spacing={2} width={'70vw'} height={'5rem'} marginLeft={'15vw'} direction={'row'} >
       <Typography width={'60rem'} alignSelf={'end'} color={'white'}>
+        <img src={logo} alt="" width={15} height={15}/>
         Ana Karla
       </Typography>
       <Stack direction={'row'} alignSelf={'end'} spacing={2} width={'30rem'}>
