@@ -36,14 +36,14 @@ function Projects() {
 
     return (
         <Grid>
-            <Stack spacing={1} direction={'row'} style={{ display: 'flex', alignItems: 'center', border: '1px solid black', marginLeft: '15vw' }}>
+            <Stack spacing={1} direction={'row'} width={'70vw'} style={{ display: 'flex', alignItems: 'center', border: '1px solid black', marginLeft: '15vw' }}>
                 {simbolHead()}
                 <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>projects</Typography>
                 <Stack>
                     <Divider sx={{ display: 'flex', backgroundColor: '#42a96d', width: '40rem' }} />
                 </Stack>
-                <Stack paddingLeft={'23.7rem'}>
-                    <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>View all ~~{">"}</Button>
+                <Stack>
+                    <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white', paddingLeft: '22rem' }}>Veja todos ~~{">"}</Button>
                 </Stack>
             </Stack>
             <Grid container style={{ display: 'flex', border: '1px solid black', paddingTop: '50px', marginLeft: '15vw', justifyContent: 'center', padding: '30px', maxWidth: '84rem' }}>

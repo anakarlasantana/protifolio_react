@@ -1,10 +1,8 @@
 import { Box, Button, IconButton, Paper, Stack, Typography } from "@mui/material";
-import logo from '../../src/assets/logo.svg';
-import foto from '../../src/assets/foto.png';
-import elementDots from '../../src/assets/elementDots.svg';
 import githubIcon from '../../src/assets/github.svg';
 import emailIcon from '../../src/assets/emailIcon.svg';
 import linedingIcon from '../../src/assets/linkedinIcon.svg';
+import fotoOne from '../assets/fotoOne.png'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
@@ -81,13 +79,13 @@ function Layout() {
             </Box>
             <Box>
                 <Stack sx={{ position: 'absolute', top: '10rem', right: '30rem'}}>
-                    <img src={foto}  alt="foto" style={{ width: '300px', height: '375px', borderRadius:'200px' }} />
+                    <img src={fotoOne}  alt="foto" style={{ width: '300px', height: '375px', borderRadius:'200px' }} />
                 </Stack>
             </Box>
             <Stack style={customPhrases} >
                 <Slider {...settings}>
                     {phrasesLayout.map((phraseObj, index) => (
-                        <div key={index}>
+                        <Stack key={index}>
                             <Typography fontSize={'24px'} color={white} align="center"
                              style={{
                                 display: 'inline-block',
@@ -108,7 +106,7 @@ function Layout() {
                             }} >
                                 - {phraseObj.author}
                             </Typography>
-                        </div>
+                        </Stack>
                     ))}
                 </Slider>
             </Stack>

@@ -6,21 +6,16 @@ import gitIcon from '../assets/gitIcon.png';
 import javascriptIcon from '../assets/javascript.svg';
 import reactIcon from '../assets/reactIcon.png';
 import nodeIcon from '../assets/nodeIcon.png';
-import javaIcon from '../assets/javaIcon.svg';
+import javaIcon from '../assets/javaIcon.png';
 import phytonIcon from '../assets/python.svg';
 import typescriptIcon from '../assets/typescript.svg';
 import muiIcon from '../assets/materialMuiIcon.png';
 import figmaIcon from '../assets/figma.svg';
 import jiraIcon from '../assets/jiraIcon.svg';
-import skillsiconesGroup from '../assets/skillsIconessGroup.svg';
 import mongoDBIcon from '../assets/mongodb.svg';
 import sqlIteIcon from '../assets/sqlite.svg';
 import jestIcon from '../assets/jestIcon.svg';
-import elementDots from '../../src/assets/elementDots.svg'
-
-
-
-
+import trelloIcon from '../assets/trelloIcon.svg';
 
 
 
@@ -117,6 +112,11 @@ function Skills() {
         {
             id: 'jira',
             icon: jiraIcon,
+            progress: 80,
+        },
+        {
+            id: 'trello',
+            icon: trelloIcon,
             progress: 80,
         },
 

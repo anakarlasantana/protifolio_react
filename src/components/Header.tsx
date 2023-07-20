@@ -13,12 +13,15 @@ const simbolHead = () => {
 
 function Header() {
   return (
-    <Stack spacing={2} width={'70vw'} height={'5rem'} marginLeft={'15vw'} direction={'row'} >
-      <Typography width={'60rem'} alignSelf={'end'} color={'white'}>
-        <img src={logo} alt="" width={15} height={15}/>
-        Ana Karla
-      </Typography>
-      <Stack direction={'row'} alignSelf={'end'} spacing={2} width={'30rem'}>
+    <Stack spacing={70} width={'70vw'} height={'5rem'} marginLeft={'15vw'} direction={'row'} >
+      <Stack direction={'row'} alignSelf={'end'}>
+        <img src={logo} alt="" width={30} height={30} />
+        <Typography width={'20rem'}  color={'white'} alignSelf={'end'} fontFamily={ 'Fira Code'}>
+          Ana Karla
+        </Typography>
+      </Stack>
+
+      <Stack direction={'row'} alignSelf={'end'} spacing={2} width={'25rem'}>
         <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }} color="primary">{simbolHead()} home </Button>
         <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }} color="primary">{simbolHead()} works</Button>
         <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }} color="primary">{simbolHead()} about-me</Button>
