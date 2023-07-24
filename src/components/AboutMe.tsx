@@ -10,15 +10,15 @@ const simbolHead = () => {
 
 function aboutMe() {
     return (
-        <Grid>
-            <Stack spacing={1} direction={'row'} style={{ display: 'flex', alignItems: 'center', border: '1px solid black', marginLeft: '15vw' }}>
+        <Grid container width={'100%'}>
+            <Stack spacing={1} direction={'row'}  style={{alignItems: 'center', marginLeft: '15vw'}}>
                 {simbolHead()}
                 <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>about me</Typography>
                 <Stack>
                     <Divider sx={{ display: 'flex', backgroundColor: '#42a96d', width: '40rem' }} />
                 </Stack>
             </Stack>
-            <Stack direction={'row'} spacing={15} style={{ display: 'flex', border: '1px solid black', paddingTop: '50px', marginLeft: '15vw', padding: '30px', maxWidth: '85rem' }}>
+            <Stack direction={'row'} spacing={10} style={{paddingTop: '50px', marginLeft: '15vw', padding: '30px'}}>
                 <Stack width={'50rem'}>
                     <Typography
                         fontFamily={'Fira Code'}

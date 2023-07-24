@@ -36,7 +36,7 @@ export const AppThemeProvider: React.FC<IAppThemeProviderProps> = ({ children })
   return (
     <ThemeContext.Provider value={{ themeName, toggleTheme }}>
       <ThemeProvider theme={theme}>
-        <Grid container width="100%" height="100%" bgcolor={theme.palette.background.paper}>
+        <Grid width="100%" height="100%" bgcolor={theme.palette.background.paper}>
           {children}
         </Grid>
       </ThemeProvider>

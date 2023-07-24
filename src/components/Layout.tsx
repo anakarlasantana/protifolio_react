@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
+import { Grid } from "@mui/joy";
 
 
 
@@ -63,55 +64,57 @@ const customPhrases = {
 function Layout() {
 
     return (
-        <Stack spacing={2} width={'70vw'} height={'43vw'} marginLeft={'15vw'} border={1} >
-            <Box margin={15} marginTop={20} width={'40rem'} maxHeight={'10rem'}>
-                <Typography fontSize={'32px'}>
-                    <span style={white}>Ana Karla é uma</span>
-                    <span style={green}> fullstack developer</span>
-                </Typography>
-                <Typography marginBottom={2} sx={description}>Ela cria sites responsivos onde a tecnologia encontra a criatividade</Typography>
-                <Button variant="contained" sx={customButton} color="primary">Entre em contato</Button>
-                <Stack direction={'row'} paddingLeft={2}>
-                <IconButton href=" https://github.com/anakarlasantana" target="_blank"><img src={githubIcon} alt=""/></IconButton>
-                <IconButton href="mailto:anakarla.p.santana@gmail.com" target="_blank"><img src={emailIcon} alt=""/></IconButton>
-                <IconButton href="https://www.linkedin.com/in/anakarlasantana/" target="_blank"><img src={linedingIcon} alt=""/></IconButton>
-                </Stack>
-            </Box>
-            <Box>
-                <Stack sx={{ position: 'absolute', top: '10rem', right: '30rem'}}>
-                    <img src={fotoOne}  alt="foto" style={{ width: '300px', height: '375px', borderRadius:'200px' }} />
-                </Stack>
-            </Box>
-            <Stack style={customPhrases} >
-                <Slider {...settings}>
-                    {phrasesLayout.map((phraseObj, index) => (
-                        <Stack key={index}>
-                            <Typography fontSize={'24px'} color={white} align="center"
-                             style={{
-                                display: 'inline-block',
-                                border: '1px solid #ABB2BF',
+        <Grid container width={'100%'}>
+            <Stack spacing={2} width={'70vw'} height={'43vw'} marginLeft={'15vw'}>
+                <Box margin={15} marginTop={20} width={'40rem'} maxHeight={'10rem'}>
+                    <Typography fontSize={'32px'}>
+                        <span style={white}>Ana Karla é uma</span>
+                        <span style={green}> fullstack developer</span>
+                    </Typography>
+                    <Typography marginBottom={2} sx={description}>Ela cria sites responsivos onde a tecnologia encontra a criatividade</Typography>
+                    <Button variant="contained" sx={customButton} color="primary">Entre em contato</Button>
+                    <Stack direction={'row'} paddingLeft={2}>
+                        <IconButton href=" https://github.com/anakarlasantana" target="_blank"><img src={githubIcon} alt="" /></IconButton>
+                        <IconButton href="mailto:anakarla.p.santana@gmail.com" target="_blank"><img src={emailIcon} alt="" /></IconButton>
+                        <IconButton href="https://www.linkedin.com/in/anakarlasantana/" target="_blank"><img src={linedingIcon} alt="" /></IconButton>
+                    </Stack>
+                </Box>
+                <Box>
+                    <Stack sx={{ position: 'absolute', top: '10rem', right: '30rem' }}>
+                        <img src={fotoOne} alt="foto" style={{ width: '300px', height: '375px', borderRadius: '200px' }} />
+                    </Stack>
+                </Box>
+                <Stack style={customPhrases} >
+                    <Slider {...settings}>
+                        {phrasesLayout.map((phraseObj, index) => (
+                            <Stack key={index}>
+                                <Typography fontSize={'24px'} color={white} align="center"
+                                    style={{
+                                        display: 'inline-block',
+                                        border: '1px solid #ABB2BF',
 
-                            }} >
-                                <FormatQuoteIcon style={{ transform: 'scaleX(-1)' }} />
-                                {phraseObj.phrase}
-                                <FormatQuoteIcon style={{ color: 'white' }} />
+                                    }} >
+                                    <FormatQuoteIcon style={{ transform: 'scaleX(-1)' }} />
+                                    {phraseObj.phrase}
+                                    <FormatQuoteIcon style={{ color: 'white' }} />
 
-                            </Typography>
-                            <Typography fontSize={'24px'} color={"grey"} 
-                            style={{
-                                display: 'inline-block',
-                                border: '1px solid #ABB2BF',
-                                padding: '5px',
-                                marginLeft: '34rem'
-                            }} >
-                                - {phraseObj.author}
-                            </Typography>
-                        </Stack>
-                    ))}
-                </Slider>
+                                </Typography>
+                                <Typography fontSize={'24px'} color={"grey"}
+                                    style={{
+                                        display: 'inline-block',
+                                        border: '1px solid #ABB2BF',
+                                        padding: '5px',
+                                        marginLeft: '34rem'
+                                    }} >
+                                    - {phraseObj.author}
+                                </Typography>
+                            </Stack>
+                        ))}
+                    </Slider>
+                </Stack>
+
             </Stack>
-
-        </Stack>
+        </Grid>
     );
 }
 

@@ -13,15 +13,15 @@ const simbolHead = () => {
 
 function contact() {
     return (
-        <Grid>
-            <Stack spacing={1} direction={'row'} style={{ display: 'flex', alignItems: 'center', border: '1px solid black', marginLeft: '15vw' }}>
+        <Grid container width={'100%'}>
+            <Stack spacing={1} direction={'row'} style={{alignItems: 'center', marginLeft: '15vw' }}>
                 {simbolHead()}
                 <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>contact</Typography>
                 <Stack>
                     <Divider sx={{ display: 'flex', backgroundColor: '#42a96d', width: '40rem' }} />
                 </Stack>
             </Stack>
-            <Stack direction={'row'} spacing={50} style={{ display: 'flex', border: '1px solid black', paddingTop: '50px', marginLeft: '15vw', padding: '30px',  }}>
+            <Stack direction={'row'} spacing={50} style={{ display: 'flex', paddingTop: '50px', marginLeft: '15vw', padding: '30px',  }}>
                 <Typography fontFamily={'Fira Code'} color={'#ABB2BF'} maxWidth={'35rem'} sx={{ textIndent: '2rem'}} >
                     Estou interessado em oportunidades freelance. No entanto, se você tiver outro pedido ou pergunta, não hesite em contactar-me
                 </Typography>

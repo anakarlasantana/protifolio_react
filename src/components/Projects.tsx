@@ -35,8 +35,8 @@ function Projects() {
 
 
     return (
-        <Grid>
-            <Stack spacing={1} direction={'row'} width={'70vw'} style={{ display: 'flex', alignItems: 'center', border: '1px solid black', marginLeft: '15vw' }}>
+        <Grid container width={'100%'}>
+            <Stack spacing={2} direction={'row'} style={{ display: 'flex', alignItems: 'center', marginLeft: '15vw' }}>
                 {simbolHead()}
                 <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>projects</Typography>
                 <Stack>
@@ -46,7 +46,7 @@ function Projects() {
                     <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white', paddingLeft: '22rem' }}>Veja todos ~~{">"}</Button>
                 </Stack>
             </Stack>
-            <Grid container style={{ display: 'flex', border: '1px solid black', paddingTop: '50px', marginLeft: '15vw', justifyContent: 'center', padding: '30px', maxWidth: '84rem' }}>
+            <Grid container width={'100%'} style={{ display: 'flex', paddingTop: '50px', marginLeft: '15vw', justifyContent: 'center', padding: '30px', maxWidth: '84rem' }}>
                 <Grid item xs={12} sm={6} md={4} sx={{ marginBottom: '10px' }} >
                     <Card sx={{ ...customCardProject, transform: isHoveredItemOne ? 'scale(1.1)' : 'scale(1)' }} onMouseEnter={() => setIsHoveredItemOne(true)} onMouseLeave={() => setIsHoveredItemOne(false)}>
                         <CardActionArea >

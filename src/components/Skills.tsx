@@ -150,8 +150,8 @@ function Skills() {
     };
 
     return (
-        <Grid>
-            <Stack spacing={1} direction={'row'} style={{ display: 'flex', alignItems: 'center', border: '1px solid black', marginLeft: '15vw' }}>
+        <Grid container width={'100%'}>
+            <Stack spacing={1} direction={'row'} style={{ display: 'flex', alignItems: 'center', marginLeft: '15vw'}}>
                 {simbolHead()}
                 <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>skills</Typography>
                 <Stack>
