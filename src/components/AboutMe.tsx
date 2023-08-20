@@ -32,8 +32,8 @@ function aboutMe() {
                         }}>
                         Era uma garota de desmontar relógios, abrir gabinetes, formatar computadores e até programar o meu pequeno e amado Galaxy Y. Por pura curiosidade e vontade de resolver problemas.
                         Lembro com carinho o tempo que fiquei viciada em aprender Illustrator e Photoshop. Fazia logotipos, montava layouts, criava cartão de visita e de casamento, editava fotos e até criava as artes dos banners para os meus colegas. Tudo isso por puro prazer.
-                        Hoje percebo que não é todo mundo que tem essa facilidade com tecnologia e criação. Que ficar horas na frente de um monitor criando, também é profissão.
-                        Sempre fui apaixonada por tecnologia e não acreditava em mim. Por isso, hoje estou recalculando a rota e dedicando minhas energias em me desenvolver profissionalmente na área de programação. Abaixo estão as minhas últimas conquistas. Enjoy ;).
+                        Hoje percebo que não é todo mundo que tem essa facilidade com tecnologia. Que ficar horas na frente de um monitor criando, também é profissão.
+                        Sempre fui apaixonada por tecnologia e não acreditava em mim. Por isso, hoje estou recalculando a rota e dedicando minhas energias em me desenvolver profissionalmente como desenvolvedora fullstack, com foco em javascript, mas sempre aberta em aprender novas tecnologias. Enjoy ;).
                     </Typography>
                 </Stack>
                 <Stack width={'20rem'} height={'20rem'}>

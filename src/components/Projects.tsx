@@ -43,7 +43,7 @@ function Projects() {
                     <Divider sx={{ display: 'flex', backgroundColor: '#42a96d', width: '40rem' }} />
                 </Stack>
                 <Stack>
-                    <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white', paddingLeft: '22rem' }}>Veja todos ~~{">"}</Button>
+                    <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white', paddingLeft: '18rem' }}>Veja todos ~~{">"}</Button>
                 </Stack>
             </Stack>
             <Grid container width={'100%'} style={{ display: 'flex', paddingTop: '50px', marginLeft: '15vw', justifyContent: 'center', padding: '30px', maxWidth: '84rem' }}>

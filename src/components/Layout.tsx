@@ -2,7 +2,8 @@ import { Box, Button, IconButton, Paper, Stack, Typography } from "@mui/material
 import githubIcon from '../../src/assets/github.svg';
 import emailIcon from '../../src/assets/emailIcon.svg';
 import linedingIcon from '../../src/assets/linkedinIcon.svg';
-import fotoOne from '../assets/fotoOne.png'
+import fotoOne from '../assets/fotoOne.png';
+import dots from '../assets/elementDots.svg';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
@@ -64,11 +65,12 @@ const customPhrases = {
 function Layout() {
 
     return (
-        <Grid container width={'100%'}>
-            <Stack spacing={2} width={'70vw'} height={'43vw'} marginLeft={'15vw'}>
-                <Box margin={15} marginTop={20} width={'40rem'} maxHeight={'10rem'}>
+        <Grid container width={'100%'} marginTop={10}>
+            <Stack spacing={2} width={'20vw'} height={'46vw'} marginLeft={'15vw'}>
+                <Stack>
+                <Box paddingTop={'8rem'} paddingLeft={'4rem'} width={'100%'} >
                     <Typography fontSize={'32px'}>
-                        <span style={white}>Ana Karla é uma</span>
+                        <span style={white}>Sou Ana Karla</span>
                         <span style={green}> fullstack developer</span>
                     </Typography>
                     <Typography marginBottom={2} sx={description}>Ela cria sites responsivos onde a tecnologia encontra a criatividade</Typography>
@@ -80,11 +82,12 @@ function Layout() {
                     </Stack>
                 </Box>
                 <Box>
-                    <Stack sx={{ position: 'absolute', top: '10rem', right: '30rem' }}>
+                    <Stack sx={{ position: 'absolute', top: '10rem', right: '28rem' }}>
                         <img src={fotoOne} alt="foto" style={{ width: '300px', height: '375px', borderRadius: '200px' }} />
                     </Stack>
                 </Box>
-                <Stack style={customPhrases} >
+                </Stack>
+                <Stack style={customPhrases} paddingTop={'11rem'} paddingLeft={'65rem'}>
                     <Slider {...settings}>
                         {phrasesLayout.map((phraseObj, index) => (
                             <Stack key={index}>

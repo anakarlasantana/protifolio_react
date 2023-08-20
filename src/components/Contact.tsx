@@ -6,7 +6,7 @@ import whatsappIcon from '../assets/whatsappIcon.svg';
 
 const simbolHead = () => {
     return (
-        <Typography color={'#42a96d'} fontSize={'32px'}>#</Typography>
+        <Typography sx={{ color: '#42a96d', fontSize: '32px'}}>#</Typography>
     );
 };
 
@@ -22,7 +22,7 @@ function contact() {
                 </Stack>
             </Stack>
             <Stack direction={'row'} spacing={50} style={{ display: 'flex', paddingTop: '50px', marginLeft: '15vw', padding: '30px',  }}>
-                <Typography fontFamily={'Fira Code'} color={'#ABB2BF'} maxWidth={'35rem'} sx={{ textIndent: '2rem'}} >
+                <Typography fontFamily={'Fira Code'} maxWidth={'35rem'} sx={{ textIndent: '2rem',  color: '#ABB2BF'}} >
                     Estou interessado em oportunidades freelance. No entanto, se você tiver outro pedido ou pergunta, não hesite em contactar-me
                 </Typography>
                 <Stack textAlign={'center'} style={{ display: 'inline-block', border: '1px solid #ABB2BF', width: '10rem' }}>

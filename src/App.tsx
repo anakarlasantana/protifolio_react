@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
-import AppRoutes from "./routes";
 import { AppThemeProvider } from "./context/ThemeContext";
+import AppRoutes from "./routes";
 
 function App() {
   return (
