@@ -26,8 +26,8 @@ function Header() {
             Ana Karla
           </Typography>
         </Stack>
-        <Stack direction={'row'} spacing={2} alignItems={'center'}>
-          <ScrollLink to="home" smooth={true} duration={500} offset={-70}>
+        <Stack direction={'row'} spacing={4} alignItems={'center'}>
+          <ScrollLink to="home" smooth={true} duration={500} offset={-80}>
             <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }} color="primary">{simbolHead()} home</Button>
           </ScrollLink>
           <ScrollLink to="projects" smooth={true} duration={500} offset={-70}>

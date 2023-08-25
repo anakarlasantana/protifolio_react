@@ -73,7 +73,7 @@ function Layout() {
                         <span style={white}>Sou Ana Karla</span>
                         <span style={green}> fullstack developer</span>
                     </Typography>
-                    <Typography marginBottom={2} sx={description}>Ela cria sites responsivos onde a tecnologia encontra a criatividade</Typography>
+                    <Typography  sx={description}>Ela cria sites responsivos onde a tecnologia encontra a criatividade</Typography>
                     <Button variant="contained" sx={customButton} color="primary">Entre em contato</Button>
                     <Stack direction={'row'} paddingLeft={2}>
                         <IconButton href=" https://github.com/anakarlasantana" target="_blank"><img src={githubIcon} alt="" /></IconButton>

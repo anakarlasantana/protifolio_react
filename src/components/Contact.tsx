@@ -23,7 +23,7 @@ function contact() {
             </Stack>
             <Stack direction={'row'} spacing={50} style={{ display: 'flex', paddingTop: '50px', marginLeft: '15vw', padding: '30px',  }}>
                 <Typography fontFamily={'Fira Code'} maxWidth={'35rem'} sx={{ textIndent: '2rem',  color: '#ABB2BF'}} >
-                    Estou interessado em oportunidades freelance. No entanto, se você tiver outro pedido ou pergunta, não hesite em contactar-me
+                    Estou interessado em oportunidades freelance. No entanto, se você tiver outro pedido ou pergunta, não hesite em me chamar.
                 </Typography>
                 <Stack textAlign={'center'} style={{ display: 'inline-block', border: '1px solid #ABB2BF', width: '10rem' }}>
                     <Typography fontFamily={'Fira Code'} color={"white"} fontSize={'12px'} margin={1}>

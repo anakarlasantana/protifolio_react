@@ -16,8 +16,8 @@ function Home() {
   return (
     <Grid >
       <Background />
-      <Element name="home">
       <Header />
+      <Element name="home">
       <Layout />
       </Element>
       <ExperienceAndEducation />
