@@ -7,14 +7,14 @@ import javascriptIcon from '../assets/javascript.svg';
 import reactIcon from '../assets/reactIcon.png';
 import nodeIcon from '../assets/nodeIcon.png';
 import javaIcon from '../assets/javaIcon.png';
-import phytonIcon from '../assets/python.svg';
+import postgresql from '../assets/postgresqlIcon.svg';
 import typescriptIcon from '../assets/typescript.svg';
 import muiIcon from '../assets/materialMuiIcon.png';
 import figmaIcon from '../assets/figma.svg';
 import jiraIcon from '../assets/jiraIcon.svg';
 import mongoDBIcon from '../assets/mongodb.svg';
 import sqlIteIcon from '../assets/sqlite.svg';
-import jestIcon from '../assets/jestIcon.svg';
+import bootstrap from '../assets/bootstrapIcon.svg';
 import trelloIcon from '../assets/trelloIcon.svg';
 
 
@@ -64,82 +64,70 @@ function Skills() {
         {
             id: 'git',
             icon: gitIcon,
-            progress: 100,
+            name: 'Git',
         },
         {
             id: 'js',
             icon: javascriptIcon,
-            progress: 100,
+            name: 'Javascript',
         },
         {
             id: 'react',
             icon: reactIcon,
-            progress: 90,
+            name: 'React',
         },
         {
             id: 'node',
             icon: nodeIcon,
-            progress: 80,
+            name: 'Node js',
         },
-        {
-            id: 'java',
-            icon: javaIcon,
-            progress: 40,
-        },
-        {
-            id: 'phyton',
-            icon: phytonIcon,
-            progress: 40,
-        },
-    ];
-
-    const iconDataTwo = [
         {
             id: 'typescript',
             icon: typescriptIcon,
-            progress: 80,
+            name: 'Typescript',
         },
         {
             id: 'mui',
             icon: muiIcon,
-            progress: 100,
+            name: 'Material MUI',
         },
         {
             id: 'figma',
             icon: figmaIcon,
-            progress: 80,
+            name: 'Figma',
         },
         {
             id: 'jira',
             icon: jiraIcon,
-            progress: 80,
+            name: 'Jira',
         },
         {
             id: 'trello',
             icon: trelloIcon,
-            progress: 80,
+            name: 'Trello',
         },
-
-    ];
-
-    const iconDataTree = [
+        {
+            id: 'bootstrap',
+            icon: bootstrap,
+            name: 'Bootstrap',
+        },
+        {
+            id: 'postgreSql',
+            icon: postgresql,
+            name: 'postgreSQL',
+        },
         {
             id: 'sqLite',
             icon: sqlIteIcon,
-            progress: 60,
-        },
-        {
-            id: 'jest',
-            icon: jestIcon,
-            progress: 30,
+            name: 'SQLite',
         },
         {
             id: 'mongoDb',
             icon: mongoDBIcon,
-            progress: 60,
+            name: 'mongoDB',
         },
-
     ];
+
 
     const handleIconMouseEnter = (id: string) => {
         setHoveredIcon(id);
@@ -151,18 +139,18 @@ function Skills() {
 
     return (
         <Grid container width={'100%'}>
-            <Stack spacing={1} direction={'row'} style={{ display: 'flex', alignItems: 'center', marginLeft: '15vw'}}>
+            <Stack spacing={1} direction={'row'} style={{ display: 'flex', alignItems: 'center', marginLeft: '15vw' }}>
                 {simbolHead()}
                 <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>skills</Typography>
                 <Stack>
                     <Divider sx={{ display: 'flex', backgroundColor: '#42a96d', width: '40rem' }} />
                 </Stack>
             </Stack>
-            <Stack direction={'row'} spacing={12} style={{ paddingTop: '50px', marginLeft: '15vw', padding: '35px' }}>
-                {iconData.map(({ id, icon, progress }) => (
+            <Stack direction={'row'} flexWrap={'wrap'} marginLeft={'15vw'} width={'80rem'} paddingTop={5}  alignItems={'center'}>
+                {iconData.map(({ id, icon, name }) => (
                     <Stack key={id} >
-                        <Stack direction="column" alignItems="center" maxWidth={'8rem'}>
-                            <Stack>
+                        <Stack direction="column" paddingBottom={5} paddingLeft={10} alignItems={'center'}>
+                            <Stack >
                                 <IconWrapper
                                     style={{ filter: hoveredIcon !== id ? 'grayscale(100%)' : 'none' }}
                                     onMouseEnter={() => handleIconMouseEnter(id)}
@@ -176,76 +164,15 @@ function Skills() {
                                     />
                                 </IconWrapper>
                             </Stack>
-                            <Stack marginTop={2}>
-                                <ProgressWrapper visible={hoveredIcon === id}>
-                                    <BorderLinearProgress variant="determinate" value={progress} />
-                                    <Typography alignSelf="center" color="#42a96d">
-                                        {`${progress}%`}
-                                    </Typography>
-                                </ProgressWrapper>
+                            <Stack marginTop={5}  height={20}>
+                                {
+                                    hoveredIcon === id ? <Typography color="#42a96d">
+                                        {name}
+                                    </Typography> : ''
+                                }
                             </Stack>
                         </Stack>
 
-                    </Stack>
-                ))}
-            </Stack>
-            <Stack direction={'row'} spacing={12} style={{ marginLeft: '15vw', padding: '35px' }}>
-                {iconDataTwo.map(({ id, icon, progress }) => (
-                    <Stack key={id} >
-                        <Stack direction="column" alignItems="center" maxWidth={'8rem'}>
-                            <Stack>
-                                <IconWrapper
-                                    style={{ filter: hoveredIcon !== id ? 'grayscale(100%)' : 'none' }}
-                                    onMouseEnter={() => handleIconMouseEnter(id)}
-                                    onMouseLeave={handleIconMouseLeave}
-                                >
-                                    <img
-                                        src={icon}
-                                        alt={`${id}Icon`}
-                                        width={100}
-                                        style={{ transform: hoveredIcon === id ? 'scale(1.1)' : 'scale(1)' }}
-                                    />
-                                </IconWrapper>
-                            </Stack>
-                            <Stack marginTop={2}>
-                                <ProgressWrapper visible={hoveredIcon === id}>
-                                    <BorderLinearProgress variant="determinate" value={progress} />
-                                    <Typography alignSelf="center" color="#42a96d">
-                                        {`${progress}%`}
-                                    </Typography>
-                                </ProgressWrapper>
-                            </Stack>
-                        </Stack>
-                    </Stack>
-                ))}
-            </Stack>
-            <Stack direction={'row'} spacing={12} style={{ marginLeft: '15vw', padding: '35px' }}>
-                {iconDataTree.map(({ id, icon, progress }) => (
-                    <Stack key={id} >
-                        <Stack direction="column" alignItems="center" maxWidth={'8rem'}>
-                            <Stack>
-                                <IconWrapper
-                                    style={{ filter: hoveredIcon !== id ? 'grayscale(100%)' : 'none' }}
-                                    onMouseEnter={() => handleIconMouseEnter(id)}
-                                    onMouseLeave={handleIconMouseLeave}
-                                >
-                                    <img
-                                        src={icon}
-                                        alt={`${id}Icon`}
-                                        width={120}
-                                        style={{ transform: hoveredIcon === id ? 'scale(1.1)' : 'scale(1)' }}
-                                    />
-                                </IconWrapper>
-                            </Stack>
-                            <Stack marginTop={2}>
-                                <ProgressWrapper visible={hoveredIcon === id}>
-                                    <BorderLinearProgress variant="determinate" value={progress} />
-                                    <Typography alignSelf="center" color="#42a96d">
-                                        {`${progress}%`}
-                                    </Typography>
-                                </ProgressWrapper>
-                            </Stack>
-                        </Stack>
                     </Stack>
                 ))}
             </Stack>

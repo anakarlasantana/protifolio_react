@@ -34,7 +34,7 @@ const customButton = {
     border: '1px solid #42a96d',
     borderRadius: '0',
     fontFamily: 'Fira Code',
-    textTransform: 'none'
+    textTransform: 'none',
 }
 
 const phrasesLayout = [
@@ -73,13 +73,15 @@ function Layout() {
                         <span style={white}>Sou Ana Karla</span>
                         <span style={green}> fullstack developer</span>
                     </Typography>
-                    <Typography  sx={description}>Ela cria sites responsivos onde a tecnologia encontra a criatividade</Typography>
-                    <Button variant="contained" sx={customButton} color="primary">Entre em contato</Button>
+                    <Typography  sx={description}>Isso significa que sei copiar e colar o código certo para o problema certo.</Typography>
+                    <Box paddingTop={2}>
+                    <Button variant="contained" sx={customButton} color="primary" href="mailto:anakarla.p.santana@gmail.com">Entre em contato</Button>
                     <Stack direction={'row'} paddingLeft={2}>
                         <IconButton href=" https://github.com/anakarlasantana" target="_blank"><img src={githubIcon} alt="" /></IconButton>
                         <IconButton href="mailto:anakarla.p.santana@gmail.com" target="_blank"><img src={emailIcon} alt="" /></IconButton>
                         <IconButton href="https://www.linkedin.com/in/anakarlasantana/" target="_blank"><img src={linedingIcon} alt="" /></IconButton>
                     </Stack>
+                    </Box>
                 </Box>
                 <Box>
                     <Stack sx={{ position: 'absolute', top: '10rem', right: '28rem' }}>

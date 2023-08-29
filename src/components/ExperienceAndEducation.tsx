@@ -18,13 +18,6 @@ import python from '../assets/python.svg';
 
 
 
-
-
-
-
-
-
-
 const simbolHead = () => {
   return (
     <Typography color={'#42a96d'} fontSize={'32px'}>#</Typography>
@@ -44,6 +37,7 @@ export default function ExperienceAndEducation() {
           >
             experiência e educação
           </Typography>
+
         </Stack>
         <VerticalTimeline className="custom-timeline">
           <VerticalTimelineElement
