@@ -1,11 +1,24 @@
-import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Divider, Grid, Paper, Stack, Typography } from "@mui/material";
-import { useState } from "react";
+import React, { useState } from 'react';
+import {
+    Box,
+    Button,
+    Card,
+    CardActionArea,
+    CardActions,
+    CardContent,
+    CardMedia,
+    Divider,
+    Grid,
+    IconButton,
+    Paper,
+    Stack,
+    Typography
+} from "@mui/material";
 import cloneNetflix from "../assets/cloneNetflix.png"
 import pin from "../assets/pin+.png"
 import AddLinkIcon from '@mui/icons-material/AddLink';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-
-
+import { ExpandMore } from '@mui/icons-material';
 
 const simbolHead = () => {
     return (
@@ -14,10 +27,8 @@ const simbolHead = () => {
 };
 
 function Projects() {
-
-    const [isHoveredItemOne, setIsHoveredItemOne] = useState(false);
-    const [isHoveredItemTwo, setIsHoveredItemTwo] = useState(false);
-    const [isHoveredItemTree, setIsHoveredItemTree] = useState(false);
+    const [isHoveredItems, setIsHoveredItems] = useState([false, false, false]);
+    const [showMoreProjects, setShowMoreProjects] = useState(false);
 
     const customButton = {
         border: '1px solid #42a96d',
@@ -30,47 +41,86 @@ function Projects() {
         border: '1px solid #ABB2BF',
         borderRadius: '0',
         maxWidth: 390,
-        transition: 'transform 0.3s ease',
+        transition: 'transform 0.3s ease-out',
     }
 
+    const handleMouseToggle = (index: number, isHovering: boolean) => {
+        const updatedHoveredItems = [...isHoveredItems];
+        updatedHoveredItems[index] = isHovering;
+        if (isHovering) {
+            for (let i = 0; i < updatedHoveredItems.length; i++) {
+                if (i !== index) {
+                    updatedHoveredItems[i] = false;
+                }
+            }
+        }
+        setIsHoveredItems(updatedHoveredItems);
+    };
 
     return (
         <Grid container width={'100%'}>
-            <Stack spacing={2} direction={'row'} style={{ display: 'flex', alignItems: 'center', marginLeft: '15vw' }}>
+            <Stack spacing={2} direction={'row'} style={{ alignItems: 'center', marginLeft: '15vw',}}>
                 {simbolHead()}
                 <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>projects</Typography>
                 <Stack>
-                    <Divider sx={{ display: 'flex', backgroundColor: '#42a96d', width: '40rem' }} />
+                    <Divider sx={{backgroundColor: '#42a96d', width: '40rem' }} />
                 </Stack>
-                <Stack>
-                    <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white', paddingLeft: '18rem' }}>Veja todos ~~{">"}</Button>
+                <Stack paddingLeft={'16rem'}>
+                    <Button variant="text" onClick={() => setShowMoreProjects(!showMoreProjects)}>
+                        {showMoreProjects ? (
+                            <Typography sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: '#42a96d', paddingRight: '0.5rem' }}>
+                                Recolher
+                            </Typography>
+                        ) : (
+                            <Typography sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: '#42a96d', paddingRight: '0.5rem' }}>
+                                More project
+                            </Typography>
+                        )}
+                        <IconButton>
+                            <ExpandMore color="success" />
+                        </IconButton>
+                    </Button>
                 </Stack>
             </Stack>
             <Grid container width={'100%'} style={{ display: 'flex', paddingTop: '50px', marginLeft: '15vw', justifyContent: 'center', padding: '30px', maxWidth: '84rem' }}>
-                <Grid item xs={12} sm={6} md={4} sx={{ marginBottom: '10px' }} >
-                    <Card sx={{ ...customCardProject, transform: isHoveredItemOne ? 'scale(1.1)' : 'scale(1)' }} onMouseEnter={() => setIsHoveredItemOne(true)} onMouseLeave={() => setIsHoveredItemOne(false)}>
-                        <CardActionArea >
-                            <CardMedia
-                                component="img"
-                                height="140"
-                                image={cloneNetflix}
-                                alt="foto"
-                            />
-                            <CardContent sx={customCardProject}>
-                                <Typography gutterBottom variant="h5" component="div" color={'white'}>
-                                    Clone Netflix
-                                </Typography>
-                                <Typography variant="body2" color="white">
-                                    Esse foi o meu primeiro projeto, que consiste na clonagem da página principa da Netflix usando somente JavaScript, HTML e CSS.
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
+                {showMoreProjects ? renderAdditionalProjects() : null}
+                {renderProjectCard("Clone Netflix", "Esse foi o meu primeiro projeto, que consiste na clonagem da página principa da Netflix usando somente JavaScript, HTML e CSS.", "https://netflix-clone-9l2uyq3sv-anakarlasantana.vercel.app/#", null, 1)}
+                {renderProjectCard("Projeto pin+", "O pin+ é um projeto que apoia a construção da cultura organizacional, através de feedbacks, incentivos, interatividade e ranking colaborativos.", "https://pinmais2-web-homo.azurewebsites.net/#/", "https://grupoportfolio.com.br/portfolio-tech/pin-mais/", 2)}
+                {renderProjectCard("API REST", "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica.", null, null, 3)}
+            </Grid>
+        </Grid>
+    );
+
+    function renderProjectCard(title: string | null, description: string | null, link: string | null, additionalLink: string | null, index: number) {
+        return (
+            <Grid item xs={12} sm={6} md={4} sx={{ marginBottom: '30px' }} >
+                <Card sx={{ ...customCardProject, transform: isHoveredItems[index] ? 'scale(1.1)' : 'scale(1)' }}
+                    onMouseEnter={() => handleMouseToggle(index, true)}
+                    onMouseLeave={() => handleMouseToggle(index, false)}
+                >
+                    <CardActionArea>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image={title === "Clone Netflix" ? cloneNetflix : pin}
+                            alt="foto"
+                        />
+                        <CardContent sx={customCardProject}>
+                            <Typography gutterBottom variant="h5" component="div" color={'white'}>
+                                {title}
+                            </Typography>
+                            <Typography variant="body2" color="white">
+                                {description}
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                        {link && (
                             <Button
                                 variant="contained"
                                 sx={customButton}
                                 color="primary"
-                                href="https://netflix-clone-9l2uyq3sv-anakarlasantana.vercel.app/#"
+                                href={link}
                                 component="a"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -80,85 +130,35 @@ function Projects() {
                                     <AddLinkIcon fontSize="small" />
                                 </Stack>
                             </Button>
-                        </CardActions>
-                    </Card>
-                </Grid>
-                <Grid item xs={12} sm={6} md={4} sx={{ marginBottom: '10px' }}>
-                    <Card sx={{ ...customCardProject, transform: isHoveredItemTwo ? 'scale(1.1)' : 'scale(1)' }} onMouseEnter={() => setIsHoveredItemTwo(true)} onMouseLeave={() => setIsHoveredItemTwo(false)}>
-                        <CardActionArea>
-                            <CardMedia
-                                component="img"
-                                height="140"
-                                image={pin}
-                                alt="foto"
-                            />
-                            <CardContent sx={customCardProject}>
-                                <Typography gutterBottom variant="h5" component="div" color={'white'}>
-                                    Projeto pin+
-                                </Typography>
-                                <Typography variant="body2" color="white">
-                                    O pin+ é um projeto que apoia a construção da cultura organizacional, através de feedbacks, incentivos, interatividade e ranking colaborativos.
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
+                        )}
+                        {additionalLink && (
                             <Button
                                 variant="contained"
                                 sx={customButton}
                                 color="primary"
-                                href="https://pinmais2-web-homo.azurewebsites.net/#/"
+                                href={additionalLink}
                                 component="a"
                                 target="_blank"
-                                rel="noopener noreferrer">
-                                <Stack direction="row" spacing={1} alignItems="center" >
-                                    <Typography sx={{ fontFamily: 'Fira Code' }}>Link</Typography>
-                                    <AddLinkIcon fontSize="small" />
-                                </Stack>
-                            </Button>
-                            <Button
-                                variant="contained"
-                                sx={customButton}
-                                color="primary"
-                                href="https://grupoportfolio.com.br/portfolio-tech/pin-mais/"
-                                component="a"
-                                target="_blank"
-                                rel="noopener noreferrer">
+                                rel="noopener noreferrer"
+                            >
                                 Saiba Mais
                             </Button>
-                        </CardActions>
-                    </Card>
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}  >
-                    <Card sx={{ ...customCardProject, transform: isHoveredItemTree ? 'scale(1.1)' : 'scale(1)' }} onMouseEnter={() => setIsHoveredItemTree(true)} onMouseLeave={() => setIsHoveredItemTree(false)}>
-                        <CardActionArea>
-                            <CardMedia
-                                component="img"
-                                height="140"
-                                image="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png"
-                                alt="foto"
-                            />
-                            <CardContent sx={customCardProject}>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    API REST
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica.
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                            <Button variant="contained" sx={customButton} color="primary">
-                                Share
-                            </Button>
-                        </CardActions>
-                    </Card>
-                </Grid>
+                        )}
+                    </CardActions>
+                </Card>
             </Grid>
+        );
+    }
 
-
-
-        </Grid>
-    );
+    function renderAdditionalProjects() {
+        return (
+            <>
+                {renderProjectCard("Clone Netflix", "Esse foi o meu primeiro projeto, que consiste na clonagem da página principa da Netflix usando somente JavaScript, HTML e CSS.", "https://netflix-clone-9l2uyq3sv-anakarlasantana.vercel.app/#", null, 4)}
+                {renderProjectCard("Projeto pin+", "O pin+ é um projeto que apoia a construção da cultura organizacional, através de feedbacks, incentivos, interatividade e ranking colaborativos.", "https://pinmais2-web-homo.azurewebsites.net/#/", "https://grupoportfolio.com.br/portfolio-tech/pin-mais/", 5)}
+                {renderProjectCard("API REST", "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica.", null, null, 6)}
+            </>
+        );
+    }
 }
 
 export default Projects;

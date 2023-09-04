@@ -76,11 +76,11 @@ function Layout() {
                     <Typography  sx={description}>Isso significa que sei copiar e colar o código certo para o problema certo.</Typography>
                     <Box paddingTop={2}>
                     <Button variant="contained" sx={customButton} color="primary" href="mailto:anakarla.p.santana@gmail.com">Entre em contato</Button>
-                    <Stack direction={'row'} paddingLeft={2}>
+                    {/* <Stack direction={'row'} paddingLeft={2}>
                         <IconButton href=" https://github.com/anakarlasantana" target="_blank"><img src={githubIcon} alt="" /></IconButton>
                         <IconButton href="mailto:anakarla.p.santana@gmail.com" target="_blank"><img src={emailIcon} alt="" /></IconButton>
                         <IconButton href="https://www.linkedin.com/in/anakarlasantana/" target="_blank"><img src={linedingIcon} alt="" /></IconButton>
-                    </Stack>
+                    </Stack> */}
                     </Box>
                 </Box>
                 <Box>
@@ -89,7 +89,7 @@ function Layout() {
                     </Stack>
                 </Box>
                 </Stack>
-                <Stack style={customPhrases} paddingTop={'11rem'} paddingLeft={'65rem'}>
+                <Stack style={customPhrases} paddingTop={'11rem'} paddingLeft={'50rem'}>
                     <Slider {...settings}>
                         {phrasesLayout.map((phraseObj, index) => (
                             <Stack key={index}>
