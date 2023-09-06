@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Box, Chip, Grid, Icon, Typography, Button, Divider } from '@mui/material';
-import 'react-vertical-timeline-component/style.min.css'; // Importe primeiro o estilo padrão
+import 'react-vertical-timeline-component/style.min.css'; 
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import './ExperienceAndEducation.css'
 import { Stack } from '@mui/joy';
@@ -83,6 +83,8 @@ export default function ExperienceAndEducation() {
             </Stack>
             <Stack alignItems={'end'}>
               <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: '#42a96d', width: '100px', border: '1px solid #42a96d', borderRadius: '0' }}
+                href='https://www.linkedin.com/in/anakarlasantana/'
+                target="_blank"
                 variant="contained"
                 size='small'>Ver mais</Button>
             </Stack>
@@ -121,11 +123,13 @@ export default function ExperienceAndEducation() {
             </Stack>
             <Stack alignItems={'end'}>
               <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: '#42a96d', width: '100px', border: '1px solid #42a96d', borderRadius: '0' }}
+                href='https://www.linkedin.com/in/anakarlasantana/'
+                target="_blank"
                 variant="contained"
                 size='small'>Ver mais</Button>
             </Stack>
           </VerticalTimelineElement>
-        <VerticalTimelineElement
+          <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{
               background: '#282C33',
@@ -167,6 +171,8 @@ export default function ExperienceAndEducation() {
             </Stack>
             <Stack alignItems={'end'}>
               <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: '#42a96d', width: '100px', border: '1px solid #42a96d', borderRadius: '0' }}
+                href='https://www.linkedin.com/in/anakarlasantana/'
+                target="_blank"
                 variant="contained"
                 size='small'>Ver mais</Button>
             </Stack>
@@ -208,7 +214,8 @@ export default function ExperienceAndEducation() {
               <Chip variant="filled" icon={<img src={python} alt="React Icon" width={15} />} label="Python" style={{ color: '#42a96d', margin: '2px', fontFamily: 'Fire Code' }} />
             </Stack>
             <Stack alignItems={'end'}>
-              <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: '#42a96d', width: '100px', border: '1px solid #42a96d', borderRadius: '0' }}
+              <Button href='https://www.linkedin.com/in/anakarlasantana/' sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: '#42a96d', width: '100px', border: '1px solid #42a96d', borderRadius: '0' }}
+                target="_blank"
                 variant="contained"
                 size='small'>Ver mais</Button>
             </Stack>

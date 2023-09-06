@@ -141,7 +141,7 @@ function Skills() {
         <Grid container width={'100%'}>
             <Stack spacing={1} direction={'row'} style={{ display: 'flex', alignItems: 'center', marginLeft: '15vw' }}>
                 {simbolHead()}
-                <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>skills</Typography>
+                <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>habilidades</Typography>
                 <Stack>
                     <Divider sx={{ display: 'flex', backgroundColor: '#42a96d', width: '40rem' }} />
                 </Stack>

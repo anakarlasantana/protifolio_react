@@ -16,13 +16,13 @@ function contact() {
         <Grid container width={'100%'}>
             <Stack spacing={1} direction={'row'} style={{alignItems: 'center', marginLeft: '15vw' }}>
                 {simbolHead()}
-                <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>contact</Typography>
+                <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>contatos</Typography>
                 <Stack>
                     <Divider sx={{ display: 'flex', backgroundColor: '#42a96d', width: '40rem' }} />
                 </Stack>
             </Stack>
-            <Stack direction={'row'} spacing={50} style={{ display: 'flex', paddingTop: '50px', marginLeft: '15vw', padding: '30px',  }}>
-                <Typography fontFamily={'Fira Code'} maxWidth={'35rem'} sx={{ textIndent: '2rem',  color: '#ABB2BF'}} >
+            <Stack direction={'row'} spacing={22} style={{ display: 'flex', paddingTop: '50px', marginLeft: '15vw', padding: '30px',  }}>
+                <Typography fontFamily={'Fira Code'} maxWidth={'50rem'} sx={{ textIndent: '2rem',  color: '#ABB2BF'}} >
                     Estou interessado em oportunidades freelance. No entanto, se você tiver outro pedido ou pergunta, não hesite em me chamar.
                 </Typography>
                 <Stack textAlign={'center'} style={{ display: 'inline-block', border: '1px solid #ABB2BF', width: '10rem' }}>

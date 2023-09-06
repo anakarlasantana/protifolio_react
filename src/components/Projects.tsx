@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-    Box,
     Button,
     Card,
     CardActionArea,
@@ -10,15 +9,13 @@ import {
     Divider,
     Grid,
     IconButton,
-    Paper,
     Stack,
     Typography
 } from "@mui/material";
 import cloneNetflix from "../assets/cloneNetflix.png"
 import pin from "../assets/pin+.png"
 import AddLinkIcon from '@mui/icons-material/AddLink';
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import { ExpandMore } from '@mui/icons-material';
+import { ExpandLess, ExpandMore } from '@mui/icons-material';
 
 const simbolHead = () => {
     return (
@@ -65,19 +62,20 @@ function Projects() {
                 <Stack>
                     <Divider sx={{backgroundColor: '#42a96d', width: '40rem' }} />
                 </Stack>
-                <Stack paddingLeft={'16rem'}>
-                    <Button variant="text" onClick={() => setShowMoreProjects(!showMoreProjects)}>
+                <Stack paddingLeft={'9rem'}>
+                    <Button size='small' onClick={() => setShowMoreProjects(!showMoreProjects)}>
                         {showMoreProjects ? (
-                            <Typography sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: '#42a96d', paddingRight: '0.5rem' }}>
+                            <Typography sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: '#42a96d',  paddingLeft: '7rem'}}>
                                 Recolher
                             </Typography>
                         ) : (
-                            <Typography sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: '#42a96d', paddingRight: '0.5rem' }}>
+                            <Typography sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: '#42a96d', paddingLeft: '7rem'}}>
                                 More project
                             </Typography>
                         )}
                         <IconButton>
-                            <ExpandMore color="success" />
+                            {showMoreProjects ? ( <ExpandLess  color="success" />) : ( <ExpandMore color="success" />)}
+                           
                         </IconButton>
                     </Button>
                 </Stack>

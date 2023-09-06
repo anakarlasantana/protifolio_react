@@ -68,28 +68,28 @@ function Layout() {
         <Grid container width={'100%'} marginTop={10}>
             <Stack spacing={2} width={'20vw'} height={'46vw'} marginLeft={'15vw'}>
                 <Stack>
-                <Box paddingTop={'8rem'} paddingLeft={'4rem'} width={'100%'} >
-                    <Typography fontSize={'32px'}>
-                        <span style={white}>Sou Ana Karla</span>
-                        <span style={green}> fullstack developer</span>
-                    </Typography>
-                    <Typography  sx={description}>Isso significa que sei copiar e colar o código certo para o problema certo.</Typography>
-                    <Box paddingTop={2}>
-                    <Button variant="contained" sx={customButton} color="primary" href="mailto:anakarla.p.santana@gmail.com">Entre em contato</Button>
-                    {/* <Stack direction={'row'} paddingLeft={2}>
-                        <IconButton href=" https://github.com/anakarlasantana" target="_blank"><img src={githubIcon} alt="" /></IconButton>
-                        <IconButton href="mailto:anakarla.p.santana@gmail.com" target="_blank"><img src={emailIcon} alt="" /></IconButton>
-                        <IconButton href="https://www.linkedin.com/in/anakarlasantana/" target="_blank"><img src={linedingIcon} alt="" /></IconButton>
-                    </Stack> */}
+                    <Box paddingTop={'8rem'} paddingLeft={'5rem'} width={'100%'} >
+                        <Typography fontSize={'32px'}>
+                            <span style={white}>Sou Ana Karla</span>
+                            <span style={green}> fullstack developer</span>
+                        </Typography>
+                        <Typography sx={description}>Isso significa que sei copiar e colar o código certo para o problema certo.</Typography>
+                        <Box paddingTop={2}>
+                            <Button variant="contained" sx={customButton} color="primary" href="https://wa.me/558591870847?text=Ol%C3%A1%2C%20te%20conheci%20pelo%20portf%C3%B3lio%21" target="_blank">Entre em contato</Button>
+                            <Stack direction={'row'} paddingLeft={1}>
+                                <IconButton href=" https://github.com/anakarlasantana" target="_blank"><img src={githubIcon} alt="" /></IconButton>
+                                <IconButton href="mailto:anakarla.p.santana@gmail.com" target="_blank"><img src={emailIcon} alt="" /></IconButton>
+                                <IconButton href="https://www.linkedin.com/in/anakarlasantana/" target="_blank"><img src={linedingIcon} alt="" /></IconButton>
+                            </Stack>
+                        </Box>
                     </Box>
-                </Box>
-                <Box>
-                    <Stack sx={{ position: 'absolute', top: '10rem', right: '28rem' }}>
-                        <img src={fotoOne} alt="foto" style={{ width: '300px', height: '375px', borderRadius: '200px' }} />
-                    </Stack>
-                </Box>
+                    <Box>
+                        <Stack sx={{ position: 'absolute', top: '10rem', right: '26rem' }}>
+                            <img src={fotoOne} alt="foto" style={{ width: '300px', height: '375px', borderRadius: '200px' }} />
+                        </Stack>
+                    </Box>
                 </Stack>
-                <Stack style={customPhrases} paddingTop={'11rem'} paddingLeft={'50rem'}>
+                <Stack style={customPhrases} paddingTop={'11rem'} paddingLeft={'53rem'}>
                     <Slider {...settings}>
                         {phrasesLayout.map((phraseObj, index) => (
                             <Stack key={index}>
