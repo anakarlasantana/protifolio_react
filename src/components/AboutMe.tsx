@@ -1,6 +1,9 @@
 import { Stack } from "@mui/joy";
 import { Divider, Grid, Typography } from "@mui/material";
 import fotoTwo from '../assets/fotoTwo.jpg'
+import './AboutMeScreen.css'
+import React, { useEffect } from "react";
+
 
 const simbolHead = () => {
     return (
@@ -8,21 +11,36 @@ const simbolHead = () => {
     );
 };
 
-function aboutMe() {
+function AboutMe() {
+    const [isSmallScreen, setIsSmallScreen] = React.useState(window.innerWidth >= 1200);    console.log(isSmallScreen);
+    
+    React.useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth >= 1200);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <Grid container width={'100%'}>
             <Stack spacing={1} direction={'row'} style={{ alignItems: 'center', marginLeft: '15vw' }}>
                 {simbolHead()}
-                <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>sobre mim</Typography>
-                <Stack>
-                    <Divider sx={{ display: 'flex', backgroundColor: '#42a96d', width: '40rem' }} />
+                <Stack >
+                    <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>about me</Typography>
+                </Stack>
+                <Stack className="typo-aboutme" >
+                    <Divider sx={{ backgroundColor: '#42a96d', width: '40rem' }} />
                 </Stack>
             </Stack>
-            <Stack direction={'row'} spacing={10} style={{ paddingTop: '50px', marginLeft: '15vw', padding: '30px' }}>
-                <Stack width={'50rem'}>
+            <Stack  direction={'row'} spacing={5} width={'65%'} className="style-reset-aboutme" style={{ marginLeft: '15vw', padding: '30px' }}>
+                <Stack>
                     <Typography
                         fontFamily={'Fira Code'}
-                        maxWidth={'80rem'}
                         color={'#ABB2BF'}
                         style={{
                             textAlign: 'justify',
@@ -30,11 +48,10 @@ function aboutMe() {
                             lineHeight: '1.6',
                             textIndent: '2rem',
                         }}>
-                        Eu era aquela garota que adorava desmontar relógios, abrir gabinetes, formatar computadores e até mesmo programar meu pequeno e amado Galaxy Y, tudo movida pela curiosidade e pela vontade de resolver problemas. Lembro com carinho da época em que fiquei viciada em aprender Illustrator e Photoshop. Eu criava logotipos, montava layouts, fazia cartões de visita e de casamento, editava fotos e até produzia as artes dos banners para os meus colegas, tudo porque me dava um prazer imenso.
+                        I was that girl who loved taking apart watches, opening cabinets, formatting computers and even programming my little beloved Galaxy Y, all driven by curiosity and the desire to solve problems. I fondly remember the time when I became addicted to learning Illustrator and Photoshop. I created logos, created layouts, made business and wedding cards, edited photos and even produced banner art for my colleagues, all because it gave me immense pleasure.
                     </Typography>
                     <Typography
                         fontFamily={'Fira Code'}
-                        maxWidth={'80rem'}
                         color={'#ABB2BF'}
                         style={{
                             textAlign: 'justify',
@@ -42,15 +59,21 @@ function aboutMe() {
                             lineHeight: '1.6',
                             textIndent: '2rem',
                         }}>
-                        Hoje em dia, percebo que nem todo mundo tem essa facilidade com tecnologia. Passar horas na frente de um monitor criando é, na verdade, uma profissão legítima. Sempre fui apaixonada por tecnologia, mesmo quando não acreditava em mim mesma. Por isso, hoje estou reavaliando meu caminho e concentrando minhas energias no meu desenvolvimento profissional como desenvolvedora fullstack, com foco em JavaScript, mas sempre aberta a aprender novas tecnologias. A diversão continua! 😉🚀
+                        Nowadays, I realize that not everyone has this facility with technology. Spending hours in front of a monitor creating is actually a legitimate profession. I've always been passionate about technology, even when I didn't believe in myself. Therefore, today I am reevaluating my path and focusing my energies on my professional development as a fullstack developer, focusing on JavaScript, but always open to learning new technologies. The fun continues! 😉🚀
                     </Typography>
                 </Stack>
-                <Stack width={'20rem'} height={'20rem'}>
-                    <img src={fotoTwo} alt="foto" />
-                </Stack>
+                {isSmallScreen ? 
+                    <Stack>
+                        <img
+                            src={fotoTwo}
+                            style={{ width: '20rem', height: '20rem' }}
+                            alt="foto"
+                        />
+                    </Stack> : <></>
+                }
             </Stack>
         </Grid>
     );
 };
 
-export default aboutMe;
+export default AboutMe;

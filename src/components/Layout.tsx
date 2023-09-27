@@ -1,32 +1,33 @@
-import { Box, Button, IconButton, Paper, Stack, Typography } from "@mui/material";
+import {Button, IconButton, Paper, Stack, Typography } from "@mui/material";
 import githubIcon from '../../src/assets/github.svg';
 import emailIcon from '../../src/assets/emailIcon.svg';
 import linedingIcon from '../../src/assets/linkedinIcon.svg';
 import fotoOne from '../assets/fotoOne.png';
 import dots from '../assets/elementDots.svg';
+import square from '../assets/square.svg';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Slider from 'react-slick';
-import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import { Grid } from "@mui/joy";
-
-
+import './LayoutScreen.css'
 
 
 const green = {
     fontFamily: 'Fira Code',
     color: '#42a96d',
+    fontSize: '40px'
+
 }
 
 const white = {
     fontFamily: 'Fira Code',
-    color: 'white'
+    color: 'white',
+    fontSize: '40px'
 }
 
 const description = {
     fontFamily: 'Fira Code',
     color: '#ABB2BF',
-    fontSize: '16px',
+    fontSize: '18px',
     width: '30rem'
 }
 
@@ -37,87 +38,39 @@ const customButton = {
     textTransform: 'none',
 }
 
-const phrasesLayout = [
-    { phrase: "Você precisa fazer aquilo que pensa que não é capaz de fazer.", author: "Eleanor Roosevelt" },
-    { phrase: "Gostaria que você soubesse que existe dentro de si uma força capaz de mudar sua vida, basta que lute e aguarde um novo amanhecer.", author: "Margaret Thatcher" },
-    { phrase: "Você precisa fazer aquilo que pensa que não é capaz de fazer.", author: "Coco Chanel" },
-
-]
-
-const settings = {
-    infinite: true,
-    arrows: false,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-};
-
-const customPhrases = {
-    fontFamily: 'Fira Code',
-    height: '12rem',
-    width: '50rem',
-    alignSelf: 'center',
-    margin: '6rem',
-}
-
 
 function Layout() {
 
     return (
-        <Grid container width={'100%'} marginTop={10}>
-            <Stack spacing={2} width={'20vw'} height={'46vw'} marginLeft={'15vw'}>
-                <Stack>
-                    <Box paddingTop={'8rem'} paddingLeft={'5rem'} width={'100%'} >
-                        <Typography fontSize={'32px'}>
-                            <span style={white}>Sou Ana Karla</span>
-                            <span style={green}> fullstack developer</span>
-                        </Typography>
-                        <Typography sx={description}>Isso significa que sei copiar e colar o código certo para o problema certo.</Typography>
-                        <Box paddingTop={2}>
-                            <Button variant="contained" sx={customButton} color="primary" href="https://wa.me/558591870847?text=Ol%C3%A1%2C%20te%20conheci%20pelo%20portf%C3%B3lio%21" target="_blank">Entre em contato</Button>
-                            <Stack direction={'row'} paddingLeft={1}>
+        <Grid container width={'100%'} justifyContent={'center'} >
+            <Stack p={'10%'} className="layout-screen">
+                <Stack direction={'row'} justifyContent={'center'} alignItems={'center'}>
+                    <Stack className="padding-right" paddingRight={35}>
+                        <Stack >
+                            <Typography className="font-style" style={white}>Hi</Typography>
+                            <Typography style={white}>I'm Ana Karla</Typography>
+                            <Typography style={green}> fullstack developer</Typography>
+                            <Typography sx={description}>This means I know how to copy and paste, the right code for the right problem.</Typography>
+                        </Stack>
+                        <Stack paddingTop={5} width={'30%'}>
+                            <Button variant="contained" sx={customButton} color="primary" href="https://wa.me/558591870847?text=Ol%C3%A1%2C%20te%20conheci%20pelo%20portf%C3%B3lio%21" target="_blank">Contact me</Button>
+                            <Stack direction={'row'} alignSelf={'center'}>
                                 <IconButton href=" https://github.com/anakarlasantana" target="_blank"><img src={githubIcon} alt="" /></IconButton>
                                 <IconButton href="mailto:anakarla.p.santana@gmail.com" target="_blank"><img src={emailIcon} alt="" /></IconButton>
                                 <IconButton href="https://www.linkedin.com/in/anakarlasantana/" target="_blank"><img src={linedingIcon} alt="" /></IconButton>
                             </Stack>
-                        </Box>
-                    </Box>
-                    <Box>
-                        <Stack sx={{ position: 'absolute', top: '10rem', right: '26rem' }}>
-                            <img src={fotoOne} alt="foto" style={{ width: '300px', height: '375px', borderRadius: '200px' }} />
                         </Stack>
-                    </Box>
+                    </Stack>
+                    <Stack>
+                        <Stack className="photo-screen" style={{ position: 'relative' }}>
+                            <img src={fotoOne} alt="foto" style={{ width: '300px', height: '375px', borderRadius: '200px', zIndex: '2' }} />
+                            <img src={dots} style={{ width: '5rem', height: '5rem', position: 'absolute', top: '20%', left: '60%', zIndex: '1' }} />
+                            <img src={square} style={{ width: '8rem', height: '8rem', position: 'absolute', top: '60%', right: '70%', zIndex: '1' }} />
+                            <img src={square} style={{ width: '4rem', height: '4rem', position: 'absolute', top: '85%', right: '60%', zIndex: '1' }} />
+                        </Stack>
+                    </Stack>
+
                 </Stack>
-                <Stack style={customPhrases} paddingTop={'11rem'} paddingLeft={'53rem'}>
-                    <Slider {...settings}>
-                        {phrasesLayout.map((phraseObj, index) => (
-                            <Stack key={index}>
-                                <Typography fontSize={'24px'} color={white} align="center"
-                                    style={{
-                                        display: 'inline-block',
-                                        border: '1px solid #ABB2BF',
-
-                                    }} >
-                                    <FormatQuoteIcon style={{ transform: 'scaleX(-1)' }} />
-                                    {phraseObj.phrase}
-                                    <FormatQuoteIcon style={{ color: 'white' }} />
-
-                                </Typography>
-                                <Typography fontSize={'24px'} color={"grey"}
-                                    style={{
-                                        display: 'inline-block',
-                                        border: '1px solid #ABB2BF',
-                                        padding: '5px',
-                                        marginLeft: '34rem'
-                                    }} >
-                                    - {phraseObj.author}
-                                </Typography>
-                            </Stack>
-                        ))}
-                    </Slider>
-                </Stack>
-
             </Stack>
         </Grid>
     );

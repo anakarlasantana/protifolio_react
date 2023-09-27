@@ -26,16 +26,6 @@ const simbolHead = () => {
     );
 };
 
-const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-    height: 10,
-    width: '10rem',
-    alignSelf: 'center',
-    backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 300 : 800],
-    '& .MuiLinearProgress-bar': {
-        borderRadius: 6,
-        backgroundColor: theme.palette.mode === 'light' ? '#42a96d' : '#308fe8',
-    },
-}));
 
 const IconWrapper = styled('div')(({ theme }) => ({
     '& img': {
@@ -49,11 +39,6 @@ const IconWrapper = styled('div')(({ theme }) => ({
     },
 }));
 
-const ProgressWrapper = styled('div')<{ visible: boolean }>(({ visible }) => ({
-    position: 'relative',
-    opacity: visible ? 1 : 0,
-    transition: 'opacity 0.3s ease',
-}));
 
 
 
@@ -138,15 +123,15 @@ function Skills() {
     };
 
     return (
-        <Grid container width={'100%'}>
-            <Stack spacing={1} direction={'row'} style={{ display: 'flex', alignItems: 'center', marginLeft: '15vw' }}>
+        <Grid container width={'100%'} maxWidth={'90%'}>
+            <Stack spacing={2} direction={'row'} style={{ alignItems: 'center', marginLeft: '15vw'}}>
                 {simbolHead()}
-                <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>habilidades</Typography>
+                <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>skills</Typography>
                 <Stack>
                     <Divider sx={{ display: 'flex', backgroundColor: '#42a96d', width: '40rem' }} />
                 </Stack>
             </Stack>
-            <Stack direction={'row'} flexWrap={'wrap'} marginLeft={'15vw'} width={'80rem'} paddingTop={5}  alignItems={'center'}>
+            <Stack direction={'row'} flexWrap={'wrap'} width={'100%'} justifyContent={'center'} paddingTop={5} maxWidth={'80%'} marginLeft={'10%'}  alignItems={'center'} >
                 {iconData.map(({ id, icon, name }) => (
                     <Stack key={id} >
                         <Stack direction="column" paddingBottom={5} paddingLeft={10} alignItems={'center'}>

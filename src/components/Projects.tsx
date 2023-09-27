@@ -12,10 +12,12 @@ import {
     Stack,
     Typography
 } from "@mui/material";
-import cloneNetflix from "../assets/cloneNetflix.png"
-import pin from "../assets/pin+.png"
+import login from "../assets/login.png";
+import socialLayout from "../assets/social_layout.png";
+import apiRestNodeJS from "../assets/api_rest_node.png";
 import AddLinkIcon from '@mui/icons-material/AddLink';
-import { ExpandLess, ExpandMore } from '@mui/icons-material';
+// import './MediaScreen.css'
+
 
 const simbolHead = () => {
     return (
@@ -56,53 +58,64 @@ function Projects() {
 
     return (
         <Grid container width={'100%'}>
-            <Stack spacing={2} direction={'row'} style={{ alignItems: 'center', marginLeft: '15vw',}}>
+            <Stack direction={'row'} spacing={2} style={{ alignItems: 'center', marginLeft: '15vw', }}>
                 {simbolHead()}
                 <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>projects</Typography>
                 <Stack>
-                    <Divider sx={{backgroundColor: '#42a96d', width: '40rem' }} />
+                    <Divider sx={{ backgroundColor: '#42a96d', width: '40rem' }} />
                 </Stack>
-                <Stack paddingLeft={'9rem'}>
+                {/* <Stack>
                     <Button size='small' onClick={() => setShowMoreProjects(!showMoreProjects)}>
                         {showMoreProjects ? (
-                            <Typography sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: '#42a96d',  paddingLeft: '7rem'}}>
-                                Recolher
+                            <Typography sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: '#42a96d'}}>
+                                Retract
                             </Typography>
                         ) : (
-                            <Typography sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: '#42a96d', paddingLeft: '7rem'}}>
+                            <Typography sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: '#42a96d'}}>
                                 More project
                             </Typography>
                         )}
                         <IconButton>
-                            {showMoreProjects ? ( <ExpandLess  color="success" />) : ( <ExpandMore color="success" />)}
-                           
+                            {showMoreProjects ? (<ExpandLess color="success" />) : (<ExpandMore color="success" />)}
+
                         </IconButton>
                     </Button>
-                </Stack>
+                </Stack> */}
             </Stack>
-            <Grid container width={'100%'} style={{ display: 'flex', paddingTop: '50px', marginLeft: '15vw', justifyContent: 'center', padding: '30px', maxWidth: '84rem' }}>
+
+            <Grid container width={'100%'} justifyContent={'center'}>
+                <Grid>
+                    {renderProjectCard(login, "Login and API REST", "It is a login application, sending emails to recover passwords for registered users and using a library to encrypt passwords.", "https://send-email-react-js.vercel.app/", "https://github.com/anakarlasantana/send_email_reactJs", 3)}
+                </Grid>
+                <Grid >
+                    {renderProjectCard(socialLayout, "Social network Layout", "This is a social media layout project. kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk", null, "https://github.com/anakarlasantana/social_layout", 1)}
+                </Grid>
+                <Grid >
+                    {renderProjectCard(apiRestNodeJS, "API REST - NodeJs + Typescript", "It is a REST API project with cities, people and login endpoints, which will allow GET, POST, PUT, DELETE when searching for people and cities.", null, "https://github.com/anakarlasantana/Api_rest_nodeJS_Typescript", 5)}
+                </Grid>
                 {showMoreProjects ? renderAdditionalProjects() : null}
-                {renderProjectCard("Clone Netflix", "Esse foi o meu primeiro projeto, que consiste na clonagem da página principa da Netflix usando somente JavaScript, HTML e CSS.", "https://netflix-clone-9l2uyq3sv-anakarlasantana.vercel.app/#", null, 1)}
-                {renderProjectCard("Projeto pin+", "O pin+ é um projeto que apoia a construção da cultura organizacional, através de feedbacks, incentivos, interatividade e ranking colaborativos.", "https://pinmais2-web-homo.azurewebsites.net/#/", "https://grupoportfolio.com.br/portfolio-tech/pin-mais/", 2)}
-                {renderProjectCard("API REST", "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica.", null, null, 3)}
             </Grid>
+
+
         </Grid>
     );
 
-    function renderProjectCard(title: string | null, description: string | null, link: string | null, additionalLink: string | null, index: number) {
+    function renderProjectCard(illustration: string | null, title: string | null, description: string | null, link: string | null, additionalLink: string | null, index: number) {
         return (
-            <Grid item xs={12} sm={6} md={4} sx={{ marginBottom: '30px' }} >
+            <Grid sx={{margin: '15px' }}>
                 <Card sx={{ ...customCardProject, transform: isHoveredItems[index] ? 'scale(1.1)' : 'scale(1)' }}
                     onMouseEnter={() => handleMouseToggle(index, true)}
                     onMouseLeave={() => handleMouseToggle(index, false)}
                 >
                     <CardActionArea>
-                        <CardMedia
-                            component="img"
-                            height="140"
-                            image={title === "Clone Netflix" ? cloneNetflix : pin}
-                            alt="foto"
-                        />
+                        {illustration ? (
+                            <CardMedia
+                                component="img"
+                                height="140"
+                                image={illustration}
+                                alt="foto"
+                            />
+                        ) : null}
                         <CardContent sx={customCardProject}>
                             <Typography gutterBottom variant="h5" component="div" color={'white'}>
                                 {title}
@@ -139,7 +152,7 @@ function Projects() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                Saiba Mais
+                                See more
                             </Button>
                         )}
                     </CardActions>
@@ -151,9 +164,7 @@ function Projects() {
     function renderAdditionalProjects() {
         return (
             <>
-                {renderProjectCard("Clone Netflix", "Esse foi o meu primeiro projeto, que consiste na clonagem da página principa da Netflix usando somente JavaScript, HTML e CSS.", "https://netflix-clone-9l2uyq3sv-anakarlasantana.vercel.app/#", null, 4)}
-                {renderProjectCard("Projeto pin+", "O pin+ é um projeto que apoia a construção da cultura organizacional, através de feedbacks, incentivos, interatividade e ranking colaborativos.", "https://pinmais2-web-homo.azurewebsites.net/#/", "https://grupoportfolio.com.br/portfolio-tech/pin-mais/", 5)}
-                {renderProjectCard("API REST", "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica.", null, null, 6)}
+                {/* {renderProjectCard(cloneNetflix, "Clone Netflix", "Esse foi o meu primeiro projeto, que consiste na clonagem da página principa da Netflix usando somente JavaScript, HTML e CSS.", "https://netflix-clone-9l2uyq3sv-anakarlasantana.vercel.app/#", null, 4)} */}
             </>
         );
     }

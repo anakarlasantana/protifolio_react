@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Box, Chip, Grid, Icon, Typography, Button, Divider } from '@mui/material';
-import 'react-vertical-timeline-component/style.min.css'; 
+import 'react-vertical-timeline-component/style.min.css';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import './ExperienceAndEducation.css'
 import { Stack } from '@mui/joy';
@@ -35,7 +35,7 @@ export default function ExperienceAndEducation() {
           <Typography
             sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}
           >
-            experiência e educação
+            experience and education
           </Typography>
 
         </Stack>
@@ -56,7 +56,7 @@ export default function ExperienceAndEducation() {
               marginLeft: '-15px'
             }}
           >
-            <Stack direction={'row'} spacing={10} fontFamily={'Fira Code'}>
+            <Stack direction={'row'} spacing={13} fontFamily={'Fira Code'}>
               <Stack direction="row" alignItems="center">
                 <Tag style={{ color: '#42a96d' }} />
                 <Stack paddingTop={'20px'}>
@@ -66,11 +66,11 @@ export default function ExperienceAndEducation() {
               </Stack>
               <Stack direction="row" alignItems="center" spacing={1}>
                 <CalendarMonth style={{ color: '#42a96d' }} />
-                <Typography style={{ fontSize: '12px' }} fontFamily={'Fira Code'}>2022 - presente</Typography>
+                <Typography style={{ fontSize: '12px' }} fontFamily={'Fira Code'}>2022 - present</Typography>
               </Stack>
             </Stack>
             <Stack direction={'row'} fontSize={'10px'}>
-              <Typography style={{ fontSize: '13px' }} fontFamily={'Fira Code'} paddingLeft={'20px'}>Atuo no projeto pin+.</Typography>
+              <Typography style={{ fontSize: '13px' }} fontFamily={'Fira Code'} paddingLeft={'20px'}>Atuo nos projetos: <a href="https://grupoportfolio.com.br/portfolio-tech/pin-mais/" style={{ color: '#42a96d' }} target="_blank">pin+</a></Typography>
             </Stack>
             <Stack direction={'row'} flexWrap={'wrap'} paddingLeft={'20px'} marginTop={'5px'} fontFamily={'Fira Code'}>
               <Chip variant="filled" icon={<img src={javascriptIcon} alt="React Icon" width={15} />} label="Javascript" style={{ color: '#42a96d', margin: '2px', fontFamily: 'Fire Code' }} />
@@ -86,7 +86,7 @@ export default function ExperienceAndEducation() {
                 href='https://www.linkedin.com/in/anakarlasantana/'
                 target="_blank"
                 variant="contained"
-                size='small'>Ver mais</Button>
+                size='small'>See more</Button>
             </Stack>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -105,28 +105,28 @@ export default function ExperienceAndEducation() {
               marginLeft: '-10px'
             }}
           >
-            <Stack direction={'row'} spacing={7} fontFamily={'Fira Code'}>
+            <Stack direction={'row'} fontFamily={'Fira Code'}>
               <Stack direction="row">
                 <Tag style={{ color: '#42a96d' }} />
                 <Stack>
-                  <h3 color={'white'} className="vertical-timeline-element-title">Analise e Desenvolvimento de Sistemas</h3>
+                  <h3 color={'white'} className="vertical-timeline-element-title">Analysis and systems development</h3>
                   <h5 className="vertical-timeline-element-subtitle">Uniasselvi</h5>
                 </Stack>
               </Stack>
-              <Stack direction="row" alignItems="center" spacing={1}>
+              <Stack direction="row" spacing={1}>
                 <CalendarMonth style={{ color: '#42a96d' }} />
-                <Typography style={{ fontSize: '12px' }} fontFamily={'Fira Code'}>2022 - presente</Typography>
+                <Typography style={{ fontSize: '12px' }} fontFamily={'Fira Code'}>2022 - present</Typography>
               </Stack>
             </Stack>
             <Stack direction={'row'} fontSize={'10px'}>
-              <Typography style={{ fontSize: '13px' }} fontFamily={'Fira Code'} paddingLeft={'20px'}>Graduação no curso superior em analise e desenvolvimento de sistemas. </Typography>
+              <Typography style={{ fontSize: '13px' }} fontFamily={'Fira Code'} paddingLeft={'20px'}>Bachelor's degree in systems analysis and development.</Typography>
             </Stack>
-            <Stack alignItems={'end'}>
+            <Stack alignItems={'end'} paddingTop={1}>
               <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: '#42a96d', width: '100px', border: '1px solid #42a96d', borderRadius: '0' }}
                 href='https://www.linkedin.com/in/anakarlasantana/'
                 target="_blank"
                 variant="contained"
-                size='small'>Ver mais</Button>
+                size='small'>See more</Button>
             </Stack>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -153,13 +153,13 @@ export default function ExperienceAndEducation() {
                   <h5 className="vertical-timeline-element-subtitle">Online Course platforms</h5>
                 </Stack>
               </Stack>
-              <Stack direction="row" alignItems="center" spacing={1}>
+              <Stack direction="row" paddingLeft={11} spacing={1}>
                 <CalendarMonth style={{ color: '#42a96d' }} />
                 <Typography style={{ fontSize: '12px' }} fontFamily={'Fira Code'}>2022 - 2023</Typography>
               </Stack>
             </Stack>
             <Stack direction={'row'} fontSize={'10px'}>
-              <Typography style={{ fontSize: '13px' }} fontFamily={'Fira Code'} paddingLeft={'20px'}>Plataforma de educação em tecnologia mais modernas de desenvolvimento web e mobile.</Typography>
+              <Typography style={{ fontSize: '13px' }} fontFamily={'Fira Code'} paddingLeft={'20px'}>Education platform on the most modern web and mobile development technology in Brazil.</Typography>
             </Stack>
             <Stack direction={'row'} flexWrap={'wrap'} paddingLeft={'20px'} marginTop={'5px'} fontFamily={'Fira Code'}>
               <Chip variant="filled" icon={<img src={javascriptIcon} alt="React Icon" width={15} />} label="Javascript" style={{ color: '#42a96d', margin: '2px', fontFamily: 'Fire Code' }} />
@@ -174,7 +174,7 @@ export default function ExperienceAndEducation() {
                 href='https://www.linkedin.com/in/anakarlasantana/'
                 target="_blank"
                 variant="contained"
-                size='small'>Ver mais</Button>
+                size='small'>See more</Button>
             </Stack>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -193,21 +193,21 @@ export default function ExperienceAndEducation() {
               marginLeft: '-10px'
             }}
           >
-            <Stack direction={'row'} spacing={7} fontFamily={'Fira Code'}>
+            <Stack direction={'row'} fontFamily={'Fira Code'}>
               <Stack direction="row">
                 <Tag style={{ color: '#42a96d' }} />
                 <Stack>
-                  <h3 color={'white'} className="vertical-timeline-element-title">Programação de Sistemas</h3>
-                  <h5 className="vertical-timeline-element-subtitle">Universidade Estadual do Ceará</h5>
+                  <h3 color={'white'} className="vertical-timeline-element-title">System programming</h3>
+                  <h5 className="vertical-timeline-element-subtitle">Ceara state University</h5>
                 </Stack>
               </Stack>
-              <Stack direction="row" alignItems="center" spacing={1}>
+              <Stack direction="row" paddingLeft={17} spacing={1}>
                 <CalendarMonth style={{ color: '#42a96d' }} />
                 <Typography style={{ fontSize: '12px' }} fontFamily={'Fira Code'}>2021 - 2021</Typography>
               </Stack>
             </Stack>
             <Stack direction={'row'} fontSize={'10px'}>
-              <Typography style={{ fontSize: '13px' }} fontFamily={'Fira Code'} paddingLeft={'20px'}>Curso Técnico em programação de sistemas. </Typography>
+              <Typography style={{ fontSize: '13px' }} fontFamily={'Fira Code'} paddingLeft={'20px'}>Technical course in systems programming. </Typography>
             </Stack>
             <Stack direction={'row'} flexWrap={'wrap'} paddingLeft={'20px'} marginTop={'5px'} fontFamily={'Fira Code'}>
               <Chip variant="filled" icon={<img src={javaIcon} alt="React Icon" width={15} />} label="Java" style={{ color: '#42a96d', margin: '2px', fontFamily: 'Fire Code' }} />
@@ -217,7 +217,7 @@ export default function ExperienceAndEducation() {
               <Button href='https://www.linkedin.com/in/anakarlasantana/' sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: '#42a96d', width: '100px', border: '1px solid #42a96d', borderRadius: '0' }}
                 target="_blank"
                 variant="contained"
-                size='small'>Ver mais</Button>
+                size='small'>See more</Button>
             </Stack>
           </VerticalTimelineElement>
         </VerticalTimeline>

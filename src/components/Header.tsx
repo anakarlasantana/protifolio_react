@@ -16,8 +16,8 @@ function Header() {
 
 
   return (
-    <Grid container width={'100%'} height={'70px'} sx={{ borderBottom: '1px solid #42a96d', top: '0', position: 'fixed', zIndex: '1000', backgroundColor: '#282C33' }}>
-      <Stack direction={'row'} paddingLeft={'18rem'} spacing={65}>
+    <Grid container width={'100%'} height={'5%'}  sx={{ borderBottom: '1px solid #42a96d', top: '0', position: 'fixed', zIndex: '1000', backgroundColor: '#282C33' }}>
+      <Stack direction={'row'} width={'100%'} justifyContent={'space-around'} >
         <Stack direction={'row'} width={'20rem'} alignItems={'center'}>
           <Stack >
             <img src={logo} alt="" width={30} height={30} />
