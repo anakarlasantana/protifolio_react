@@ -10,7 +10,7 @@ export const DarkTheme = createTheme({
             
         },
         secondary: {
-            main: '#5d856d',
+            main: '#42a96d',
         },
         
         background: {

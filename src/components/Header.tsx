@@ -1,32 +1,32 @@
-import { Typography, Stack, Button } from '@mui/material';
+import { Typography, Stack, Button, useMediaQuery } from '@mui/material';
 import logo from '../../src/assets/logo.svg';
 import { Link as ScrollLink } from 'react-scroll';
-import { Divider, Grid } from '@mui/joy';
-
-
-const simbolHead = () => {
-  return (
-    <Typography color={'#42a96d'}>#</Typography>
-  );
-
-};
+import { Grid } from '@mui/joy';
+import MenuMobile from './MenuMobile';
 
 
 function Header() {
 
+  const isSmallScreen = useMediaQuery('(max-width: 950px)');
+  const isMobileScreen = useMediaQuery('(max-width: 540px)');
+
+
+  const simbolHead = () => {
+    return <Typography color="#42a96d">#</Typography>;
+  };
 
   return (
-    <Grid container width={'100%'} height={'5%'}  sx={{ borderBottom: '1px solid #42a96d', top: '0', position: 'fixed', zIndex: '1000', backgroundColor: '#282C33' }}>
-      <Stack direction={'row'} width={'100%'} justifyContent={'space-around'} >
-        <Stack direction={'row'} width={'20rem'} alignItems={'center'}>
-          <Stack >
+    <Grid container width={'100%'} height={'8%'} position={'absolute'} sx={{ borderBottom: '1px solid #42a96d', top: '0', position: 'fixed', zIndex: '1000', backgroundColor: '#282C33' }}>
+      <Stack direction={'row'} width={'100%'} justifyContent={isSmallScreen ? "space-between" : "space-evenly"}>
+        <Stack direction={'row'} width={'50%'} alignItems={'center'}>
+          <Stack paddingLeft={2}>
             <img src={logo} alt="" width={30} height={30} />
           </Stack>
-          <Typography color={'white'} fontFamily={'Fira Code'}>
+          {isMobileScreen ? <></> : <Typography color={'white'} fontFamily={'Fira Code'} width={'100%'}>
             Ana Karla
-          </Typography>
+          </Typography>}
         </Stack>
-        <Stack direction={'row'} spacing={4} alignItems={'center'}>
+        {isSmallScreen ? <MenuMobile /> : <Stack direction={'row'} spacing={4} alignItems={'center'}>
           <ScrollLink to="home" smooth={true} duration={500} offset={-80}>
             <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }} color="primary">{simbolHead()} home</Button>
           </ScrollLink>
@@ -40,6 +40,8 @@ function Header() {
             <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }} color="primary">{simbolHead()} contatos</Button>
           </ScrollLink>
         </Stack>
+        }
+
       </Stack>
     </Grid>
 
