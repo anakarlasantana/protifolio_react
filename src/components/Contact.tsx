@@ -1,7 +1,4 @@
-import { Divider, Grid, IconButton, Stack, Typography } from "@mui/material";
-import emailIcon from '../assets/emailIcon.svg';
-import whatsappIcon from '../assets/whatsappIcon.svg';
-
+import { Divider, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
 
 
 const simbolHead = () => {
@@ -11,12 +8,15 @@ const simbolHead = () => {
 };
 
 
-function contact() {
+function Contact() {
+
+    const isMobileScreen = useMediaQuery('(max-width: 540px)');
+
     return (
         <Grid container width={'100%'}>
             <Stack spacing={1} direction={'row'} style={{ alignItems: 'center', marginLeft: '15vw' }}>
                 {simbolHead()}
-                <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>contact</Typography>
+                <Typography fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>contact</Typography>
                 <Stack>
                     <Divider sx={{ display: 'flex', backgroundColor: '#42a96d', width: '40rem' }} />
                 </Stack>
@@ -31,4 +31,4 @@ function contact() {
     );
 };
 
-export default contact;
+export default Contact;

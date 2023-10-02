@@ -1,16 +1,20 @@
 import { Button, IconButton, List, ListItem, ListItemText, Stack, SwipeableDrawer, Typography } from "@mui/material";
 import React, { useState } from "react";
-import { Menu as MenuIcon } from '@mui/icons-material';
+import { Close, Menu as MenuIcon } from '@mui/icons-material';
 import logo from '../../src/assets/logo.svg';
 import githubIcon from '../../src/assets/github.svg';
 import emailIcon from '../../src/assets/emailIcon.svg';
 import linkedingIcon from '../../src/assets/linkedinIcon.svg';
+import { Link as ScrollLink } from "react-scroll";
+
+const simbolHead = () => {
+    return <Typography color="#42a96d">#</Typography>;
+};
 
 
 const MenuMobile: React.FC = () => {
     type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
-    // Create separate state variables for each anchor
     const [openMenu, setOpenMenu] = useState(false);
 
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -18,13 +22,11 @@ const MenuMobile: React.FC = () => {
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
-        // Open the drawer for the 'top' anchor when the button is clicked
         setOpenMenu(true);
     };
 
     const handleClose = () => {
         setAnchorEl(null);
-        // Close the drawer for the 'top' anchor when needed
         setOpenMenu(false);
     };
 
@@ -35,6 +37,11 @@ const MenuMobile: React.FC = () => {
                     setOpenMenu(!openMenu);
                 }
             };
+
+
+    const itemText = {
+        color: 'white'
+    }
 
     return (
         <Stack>
@@ -57,33 +64,44 @@ const MenuMobile: React.FC = () => {
             >
                 <List sx={{ backgroundColor: 'primary', width: 'auto' }} >
                     <Stack direction={'row'} justifyContent={'space-between'}>
-                        <Stack direction={'row'} width={'50%'} alignItems={'center'}>
+                        <Stack direction={'row'} justifyContent={'space-between'} width={'98%'} alignItems={'center'}>
                             <Stack paddingLeft={2}>
-                                <img src={logo} alt="" width={30} height={30} />
+                                <img src={logo} alt="" width={18} height={18} />
                             </Stack>
+                            <IconButton onClick={handleClose} style={itemText}>
+                                <Close fontSize="small" />
+                            </IconButton>
                         </Stack>
-                        <Button onClick={handleClose}>X</Button>
                     </Stack>
                     <Stack>
-                        <ListItem button onClick={handleClose}>
-                            <ListItemText primary="Item 1" />
-                        </ListItem>
-                        <ListItem button onClick={handleClose}>
-                            <ListItemText primary="Item 2" />
-                        </ListItem>
-                        <ListItem button onClick={handleClose}>
-                            <ListItemText primary="Item 3" />
-                        </ListItem>
-                        <ListItem button onClick={handleClose}>
-                            <ListItemText primary="Item 4" />
-                        </ListItem>
-                        <ListItem button onClick={handleClose}>
-                            <ListItemText primary="Tranlate" />
-                        </ListItem>
+                        <ScrollLink to="home" smooth={true} duration={500} offset={-80}>
+                            <ListItem button onClick={handleClose}>
+                                {simbolHead()}
+                                <ListItemText primary="home" style={itemText} />
+                            </ListItem>
+                        </ScrollLink>
+                        <ScrollLink to="projects" smooth={true} duration={500} offset={-70}>
+                            <ListItem button onClick={handleClose}>
+                                {simbolHead()}
+                                <ListItemText primary="projects" style={itemText} />
+                            </ListItem>
+                        </ScrollLink>
+                        <ScrollLink to="aboutMe" smooth={true} duration={500}>
+                            <ListItem button onClick={handleClose}>
+                                {simbolHead()}
+                                <ListItemText primary="about me" style={itemText} />
+                            </ListItem>
+                        </ScrollLink>
+                        <ScrollLink to="contact" smooth={true} duration={500}>
+                            <ListItem button onClick={handleClose}>
+                                {simbolHead()}
+                                <ListItemText primary="contact" style={itemText} />
+                            </ListItem>
+                        </ScrollLink>
                         <Stack direction={'row'} alignSelf={'center'}>
-                            <IconButton href=" https://github.com/anakarlasantana" target="_blank"><img src={githubIcon} alt="" /></IconButton>
-                            <IconButton href="mailto:anakarla.p.santana@gmail.com" target="_blank"><img src={emailIcon} alt="" /></IconButton>
-                            <IconButton href="https://www.linkedin.com/in/anakarlasantana/" target="_blank"><img src={linkedingIcon} alt="" /></IconButton>
+                            <IconButton href=" https://github.com/anakarlasantana"><img src={githubIcon} alt="" /></IconButton>
+                            <IconButton href="mailto:anakarla.p.santana@gmail.com"><img src={emailIcon} alt="" /></IconButton>
+                            <IconButton href="https://www.linkedin.com/in/anakarlasantana/"><img src={linkedingIcon} alt="" /></IconButton>
                         </Stack>
                     </Stack>
 

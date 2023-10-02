@@ -10,7 +10,8 @@ import {
     Grid,
     IconButton,
     Stack,
-    Typography
+    Typography,
+    useMediaQuery
 } from "@mui/material";
 import login from "../assets/login.png";
 import socialLayout from "../assets/social_layout.png";
@@ -28,6 +29,9 @@ const simbolHead = () => {
 function Projects() {
     const [isHoveredItems, setIsHoveredItems] = useState([false, false, false]);
     const [showMoreProjects, setShowMoreProjects] = useState(false);
+
+    const isMobileScreen = useMediaQuery('(max-width: 540px)');
+
 
     const customButton = {
         border: '1px solid #42a96d',
@@ -60,7 +64,7 @@ function Projects() {
         <Grid container width={'100%'}>
             <Stack direction={'row'} spacing={2} style={{ alignItems: 'center', marginLeft: '15vw', }}>
                 {simbolHead()}
-                <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>projects</Typography>
+                <Typography fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>projects</Typography>
                 <Stack>
                     <Divider sx={{ backgroundColor: '#42a96d', width: '40rem' }} />
                 </Stack>
@@ -88,7 +92,7 @@ function Projects() {
                     {renderProjectCard(login, "Login and API REST", "It is a login application, sending emails to recover passwords for registered users and using a library to encrypt passwords.", "https://send-email-react-js.vercel.app/", "https://github.com/anakarlasantana/send_email_reactJs", 3)}
                 </Grid>
                 <Grid >
-                    {renderProjectCard(socialLayout, "Social network Layout", "This is a social media layout project. kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk", null, "https://github.com/anakarlasantana/social_layout", 1)}
+                    {renderProjectCard(socialLayout, "Social network Layout", "This is a social media layout project. It is a project that simulates the social media feed, with features such as comments, applauding and deleting comments.", null, "https://github.com/anakarlasantana/social_layout", 1)}
                 </Grid>
                 <Grid >
                     {renderProjectCard(apiRestNodeJS, "API REST - NodeJs + Typescript", "It is a REST API project with cities, people and login endpoints, which will allow GET, POST, PUT, DELETE when searching for people and cities.", null, "https://github.com/anakarlasantana/Api_rest_nodeJS_Typescript", 5)}
@@ -164,7 +168,7 @@ function Projects() {
     function renderAdditionalProjects() {
         return (
             <>
-                {/* {renderProjectCard(cloneNetflix, "Clone Netflix", "Esse foi o meu primeiro projeto, que consiste na clonagem da página principa da Netflix usando somente JavaScript, HTML e CSS.", "https://netflix-clone-9l2uyq3sv-anakarlasantana.vercel.app/#", null, 4)} */}
+                {}
             </>
         );
     }

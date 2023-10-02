@@ -56,7 +56,7 @@ function Layout() {
                             <Typography fontSize={isMobileScreen ? 20 : 40} style={white}>{t("layout_hi")}</Typography>
                             <Typography fontSize={isMobileScreen ? 20 : 40} style={white}>{t("layout_name")}</Typography>
                             <Typography fontSize={isMobileScreen ? 20 : 40} style={green}>{t("layout_office")}</Typography>
-                            <Typography  width={'80%'} fontSize={isMobileScreen ? 10 : 18} sx={description}>{t("layout_script")}</Typography>
+                            <Typography  width={'80%'} fontSize={isMobileScreen ? 12 : 18} sx={description}>{t("layout_script")}</Typography>
                         </Stack>
                         <Stack paddingTop={4} maxWidth={'30%'} minWidth={'130px'}>
                             <Button size={isMobileScreen ? 'small' : 'medium'} variant="contained" sx={customButton} color="primary" href="https://wa.me/558591870847?text=Ol%C3%A1%2C%20te%20conheci%20pelo%20portf%C3%B3lio%21" target="_blank">{t("layout_button")}</Button>

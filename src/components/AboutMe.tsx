@@ -1,5 +1,5 @@
 import { Stack } from "@mui/joy";
-import { Divider, Grid, Typography } from "@mui/material";
+import { Divider, Grid, Typography, useMediaQuery } from "@mui/material";
 import fotoTwo from '../assets/fotoTwo.jpg'
 import './AboutMeScreen.css'
 import React, { useEffect } from "react";
@@ -14,6 +14,8 @@ const simbolHead = () => {
 function AboutMe() {
     const [isSmallScreen, setIsSmallScreen] = React.useState(window.innerWidth >= 1200);    console.log(isSmallScreen);
     
+    const isMobileScreen = useMediaQuery('(max-width: 540px)');
+
     React.useEffect(() => {
         const handleResize = () => {
             setIsSmallScreen(window.innerWidth >= 1200);
@@ -25,13 +27,14 @@ function AboutMe() {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+    
 
     return (
         <Grid container width={'100%'}>
             <Stack spacing={1} direction={'row'} style={{ alignItems: 'center', marginLeft: '15vw' }}>
                 {simbolHead()}
-                <Stack >
-                    <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>about me</Typography>
+                <Stack width={isMobileScreen ? 100 : 160}>
+                    <Typography fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>about me</Typography>
                 </Stack>
                 <Stack className="typo-aboutme" >
                     <Divider sx={{ backgroundColor: '#42a96d', width: '40rem' }} />

@@ -18,26 +18,30 @@ function Header() {
   return (
     <Grid container width={'100%'} height={'8%'} position={'absolute'} sx={{ borderBottom: '1px solid #42a96d', top: '0', position: 'fixed', zIndex: '1000', backgroundColor: '#282C33' }}>
       <Stack direction={'row'} width={'100%'} justifyContent={isSmallScreen ? "space-between" : "space-evenly"}>
-        <Stack direction={'row'} width={'50%'} alignItems={'center'}>
+        <Stack direction={'row'} width={'50%'} alignSelf={'center'} spacing={1}>
           <Stack paddingLeft={2}>
-            <img src={logo} alt="" width={30} height={30} />
+            <img src={logo} alt="" width={18} height={18} />
           </Stack>
-          {isMobileScreen ? <></> : <Typography color={'white'} fontFamily={'Fira Code'} width={'100%'}>
-            Ana Karla
-          </Typography>}
+          {isMobileScreen ? <></> :
+            <Stack>
+              <Typography color={'white'} fontFamily={'Fira Code'} width={'100%'}>
+                Ana Karla
+              </Typography>
+            </Stack>
+          }
         </Stack>
         {isSmallScreen ? <MenuMobile /> : <Stack direction={'row'} spacing={4} alignItems={'center'}>
           <ScrollLink to="home" smooth={true} duration={500} offset={-80}>
             <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }} color="primary">{simbolHead()} home</Button>
           </ScrollLink>
           <ScrollLink to="projects" smooth={true} duration={500} offset={-70}>
-            <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }} color="primary">{simbolHead()} projetos</Button>
+            <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }} color="primary">{simbolHead()} projects</Button>
           </ScrollLink>
           <ScrollLink to="aboutMe" smooth={true} duration={500}>
-            <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }} color="primary">{simbolHead()} sobre mim</Button>
+            <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }} color="primary">{simbolHead()} about me</Button>
           </ScrollLink>
           <ScrollLink to="contact" smooth={true} duration={500}>
-            <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }} color="primary">{simbolHead()} contatos</Button>
+            <Button sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }} color="primary">{simbolHead()} contact</Button>
           </ScrollLink>
         </Stack>
         }

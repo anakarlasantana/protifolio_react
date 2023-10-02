@@ -1,12 +1,10 @@
 import React from "react";
-import { Divider, Grid, Stack, Typography } from "@mui/material";
-import LinearProgress from '@mui/material/LinearProgress';
+import { Divider, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
 import { styled } from '@mui/material/styles';
 import gitIcon from '../assets/gitIcon.png';
 import javascriptIcon from '../assets/javascript.svg';
 import reactIcon from '../assets/reactIcon.png';
 import nodeIcon from '../assets/nodeIcon.png';
-import javaIcon from '../assets/javaIcon.png';
 import postgresql from '../assets/postgresqlIcon.svg';
 import typescriptIcon from '../assets/typescript.svg';
 import muiIcon from '../assets/materialMuiIcon.png';
@@ -38,7 +36,6 @@ const IconWrapper = styled('div')(({ theme }) => ({
         pointerEvents: 'auto',
     },
 }));
-
 
 
 
@@ -122,11 +119,13 @@ function Skills() {
         setHoveredIcon('');
     };
 
+    const isMobileScreen = useMediaQuery('(max-width: 540px)');
+
     return (
         <Grid container width={'100%'} maxWidth={'90%'}>
             <Stack spacing={2} direction={'row'} style={{ alignItems: 'center', marginLeft: '15vw'}}>
                 {simbolHead()}
-                <Typography sx={{ fontFamily: 'Fira Code', fontSize: '32px', textTransform: 'none', color: 'white' }}>skills</Typography>
+                <Typography fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>skills</Typography>
                 <Stack>
                     <Divider sx={{ display: 'flex', backgroundColor: '#42a96d', width: '40rem' }} />
                 </Stack>
