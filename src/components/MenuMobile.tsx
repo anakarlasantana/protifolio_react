@@ -1,7 +1,7 @@
 import { Button, IconButton, List, ListItem, ListItemText, Stack, SwipeableDrawer, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { Close, Menu as MenuIcon } from '@mui/icons-material';
-import logo from '../../src/assets/logo.svg';
+import logo from '../../src/assets/logo.png';
 import githubIcon from '../../src/assets/github.svg';
 import emailIcon from '../../src/assets/emailIcon.svg';
 import linkedingIcon from '../../src/assets/linkedinIcon.svg';
