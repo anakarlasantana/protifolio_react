@@ -1,6 +1,5 @@
 import Stack from "@mui/material/Stack";
 import dots from '../assets/elementDots.svg';
-import logoTwo from '../assets/logoTwo.svg';
 import squareLeft from '../assets/squareLeft.svg';
 import square from '../assets/square.svg';
 import squareRight from '../assets/squareRight.svg';

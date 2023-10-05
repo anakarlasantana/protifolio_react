@@ -1,12 +1,58 @@
 {
     "translation": {
+
+        "header_home": "home",
+        "header_projects": "projects",
+        "header_aboutme": "about me",
+        "header_contact": "contact",
+
         "layout_hi": "Hi",
         "layout_name": "I'm Ana Karla",
         "layout_office": "fullstak developer",
         "layout_script": "This means I know how to copy and paste, the right code for the right problem.",
         "layout_button": "Contact me",
 
-        "title_expe" : "experience and education"
+        "title_expe" : "experience and education",
+        "card_button": "See more",
+
+        "card_one_title" : "FullStack Developer",
+        "card_one_date": "2022 - present",
+        "card_one_description" : "I work on projects:",
+
+        "card_two_title" : "Analysis and systems development",
+        "card_two_date": "2022 - present",
+        "card_two_description" : "Bachelor's degree in systems analysis and development.",
+
+        "card_tree_description" : "Education platform on the most modern web and mobile development technology in Brazil.",
         
+        "card_four_title" : "System programming",
+        "card_four_colege" : "Ceara state University",
+        "card_four_description" : "Technical course in systems programming.",
+
+        "project_title" : "projects",
+        "project_btton": "See more",
+        "project_btton_link": "Link",
+
+
+        "project_card_one_title" : "Login and API REST",
+        "project_card_one_description" : "It is a login application, sending emails to recover passwords for registered users and using a library to encrypt passwords.",
+        
+        "project_card_two_title" : "Social network Layout",
+        "project_card_two_description" : "This is a social media layout project. It is a project that simulates the social media feed, with features such as comments, liking and deleting comments.",
+        
+        "project_card_tree_title" : "API REST - NodeJs + Typescript",
+        "project_card_tree_description" : "It is a REST API project with cities, people and login endpoints, which will allow GET, POST, PUT, DELETE when searching for people and cities.",
+
+        "skills_title" : "skills",
+
+        "aboutme_title" : "about me",
+        "aboutme_text" : "I was that girl who loved taking apart watches, opening cabinets, formatting computers and even programming my little beloved Galaxy Y, all driven by curiosity and the desire to solve problems. I fondly remember the time when I became addicted to learning Illustrator and Photoshop. I created logos, created layouts, made business and wedding cards, edited photos and even produced banner art for my colleagues, all because it gave me immense pleasure. Nowadays, I realize that not everyone has this facility with technology. Spending hours in front of a monitor creating is actually a legitimate profession. I've always been passionate about technology, even when I didn't believe in myself. Therefore, today I am reevaluating my path and focusing my energies on my professional development as a fullstack developer, focusing on JavaScript, but always open to learning new technologies. The fun continues! 😉🚀",
+
+        "contact_title" : "contact",
+        "contact_text" : "I'm interested in freelance opportunities. However, if you have another request or question, please don't hesitate to call me.",
+
+        "fullstack": "FullStack developer"
+
+
     }
 }

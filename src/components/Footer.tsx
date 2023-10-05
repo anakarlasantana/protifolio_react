@@ -1,10 +1,12 @@
 import { Typography, Stack, Divider, Box } from '@mui/material';
 import logo from '../assets/logo.png';
+import { useTranslation } from 'react-i18next';
 
 
 
 function Footer() {
     const currentYear = new Date().getFullYear();
+    const { t } = useTranslation();
 
 
     return (
@@ -18,7 +20,8 @@ function Footer() {
                             Ana Karla
                         </Typography>
                     </Stack>
-                    <Typography fontFamily={'Fira Code'} color={'#ABB2BF'}>Fullstack developer</Typography>
+                    <Typography fontFamily={'Fira Code'} color={'#ABB2BF'}>
+                        {t("fullstack")}</Typography>
                 </Box>
                 <footer style={{ textAlign: 'center', padding: '1rem', color: '#ABB2BF' }}>
                     © Copyright {currentYear}. Made by Ana Karla Santana

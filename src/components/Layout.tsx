@@ -60,7 +60,7 @@ function Layout() {
                         </Stack>
                         <Stack paddingTop={4} maxWidth={'30%'} minWidth={'130px'}>
                             <Button size={isMobileScreen ? 'small' : 'medium'} variant="contained" sx={customButton} color="primary" href="https://wa.me/558591870847?text=Ol%C3%A1%2C%20te%20conheci%20pelo%20portf%C3%B3lio%21" target="_blank">{t("layout_button")}</Button>
-                            {isMobileScreen ? <></> : <Stack direction={'row'} alignSelf={'center'}>
+                            {isSmallScreen ? <></> : <Stack direction={'row'} alignSelf={'center'}>
                                 <IconButton  href=" https://github.com/anakarlasantana" target="_blank"><img src={githubIcon} alt="" /></IconButton>
                                 <IconButton  href="mailto:anakarla.p.santana@gmail.com" target="_blank"><img src={emailIcon} alt="" /></IconButton>
                                 <IconButton  href="https://www.linkedin.com/in/anakarlasantana/" target="_blank"><img src={linedingIcon} alt="" /></IconButton>

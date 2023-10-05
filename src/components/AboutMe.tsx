@@ -3,6 +3,7 @@ import { Divider, Grid, Typography, useMediaQuery } from "@mui/material";
 import fotoTwo from '../assets/fotoTwo.jpg'
 import './AboutMeScreen.css'
 import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 
 const simbolHead = () => {
@@ -12,9 +13,12 @@ const simbolHead = () => {
 };
 
 function AboutMe() {
-    const [isSmallScreen, setIsSmallScreen] = React.useState(window.innerWidth >= 1200);    console.log(isSmallScreen);
+    const [isSmallScreen, setIsSmallScreen] = React.useState(window.innerWidth >= 1200); 
     
     const isMobileScreen = useMediaQuery('(max-width: 540px)');
+
+    const { t } = useTranslation();
+
 
     React.useEffect(() => {
         const handleResize = () => {
@@ -33,8 +37,8 @@ function AboutMe() {
         <Grid container width={'100%'}>
             <Stack spacing={1} direction={'row'} style={{ alignItems: 'center', marginLeft: '15vw' }}>
                 {simbolHead()}
-                <Stack width={isMobileScreen ? 100 : 160}>
-                    <Typography fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>about me</Typography>
+                <Stack width={isMobileScreen ? 100 : 'auto'}>
+                    <Typography fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>{t("aboutme_title")}</Typography>
                 </Stack>
                 <Stack className="typo-aboutme" >
                     <Divider sx={{ backgroundColor: '#42a96d', width: '40rem' }} />
@@ -51,18 +55,7 @@ function AboutMe() {
                             lineHeight: '1.6',
                             textIndent: '2rem',
                         }}>
-                        I was that girl who loved taking apart watches, opening cabinets, formatting computers and even programming my little beloved Galaxy Y, all driven by curiosity and the desire to solve problems. I fondly remember the time when I became addicted to learning Illustrator and Photoshop. I created logos, created layouts, made business and wedding cards, edited photos and even produced banner art for my colleagues, all because it gave me immense pleasure.
-                    </Typography>
-                    <Typography
-                        fontFamily={'Fira Code'}
-                        color={'#ABB2BF'}
-                        style={{
-                            textAlign: 'justify',
-                            fontSize: '1rem',
-                            lineHeight: '1.6',
-                            textIndent: '2rem',
-                        }}>
-                        Nowadays, I realize that not everyone has this facility with technology. Spending hours in front of a monitor creating is actually a legitimate profession. I've always been passionate about technology, even when I didn't believe in myself. Therefore, today I am reevaluating my path and focusing my energies on my professional development as a fullstack developer, focusing on JavaScript, but always open to learning new technologies. The fun continues! 😉🚀
+                        {t("aboutme_text")}
                     </Typography>
                 </Stack>
                 {isSmallScreen ? 

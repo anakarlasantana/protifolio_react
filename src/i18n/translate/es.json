@@ -1,8 +1,55 @@
 {
     "translation": {
+        "header_home": "sitio",
+        "header_projects": "proyectos",
+        "header_aboutme": "sobre mi",
+        "header_contact": "contacto",
+
         "layout_hi": "Hola",
         "layout_name": "Yo soy Ana Karla",
         "layout_office": "desarrollador fullstack",
-        "layout_script": "Esto significa que sé cómo copiar y pegar el código correcto para el problema correcto."
+        "layout_script": "Esto significa que sé cómo copiar y pegar el código correcto para el problema correcto.",
+        "layout_button": "contacto",
+
+        "title_expe" : "experiencia y educación",
+        "card_button": "vea mas",
+
+        "card_one_title" : "Desarrollador fullstack",
+        "card_one_date": "2022 - al presente",
+        "card_one_description" : "Trabajo en proyectos:",
+
+        "card_two_title" : "Análisis y desarrollo de Sistemas",
+        "card_two_date": "2022 - al presente",
+        "card_two_description" : "Licenciatura en análisis y desarrollo de sistemas.",
+
+        "card_tree_description" : "Plataforma educativa sobre la más moderna tecnología de desarrollo web y móvil de Brasil.",
+        
+        "card_four_title" : "programación del sistema",
+        "card_four_colege" : "Universidad Estatal de Ceará",
+        "card_four_description" : "Curso técnico en programación de sistemas.",
+
+        "project_title" : "proyectos",
+        "project_btton": "Vea mas",
+        "project_btton_link": "Link",
+
+
+        "project_card_one_title" : "Login and API REST",
+        "project_card_one_description" : "Es una aplicación de inicio de sesión, que envía correos electrónicos para recuperar contraseñas de usuarios registrados y utiliza una biblioteca para cifrar contraseñas.",
+        
+        "project_card_two_title" : "Diseño de red social",
+        "project_card_two_description" : "Este es un diseño de diseño de redes sociales. Es un proyecto que simula el feed de las redes sociales, con funciones como comentarios, me gusta y eliminación de comentarios.",
+        
+        "project_card_tree_title" : "API REST - NodeJs + Typescript",
+        "project_card_tree_description" : "Es un proyecto REST API con ciudades, personas y punto final de inicio de sesión, que permite OBTENER, POST, PUT, DELETE al buscar personas y ciudades.",
+
+        "skills_title" : "tecnologias",
+
+        "aboutme_title" : "sobre mi",
+        "aboutme_text" : "Yo era esa chica que amaba desarmar relojes, abrir gabinetes, formatear computadoras y hasta programar mi querido Galaxy Y, todo movido por la curiosidad y las ganas de resolver problemas. Recuerdo con cariño el momento en que me enganché a aprender Illustrator y Photoshop. Creé logotipos, creé diseños, hice tarjetas de visita y de boda, edité fotografías e incluso produje pancartas para mis colegas, todo porque me dio un inmenso placer. Hoy en día me doy cuenta de que no todo el mundo tiene esta facilidad con la tecnología. Pasar horas delante de un monitor creando es en realidad una profesión legítima. Siempre me ha apasionado la tecnología, incluso cuando no creía en mí mismo. Por eso, hoy estoy reevaluando mi trayectoria y enfocando mis energías en mi desarrollo profesional como desarrollador fullstack, enfocándome en JavaScript, pero siempre abierto a aprender nuevas tecnologías. ¡La diversión continúa! 😉🚀",
+
+        "contact_title" : "contacto",
+        "contact_text" : "Estoy interesado en oportunidades de autónomos. Sin embargo, si tiene otra solicitud o pregunta, no dude en ponerse en contacto.",
+
+        "fullstack": "Desarrollador fullstack"
     }
 }

@@ -17,7 +17,7 @@ import login from "../assets/login.png";
 import socialLayout from "../assets/social_layout.png";
 import apiRestNodeJS from "../assets/api_rest_node.png";
 import AddLinkIcon from '@mui/icons-material/AddLink';
-// import './MediaScreen.css'
+import { useTranslation } from 'react-i18next';
 
 
 const simbolHead = () => {
@@ -32,6 +32,7 @@ function Projects() {
 
     const isMobileScreen = useMediaQuery('(max-width: 540px)');
 
+    const { t } = useTranslation();
 
     const customButton = {
         border: '1px solid #42a96d',
@@ -64,7 +65,7 @@ function Projects() {
         <Grid container width={'100%'}>
             <Stack direction={'row'} spacing={2} style={{ alignItems: 'center', marginLeft: '15vw', }}>
                 {simbolHead()}
-                <Typography fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>projects</Typography>
+                <Typography fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>{t("project_title")}</Typography>
                 <Stack>
                     <Divider sx={{ backgroundColor: '#42a96d', width: '40rem' }} />
                 </Stack>
@@ -89,24 +90,22 @@ function Projects() {
 
             <Grid container width={'100%'} justifyContent={'center'}>
                 <Grid>
-                    {renderProjectCard(login, "Login and API REST", "It is a login application, sending emails to recover passwords for registered users and using a library to encrypt passwords.", "https://send-email-react-js.vercel.app/", "https://github.com/anakarlasantana/send_email_reactJs", 3)}
+                    {renderProjectCard(login, "Login and API REST", t("project_card_one_description"), "https://send-email-react-js.vercel.app/", "https://github.com/anakarlasantana/send_email_reactJs", 3)}
                 </Grid>
                 <Grid >
-                    {renderProjectCard(socialLayout, "Social network Layout", "This is a social media layout project. It is a project that simulates the social media feed, with features such as comments, applauding and deleting comments.", null, "https://github.com/anakarlasantana/social_layout", 1)}
+                    {renderProjectCard(socialLayout, t("project_card_two_title"), t("project_card_two_description"), null, "https://github.com/anakarlasantana/social_layout", 1)}
                 </Grid>
                 <Grid >
-                    {renderProjectCard(apiRestNodeJS, "API REST - NodeJs + Typescript", "It is a REST API project with cities, people and login endpoints, which will allow GET, POST, PUT, DELETE when searching for people and cities.", null, "https://github.com/anakarlasantana/Api_rest_nodeJS_Typescript", 5)}
+                    {renderProjectCard(apiRestNodeJS, t("project_card_tree_title"), t("project_card_tree_description"), null, "https://github.com/anakarlasantana/Api_rest_nodeJS_Typescript", 5)}
                 </Grid>
                 {showMoreProjects ? renderAdditionalProjects() : null}
             </Grid>
-
-
         </Grid>
     );
 
     function renderProjectCard(illustration: string | null, title: string | null, description: string | null, link: string | null, additionalLink: string | null, index: number) {
         return (
-            <Grid sx={{margin: '15px' }}>
+            <Grid sx={{ margin: '15px' }}>
                 <Card sx={{ ...customCardProject, transform: isHoveredItems[index] ? 'scale(1.1)' : 'scale(1)' }}
                     onMouseEnter={() => handleMouseToggle(index, true)}
                     onMouseLeave={() => handleMouseToggle(index, false)}
@@ -141,7 +140,7 @@ function Projects() {
                                 rel="noopener noreferrer"
                             >
                                 <Stack direction="row" spacing={1} alignItems="center" >
-                                    <Typography sx={{ fontFamily: 'Fira Code' }}>Link</Typography>
+                                    <Typography sx={{ fontFamily: 'Fira Code' }}> {t("project_btton_link")}</Typography>
                                     <AddLinkIcon fontSize="small" />
                                 </Stack>
                             </Button>
@@ -156,7 +155,7 @@ function Projects() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                See more
+                                {t("project_btton")}
                             </Button>
                         )}
                     </CardActions>
@@ -168,7 +167,7 @@ function Projects() {
     function renderAdditionalProjects() {
         return (
             <>
-                {}
+                { }
             </>
         );
     }

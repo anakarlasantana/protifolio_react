@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Chip,
@@ -27,6 +27,7 @@ import jiraIcon from '../assets/jiraIcon.svg';
 import sqlIcon from '../assets/sqlite.svg';
 import javaIcon from '../assets/javaIcon.png';
 import python from '../assets/python.svg';
+import { useTranslation } from 'react-i18next';
 
 interface Skill {
   icon: string;
@@ -36,12 +37,12 @@ interface Skill {
 
 interface ExperienceProps {
   title: string;
-  subtitle: string;
   company: string;
   date: string;
   description: string;
   skills: Skill[];
   link: string;
+  showCustomLink: boolean,
 }
 
 const SymbolHead = () => {
@@ -50,13 +51,26 @@ const SymbolHead = () => {
 
 const ExperienceCard: React.FC<ExperienceProps> = ({
   title,
-  subtitle,
   company,
   date,
   description,
   skills,
   link,
+  showCustomLink,
 }) => {
+
+  const { t } = useTranslation();
+
+
+  const CustomLink = () => (
+    <Typography style={{ fontSize: '13px', fontFamily: 'Fira Code' }}>
+      <a href="https://grupoportfolio.com.br/portfolio-tech/pin-mais/" target="_blank">
+        pin+
+      </a>
+       , cronos, Phoenix.
+    </Typography>
+  );
+
   return (
     <VerticalTimelineElement
       className="vertical-timeline-element--work"
@@ -92,13 +106,16 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
         </Stack>
       </Stack>
       <Stack direction={'row'} fontSize={'10px'}>
-        <Typography
-          style={{ fontSize: '13px' }}
-          fontFamily={'Fira Code'}
-          paddingLeft={'20px'}
-        >
-          {description}
-        </Typography>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+    <Typography
+      style={{ fontSize: '13px' }}
+      fontFamily={'Fira Code'}
+      paddingLeft={'20px'}
+    >
+      {description}
+    </Typography>
+    {showCustomLink && <CustomLink />}
+  </div>
       </Stack>
       <Stack direction={'row'} flexWrap={'wrap'} paddingLeft={'20px'} marginTop={'5px'} fontFamily={'Fira Code'}>
         {skills.map((skill, index) => (
@@ -132,7 +149,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
           variant="contained"
           size="small"
         >
-          See more
+          {t("card_button")}
         </Button>
       </Stack>
     </VerticalTimelineElement>
@@ -140,7 +157,10 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
 };
 
 export default function ExperienceAndEducation() {
+  
   const isMobileScreen = useMediaQuery('(max-width: 540px)');
+  const { t } = useTranslation();
+
 
   return (
     <Grid container width={'100%'}>
@@ -155,16 +175,15 @@ export default function ExperienceAndEducation() {
             }}
             fontSize={isMobileScreen ? 20 : 32}
           >
-            experience and education
+            {t("title_expe")}
           </Typography>
         </Stack>
         <VerticalTimeline className="custom-timeline">
           <ExperienceCard
-            title="FullStack Developer"
-            subtitle="Grupo Portfólio"
+            title={t("card_one_title")}
             company="Grupo Portfólio"
-            date="2022 - present"
-            description="Atuo nos projetos: pin+"
+            date={t("card_one_date")}
+            description={t("card_one_description")}
             skills={[
               { icon: javascriptIcon, alt: 'Javascript', label: 'Javascript' },
               { icon: reactIcon, alt: 'React', label: 'React' },
@@ -175,22 +194,22 @@ export default function ExperienceAndEducation() {
               { icon: jiraIcon, alt: 'Jira', label: 'Jira' },
             ]}
             link="https://www.linkedin.com/in/anakarlasantana/"
+            showCustomLink={true}
           />
           <ExperienceCard
-            title="Analysis and systems development"
-            subtitle="Uniasselvi"
+            title={t("card_two_title")}
             company="Uniasselvi"
-            date="2022 - present"
-            description="Bachelor's degree in systems analysis and development."
+            date={t("card_two_date")}
+            description={t("card_two_description")}
             skills={[]}
             link="https://www.linkedin.com/in/anakarlasantana/"
+            showCustomLink={false}
           />
           <ExperienceCard
             title="Rocketseat"
-            subtitle="Online Course platforms"
             company="Online Course platforms"
             date="2022 - 2023"
-            description="Education platform on the most modern web and mobile development technology in Brazil."
+            description={t("card_tree_description")}
             skills={[
               { icon: javascriptIcon, alt: 'Javascript', label: 'Javascript' },
               { icon: reactIcon, alt: 'React', label: 'React' },
@@ -200,18 +219,20 @@ export default function ExperienceAndEducation() {
               { icon: gitIcon, alt: 'Git', label: 'Git' },
             ]}
             link="https://www.linkedin.com/in/anakarlasantana/"
+            showCustomLink={false}
+
           />
           <ExperienceCard
-            title="System programming"
-            subtitle="Ceara state University"
-            company="Ceara state University"
+            title={t("card_four_title")}
+            company={t("card_four_colege")}
             date="2021 - 2021"
-            description="Technical course in systems programming."
+            description={t("card_four_description")}
             skills={[
               { icon: javaIcon, alt: 'Java', label: 'Java' },
               { icon: python, alt: 'Python', label: 'Python' },
             ]}
             link="https://www.linkedin.com/in/anakarlasantana/"
+            showCustomLink={false}
           />
         </VerticalTimeline>
       </Stack>

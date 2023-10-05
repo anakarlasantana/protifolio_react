@@ -14,6 +14,7 @@ import mongoDBIcon from '../assets/mongodb.svg';
 import sqlIteIcon from '../assets/sqlite.svg';
 import bootstrap from '../assets/bootstrapIcon.svg';
 import trelloIcon from '../assets/trelloIcon.svg';
+import { useTranslation } from "react-i18next";
 
 
 
@@ -41,6 +42,8 @@ const IconWrapper = styled('div')(({ theme }) => ({
 
 function Skills() {
     const [hoveredIcon, setHoveredIcon] = React.useState('');
+    const { t } = useTranslation();
+
 
     const iconData = [
         {
@@ -125,7 +128,7 @@ function Skills() {
         <Grid container width={'100%'} maxWidth={'90%'}>
             <Stack spacing={2} direction={'row'} style={{ alignItems: 'center', marginLeft: '15vw'}}>
                 {simbolHead()}
-                <Typography fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>skills</Typography>
+                <Typography fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>{t("skills_title")}</Typography>
                 <Stack>
                     <Divider sx={{ display: 'flex', backgroundColor: '#42a96d', width: '40rem' }} />
                 </Stack>

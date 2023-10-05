@@ -6,6 +6,7 @@ import githubIcon from '../../src/assets/github.svg';
 import emailIcon from '../../src/assets/emailIcon.svg';
 import linkedingIcon from '../../src/assets/linkedinIcon.svg';
 import { Link as ScrollLink } from "react-scroll";
+import { LanguageSwitcher } from "./languageSwither";
 
 const simbolHead = () => {
     return <Typography color="#42a96d">#</Typography>;
@@ -98,6 +99,7 @@ const MenuMobile: React.FC = () => {
                                 <ListItemText primary="contact" style={itemText} />
                             </ListItem>
                         </ScrollLink>
+                        <LanguageSwitcher/>
                         <Stack direction={'row'} alignSelf={'center'}>
                             <IconButton href=" https://github.com/anakarlasantana"><img src={githubIcon} alt="" /></IconButton>
                             <IconButton href="mailto:anakarla.p.santana@gmail.com"><img src={emailIcon} alt="" /></IconButton>
