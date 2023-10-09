@@ -51,7 +51,7 @@ function Layout() {
         <Grid container width={'100%'} justifyContent={'center'}>
             <Stack padding={'10%'} marginTop={3}>
                 <Stack direction={'row'} justifyContent={'center'} alignItems={'center'} spacing={isMediumScreen ? 0 : 12}>
-                    <Stack maxWidth={'65%'}>
+                    <Stack maxWidth={isMobileScreen || isSmallScreen ?'100%' : '65%'}>
                         <Stack>
                             <Typography fontSize={isMobileScreen ? 20 : 40} style={white}>{t("layout_hi")}</Typography>
                             <Typography fontSize={isMobileScreen ? 20 : 40} style={white}>{t("layout_name")}</Typography>

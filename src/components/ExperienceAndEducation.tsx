@@ -59,6 +59,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
   showCustomLink,
 }) => {
 
+  const isMobileScreen = useMediaQuery('(max-width: 540px)');
   const { t } = useTranslation();
 
 
@@ -88,7 +89,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
         marginLeft: '-10px',
       }}
     >
-      <Stack direction={'row'} fontFamily={'Fira Code'} justifyContent={'space-between'}>
+      <Stack direction={isMobileScreen ? 'column' : 'row'} fontFamily={'Fira Code'} justifyContent={'space-between'}>
         <Stack direction="row" alignItems="center">
           <Tag style={{ color: '#42a96d' }} />
           <Stack paddingTop={'20px'}>
@@ -99,7 +100,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
           </Stack>
         </Stack>
         <Stack direction="row" alignItems="center" spacing={1}>
-          <CalendarMonth style={{ color: '#42a96d' }} />
+          <CalendarMonth fontSize='small' style={{ color: '#42a96d' }} />
           <Typography style={{ fontSize: '12px' }} fontFamily={'Fira Code'}>
             {date}
           </Typography>
