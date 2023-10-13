@@ -126,14 +126,14 @@ function Skills() {
 
     return (
         <Grid container width={'100%'} maxWidth={'90%'}>
-            <Stack spacing={2} direction={'row'} style={{ alignItems: 'center', marginLeft: '15vw'}}>
+            <Stack spacing={2} direction={'row'} width={'100%'} style={{ alignItems: 'center', marginLeft: '15vw' }}>
                 {simbolHead()}
                 <Typography fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>{t("skills_title")}</Typography>
-                <Stack>
-                    <Divider sx={{ display: 'flex', backgroundColor: '#42a96d', width: '40rem' }} />
+                <Stack width={'50%'}>
+                    <Divider sx={{ backgroundColor: '#42a96d' }} />
                 </Stack>
             </Stack>
-            <Stack direction={'row'} flexWrap={'wrap'} width={'100%'} justifyContent={'center'} paddingTop={5} maxWidth={'80%'} marginLeft={'10%'}  alignItems={'center'} >
+            <Stack direction={'row'} flexWrap={'wrap'} width={'100%'} justifyContent={'center'} paddingTop={5} maxWidth={'80%'} marginLeft={'10%'} alignItems={'center'} >
                 {iconData.map(({ id, icon, name }) => (
                     <Stack key={id} >
                         <Stack direction="column" paddingBottom={5} paddingLeft={10} alignItems={'center'}>
@@ -151,7 +151,7 @@ function Skills() {
                                     />
                                 </IconWrapper>
                             </Stack>
-                            <Stack marginTop={5}  height={20}>
+                            <Stack marginTop={5} height={20}>
                                 {
                                     hoveredIcon === id ? <Typography color="#42a96d">
                                         {name}

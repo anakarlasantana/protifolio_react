@@ -63,11 +63,11 @@ function Projects() {
 
     return (
         <Grid container width={'100%'}>
-            <Stack direction={'row'} spacing={2} style={{ alignItems: 'center', marginLeft: '15vw', }}>
+            <Stack direction={'row'} spacing={2}  width={'100%'} style={{ alignItems: 'center', marginLeft: '15vw', }}>
                 {simbolHead()}
                 <Typography fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>{t("project_title")}</Typography>
-                <Stack>
-                    <Divider sx={{ backgroundColor: '#42a96d', width: '40rem' }} />
+                <Stack width={'50%'}>
+                    <Divider sx={{ backgroundColor: '#42a96d' }} />
                 </Stack>
                 {/* <Stack>
                     <Button size='small' onClick={() => setShowMoreProjects(!showMoreProjects)}>

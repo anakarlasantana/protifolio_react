@@ -13,8 +13,8 @@ const simbolHead = () => {
 };
 
 function AboutMe() {
-    const [isSmallScreen, setIsSmallScreen] = React.useState(window.innerWidth >= 1200); 
-    
+    const [isSmallScreen, setIsSmallScreen] = React.useState(window.innerWidth >= 1200);
+
     const isMobileScreen = useMediaQuery('(max-width: 540px)');
 
     const { t } = useTranslation();
@@ -31,20 +31,20 @@ function AboutMe() {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
-    
+
 
     return (
         <Grid container width={'100%'}>
-            <Stack spacing={1} direction={'row'} style={{ alignItems: 'center', marginLeft: '15vw' }}>
+            <Stack spacing={1} direction={'row'} width={'100%'} style={{ alignItems: 'center', marginLeft: '15vw' }}>
                 {simbolHead()}
-                <Stack width={isMobileScreen ? 100 : 'auto'}>
-                    <Typography fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>{t("aboutme_title")}</Typography>
+                <Stack>
+                    <Typography width={isMobileScreen ? '7rem' : '10rem'} fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>{t("aboutme_title")}</Typography>
                 </Stack>
-                <Stack className="typo-aboutme" >
-                    <Divider sx={{ backgroundColor: '#42a96d', width: '40rem' }} />
+                <Stack width={'50%'}>
+                    <Divider sx={{ backgroundColor: '#42a96d' }} />
                 </Stack>
             </Stack>
-            <Stack  direction={'row'} spacing={5} width={'65%'} className="style-reset-aboutme" style={{ marginLeft: '15vw', padding: '30px' }}>
+            <Stack direction={'row'} spacing={5} width={'65%'} className="style-reset-aboutme" style={{ marginLeft: '15vw', padding: '30px' }}>
                 <Stack>
                     <Typography
                         fontFamily={'Fira Code'}
@@ -58,7 +58,7 @@ function AboutMe() {
                         {t("aboutme_text")}
                     </Typography>
                 </Stack>
-                {isSmallScreen ? 
+                {isSmallScreen ?
                     <Stack>
                         <img
                             src={fotoTwo}
