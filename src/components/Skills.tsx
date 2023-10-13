@@ -129,13 +129,13 @@ function Skills() {
             <Stack spacing={1} direction={'row'} width={'100%'} style={{ alignItems: 'center', marginLeft: '15vw' }}>
                 {simbolHead()}
                 <Stack>
-                    <Typography width={isMobileScreen ? '7rem' : '10rem'} fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>{t("skills_title")}</Typography>
+                    <Typography width={'auto'} fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>{t("skills_title")}</Typography>
                 </Stack>
                 <Stack width={'50%'}>
                     <Divider sx={{ backgroundColor: '#42a96d' }} />
                 </Stack>
             </Stack>
-                <Stack direction={'row'} flexWrap={'wrap'} justifyContent={'center'} paddingTop={5} maxWidth={'65%'} marginLeft={'15%'} alignItems={'center'} >
+                <Stack direction={'row'} flexWrap={'wrap'} width={'60%'} marginLeft={'15vw'} justifyContent={'center'} paddingTop={'2vw'} alignItems={'center'} >
                     {iconData.map(({ id, icon, name }) => (
                         <Stack key={id} >
                             <Stack direction="column" paddingBottom={5} paddingLeft={10} alignItems={'center'}>

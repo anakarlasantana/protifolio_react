@@ -37,7 +37,7 @@ function AboutMe() {
             <Stack spacing={1} direction={'row'} width={'100%'} style={{ alignItems: 'center', marginLeft: '15vw' }}>
                 {simbolHead()}
                 <Stack>
-                    <Typography width={isMobileScreen ? '7rem' : '10rem'} fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>{t("aboutme_title")}</Typography>
+                    <Typography width={'auto'} fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>{t("aboutme_title")}</Typography>
                 </Stack>
                 <Stack width={'50%'}>
                     <Divider sx={{ backgroundColor: '#42a96d' }} />
