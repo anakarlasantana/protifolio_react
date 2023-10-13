@@ -33,14 +33,12 @@ const customButton = {
     textTransform: 'none',
 }
 
-const smallIcon = {
-    width: '10px'
-}
 
 
 function Layout() {
 
-    const isMediumScreen = useMediaQuery("(max-width: 1400px)");
+    const isMediumScreen = useMediaQuery("(max-width: 1200px)");
+    const takePhoto = useMediaQuery("(max-width: 1000px)");
     const isSmallScreen = useMediaQuery('(max-width: 950px)');
     const isMobileScreen = useMediaQuery('(max-width: 540px)');
 
@@ -50,16 +48,16 @@ function Layout() {
     return (
         <Grid container width={'100%'} justifyContent={'center'}>
             <Stack padding={'10%'} marginTop={3}>
-                <Stack direction={'row'} justifyContent={'center'} alignItems={'center'} spacing={isMediumScreen ? 0 : 12}>
-                    <Stack maxWidth={isMobileScreen || isSmallScreen ?'100%' : '65%'}>
+                <Stack direction={'row'} justifyContent={'center'} alignItems={'center'} spacing={isMobileScreen || isSmallScreen ? 0 : 5}>
+                    <Stack>
                         <Stack>
-                            <Typography fontSize={isMobileScreen ? 20 : 40} style={white}>{t("layout_hi")}</Typography>
-                            <Typography fontSize={isMobileScreen ? 20 : 40} style={white}>{t("layout_name")}</Typography>
-                            <Typography fontSize={isMobileScreen ? 20 : 40} style={green}>{t("layout_office")}</Typography>
-                            <Typography  width={'50%'} fontSize={isMobileScreen ? 12 : 18} sx={description}>{t("layout_script")}</Typography>
+                            <Typography fontSize={isMobileScreen || isSmallScreen ? 25 : 40} style={white}>{t("layout_hi")}</Typography>
+                            <Typography fontSize={isMobileScreen || isSmallScreen ? 25 : 40} style={white}>{t("layout_name")}</Typography>
+                            <Typography fontSize={isMobileScreen || isSmallScreen ? 25 : 40} style={green}>{t("layout_office")}</Typography>
+                            <Typography  width={'80%'} fontSize={isMobileScreen ? 16 : 20} sx={description}>{t("layout_script")}</Typography>
                         </Stack>
-                        <Stack paddingTop={4} maxWidth={'30%'} minWidth={'130px'}>
-                            <Button size={isMobileScreen ? 'small' : 'medium'} variant="contained" sx={customButton} color="primary" href="https://wa.me/558591870847?text=Ol%C3%A1%2C%20te%20conheci%20pelo%20portf%C3%B3lio%21" target="_blank">{t("layout_button")}</Button>
+                        <Stack paddingTop={4} maxWidth={'30%'} minWidth={'150px'}>
+                            <Button size={isMobileScreen ? 'small' : 'large'} variant="contained" sx={customButton} color="primary" href="https://wa.me/558591870847?text=Ol%C3%A1%2C%20te%20conheci%20pelo%20portf%C3%B3lio%21" target="_blank">{t("layout_button")}</Button>
                             {isSmallScreen ? <></> : <Stack direction={'row'} alignSelf={'center'}>
                                 <IconButton  href=" https://github.com/anakarlasantana" target="_blank"><img src={githubIcon} alt="" /></IconButton>
                                 <IconButton  href="mailto:anakarla.p.santana@gmail.com" target="_blank"><img src={emailIcon} alt="" /></IconButton>
@@ -69,11 +67,11 @@ function Layout() {
                     </Stack>
                     {isSmallScreen ? <></> :
                         <Stack>
-                            <Stack className="photo-screen" style={{ position: 'relative' }}>
-                                <img src={fotoOne} alt="foto" style={{ width: '300px', height: '375px', borderRadius: '200px', zIndex: '2' }} />
-                                <img src={dots} alt="dots" style={{ width: '5rem', height: '5rem', position: 'absolute', top: '20%', left: '60%', zIndex: '1' }} />
-                                <img src={square} alt="square" style={{ width: '8rem', height: '8rem', position: 'absolute', top: '60%', right: '70%', zIndex: '1' }} />
-                                <img src={square} alt="square" style={{ width: '4rem', height: '4rem', position: 'absolute', top: '85%', right: '60%', zIndex: '1' }} />
+                            <Stack style={{ position: 'relative'}}>
+                                <img src={fotoOne} alt="foto" width={isMediumScreen ? '300px' : '400px'} height={isMediumScreen ? '375px' : '475px'} style={{ borderRadius: '200px', zIndex: '2' }} />
+                                <img src={dots} alt="dots" style={{ width: '5rem', height: '5rem', position: 'absolute', top: '20%', left: '70%', zIndex: '1' }} />
+                                <img src={square} alt="square" style={{ width: '8rem', height: '8rem', position: 'absolute', top: '60%', right: '80%', zIndex: '1' }} />
+                                <img src={square} alt="square" style={{ width: '4rem', height: '4rem', position: 'absolute', top: '85%', right: '70%', zIndex: '1' }} />
                             </Stack>
                         </Stack>
                     }

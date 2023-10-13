@@ -125,44 +125,46 @@ function Skills() {
     const isMobileScreen = useMediaQuery('(max-width: 540px)');
 
     return (
-        <Grid container width={'100%'} maxWidth={'90%'}>
-            <Stack spacing={2} direction={'row'} width={'100%'} style={{ alignItems: 'center', marginLeft: '15vw' }}>
+        <Grid container width={'100%'}>
+            <Stack spacing={1} direction={'row'} width={'100%'} style={{ alignItems: 'center', marginLeft: '15vw' }}>
                 {simbolHead()}
-                <Typography fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>{t("skills_title")}</Typography>
+                <Stack>
+                    <Typography width={isMobileScreen ? '7rem' : '10rem'} fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>{t("skills_title")}</Typography>
+                </Stack>
                 <Stack width={'50%'}>
                     <Divider sx={{ backgroundColor: '#42a96d' }} />
                 </Stack>
             </Stack>
-            <Stack direction={'row'} flexWrap={'wrap'} width={'100%'} justifyContent={'center'} paddingTop={5} maxWidth={'80%'} marginLeft={'10%'} alignItems={'center'} >
-                {iconData.map(({ id, icon, name }) => (
-                    <Stack key={id} >
-                        <Stack direction="column" paddingBottom={5} paddingLeft={10} alignItems={'center'}>
-                            <Stack >
-                                <IconWrapper
-                                    style={{ filter: hoveredIcon !== id ? 'grayscale(100%)' : 'none' }}
-                                    onMouseEnter={() => handleIconMouseEnter(id)}
-                                    onMouseLeave={handleIconMouseLeave}
-                                >
-                                    <img
-                                        src={icon}
-                                        alt={`${id}Icon`}
-                                        width={100}
-                                        style={{ transform: hoveredIcon === id ? 'scale(1.1)' : 'scale(1)' }}
-                                    />
-                                </IconWrapper>
+                <Stack direction={'row'} flexWrap={'wrap'} justifyContent={'center'} paddingTop={5} maxWidth={'65%'} marginLeft={'15%'} alignItems={'center'} >
+                    {iconData.map(({ id, icon, name }) => (
+                        <Stack key={id} >
+                            <Stack direction="column" paddingBottom={5} paddingLeft={10} alignItems={'center'}>
+                                <Stack >
+                                    <IconWrapper
+                                        style={{ filter: hoveredIcon !== id ? 'grayscale(100%)' : 'none' }}
+                                        onMouseEnter={() => handleIconMouseEnter(id)}
+                                        onMouseLeave={handleIconMouseLeave}
+                                    >
+                                        <img
+                                            src={icon}
+                                            alt={`${id}Icon`}
+                                            width={100}
+                                            style={{ transform: hoveredIcon === id ? 'scale(1.1)' : 'scale(1)' }}
+                                        />
+                                    </IconWrapper>
+                                </Stack>
+                                <Stack marginTop={5} height={20}>
+                                    {
+                                        hoveredIcon === id ? <Typography color="#42a96d">
+                                            {name}
+                                        </Typography> : ''
+                                    }
+                                </Stack>
                             </Stack>
-                            <Stack marginTop={5} height={20}>
-                                {
-                                    hoveredIcon === id ? <Typography color="#42a96d">
-                                        {name}
-                                    </Typography> : ''
-                                }
-                            </Stack>
-                        </Stack>
 
-                    </Stack>
-                ))}
-            </Stack>
+                        </Stack>
+                    ))}
+                </Stack>
         </Grid>
     );
 }

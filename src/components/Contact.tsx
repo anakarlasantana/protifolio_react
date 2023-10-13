@@ -17,16 +17,25 @@ function Contact() {
 
 
     return (
-        <Grid container>
+        <Grid container width={'100%'}>
             <Stack spacing={1} direction={'row'} width={'100%'} style={{ alignItems: 'center', marginLeft: '15vw' }}>
                 {simbolHead()}
-                <Typography fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>{t("contact_title")}</Typography>
+                <Stack>
+                    <Typography width={isMobileScreen ? '7rem' : '10rem'} fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>{t("contact_title")}</Typography>
+                </Stack>
                 <Stack width={'50%'}>
                     <Divider sx={{ backgroundColor: '#42a96d' }} />
                 </Stack>
             </Stack>
-            <Stack direction={'row'} spacing={22} style={{ display: 'flex', paddingTop: '50px', marginLeft: '15vw', padding: '30px' }}>
-                <Typography fontFamily={'Fira Code'} maxWidth={'70%'} sx={{ textIndent: '2rem', color: '#ABB2BF', textAlign: 'justify' }}>
+            <Stack direction={'row'} spacing={5} style={{ marginLeft: '15vw', padding: '30px', maxWidth: '65%' }}>
+                <Typography fontFamily={'Fira Code'}
+                        color={'#ABB2BF'}
+                        style={{
+                            textAlign: 'justify',
+                            fontSize: '1rem',
+                            lineHeight: '1.6',
+                            textIndent: '2rem',
+                        }}>
                     {t("contact_text")}
                 </Typography>
             </Stack>

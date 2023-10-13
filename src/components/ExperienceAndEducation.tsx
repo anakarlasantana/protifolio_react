@@ -68,7 +68,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
       <a href="https://grupoportfolio.com.br/portfolio-tech/pin-mais/" target="_blank">
         pin+
       </a>
-       , cronos, Phoenix.
+      , cronos, Phoenix.
     </Typography>
   );
 
@@ -92,7 +92,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
       <Stack direction={isMobileScreen ? 'column' : 'row'} fontFamily={'Fira Code'} justifyContent={'space-between'}>
         <Stack direction="row" alignItems="center">
           <Tag style={{ color: '#42a96d' }} />
-          <Stack paddingTop={'20px'}>
+          <Stack paddingTop={'20px'} fontSize={'18px'}>
             <h3 color={'white'} className="vertical-timeline-element-title">
               {title}
             </h3>
@@ -101,22 +101,22 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
         </Stack>
         <Stack direction="row" alignItems="center" spacing={1}>
           <CalendarMonth fontSize='small' style={{ color: '#42a96d' }} />
-          <Typography style={{ fontSize: '12px' }} fontFamily={'Fira Code'}>
+          <Typography style={{ fontSize: '15px' }} fontFamily={'Fira Code'}>
             {date}
           </Typography>
         </Stack>
       </Stack>
-      <Stack direction={'row'} fontSize={'10px'}>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-    <Typography
-      style={{ fontSize: '13px' }}
-      fontFamily={'Fira Code'}
-      paddingLeft={'20px'}
-    >
-      {description}
-    </Typography>
-    {showCustomLink && <CustomLink />}
-  </div>
+      <Stack direction={'row'}>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <Typography
+            style={{ fontSize: '15px' }}
+            fontFamily={'Fira Code'}
+            paddingLeft={'20px'}
+          >
+            {description}
+          </Typography>
+          {showCustomLink && <CustomLink />}
+        </div>
       </Stack>
       <Stack direction={'row'} flexWrap={'wrap'} paddingLeft={'20px'} marginTop={'5px'} fontFamily={'Fira Code'}>
         {skills.map((skill, index) => (
@@ -158,7 +158,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
 };
 
 export default function ExperienceAndEducation() {
-  
+
   const isMobileScreen = useMediaQuery('(max-width: 540px)');
   const { t } = useTranslation();
 

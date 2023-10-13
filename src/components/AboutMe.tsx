@@ -1,7 +1,6 @@
 import { Stack } from "@mui/joy";
 import { Divider, Grid, Typography, useMediaQuery } from "@mui/material";
 import fotoTwo from '../assets/fotoTwo.jpg'
-import './AboutMeScreen.css'
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -44,7 +43,7 @@ function AboutMe() {
                     <Divider sx={{ backgroundColor: '#42a96d' }} />
                 </Stack>
             </Stack>
-            <Stack direction={'row'} spacing={5} width={'65%'} className="style-reset-aboutme" style={{ marginLeft: '15vw', padding: '30px' }}>
+            <Stack direction={'row'} spacing={5} width={'65%'} style={{ marginLeft: '15vw', padding: '30px' }}>
                 <Stack>
                     <Typography
                         fontFamily={'Fira Code'}

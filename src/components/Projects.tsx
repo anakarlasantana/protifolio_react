@@ -120,10 +120,10 @@ function Projects() {
                             />
                         ) : null}
                         <CardContent sx={customCardProject}>
-                            <Typography gutterBottom variant="h5" component="div" color={'white'}>
+                            <Typography gutterBottom variant="h5" component="div" color={'white'} fontFamily={'Fira Code'}>
                                 {title}
                             </Typography>
-                            <Typography variant="body2" color="white">
+                            <Typography variant="body2" color="#ABB2BF" fontSize={'15px'} fontFamily={'Fira Code'}>
                                 {description}
                             </Typography>
                         </CardContent>
