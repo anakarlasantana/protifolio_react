@@ -9,13 +9,14 @@
         "layout_hi": "Oi",
         "layout_name": "Eu sou Ana Karla",
         "layout_office": "desenvolvedora fullstack",
-        "layout_script": "Isso significa que sei copiar e colar o código certo para o problema certo.",
+        "layout_script": "Eu sei como escrever o código certo para o problema certo.",
         "layout_button": "Contato",
 
         "title_expe" : "experiência e educação",
         "card_button": "Veja mais",
 
         "card_one_title" : "Desenvolvedor(a) fullstack",
+        "card_product_title": "Produtos:",
         "card_one_date": "2022 - presente",
         "card_one_description" : "Eu trabalho em projetos:",
 
@@ -34,15 +35,18 @@
         "project_btton_link": "Link",
 
 
-        "project_card_one_title" : "Login and API REST",
+        "project_card_one_title" : "API de Autenticação de Usuário com Recuperação por E-mail",
         "project_card_one_description" : "É um aplicativo de login, envio de e-mails para recuperação de senhas de usuários cadastrados e utilizando uma biblioteca para criptografar senhas.",
         
-        "project_card_two_title" : "Layout de rede social",
-        "project_card_two_description" : "Este é um projeto de layout de mídia social. É um projeto que simula o feed das redes sociais, com funcionalidades como comentários, curtidas e exclusão de comentários.",
-        
-        "project_card_tree_title" : "API REST - NodeJs + Typescript",
+        "project_card_two_title" : "Sistema de Votação Fullstack - React + Django + Docker + Nginx",
+        "project_card_two_description" : "No modelo de cooperativismo, decisões importantes são tomadas em assembleias por meio de votação. Essa é uma plataforma digital para modernizar esse processo, permitindo que associados participem de votações de forma remota, segura e transparente.",
+
+        "project_card_tree_title" : "API de Busca de Cidades (Node + TS + JWT)",
         "project_card_tree_description" : "É um projeto REST API com cidades, pessoas e endpoints de login, que permite GET, POST, PUT, DELETE na busca por pessoas e cidades.",
 
+        "project_card_four_title" : "Layout de rede social",
+        "project_card_four_description" : "Este é um projeto de layout de mídia social. É um projeto que simula o feed das redes sociais, com funcionalidades como comentários, curtidas e exclusão de comentários.",
+      
         "skills_title" : "tecnologias",
 
         "aboutme_title" : "sobre mim",

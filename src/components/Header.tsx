@@ -1,7 +1,6 @@
-import { Typography, Stack, Button, useMediaQuery } from '@mui/material';
+import { Typography, Stack, Button, useMediaQuery, Box } from '@mui/material';
 import logo from '../../src/assets/logo.png';
-import { Link as ScrollLink } from 'react-scroll';
-import { Grid } from '@mui/joy';
+import ScrollLink from '../utils/ScrollLink';
 import MenuMobile from './MenuMobile';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from './languageSwither';
@@ -19,7 +18,19 @@ function Header() {
   };
 
   return (
-    <Grid container width={'100%'} height={'auto'} position={'absolute'} sx={{ borderBottom: '1px solid #42a96d', top: '0', position: 'fixed', zIndex: '1000', backgroundColor: '#282C33'}}>
+    <Box sx={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100vw',
+      height: '64px',
+      zIndex: 1100,
+      borderBottom: '1px solid #42a96d',
+      backgroundColor: '#282C33',
+      display: 'flex',
+      alignItems: 'center',
+      px: 2,
+    }}>
       <Stack direction={'row'} width={'100%'} justifyContent={isSmallScreen ? "space-between" : "space-evenly"}>
         <Stack direction={'row'} width={'30%'} alignSelf={'center'} spacing={1}>
           <Stack paddingLeft={2}>
@@ -51,7 +62,7 @@ function Header() {
         }
 
       </Stack>
-    </Grid>
+    </Box>
 
   );
 }

@@ -15,6 +15,7 @@
         "card_button": "vea mas",
 
         "card_one_title" : "Desarrollador fullstack",
+        "card_product_title": "Productos:",
         "card_one_date": "2022 - al presente",
         "card_one_description" : "Trabajo en proyectos:",
 
@@ -33,14 +34,18 @@
         "project_btton_link": "Link",
 
 
-        "project_card_one_title" : "Login and API REST",
+        "project_card_one_title" : "API de Autenticación de Usuario con Recuperación de Correo Electrónico",
         "project_card_one_description" : "Es una aplicación de inicio de sesión, que envía correos electrónicos para recuperar contraseñas de usuarios registrados y utiliza una biblioteca para cifrar contraseñas.",
         
-        "project_card_two_title" : "Diseño de red social",
-        "project_card_two_description" : "Este es una diseño de redes sociales. Es un proyecto que simula el feed de las redes sociales, con funciones como comentarios, me gusta y eliminación de comentarios.",
-        
-        "project_card_tree_title" : "API REST - NodeJs + Typescript",
+         "project_card_two_title" : "Sistema de Votación Fullstack - React + Django + Docker + Nginx",
+        "project_card_two_description" : "En el modelo de cooperativismo, las decisiones importantes se toman en asambleas mediante votación. Esta es una plataforma digital para modernizar este proceso, permitiendo que los asociados participen en votaciones de forma remota, segura y transparente.",
+
+        "project_card_tree_title" : "API de búsqueda de ciudad (Node + TS + JWT)",
         "project_card_tree_description" : "Es un proyecto REST API con ciudades, personas y punto final de inicio de sesión, que permite GET, POST, PUT, DELETE al buscar personas y ciudades.",
+
+        "project_card_four_title" : "Diseño de red social",
+        "project_card_four_description" : "Este es una diseño de redes sociales. Es un proyecto que simula el feed de las redes sociales, con funciones como comentarios, me gusta y eliminación de comentarios.",
+        
 
         "skills_title" : "tecnologias",
 

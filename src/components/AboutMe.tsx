@@ -1,7 +1,7 @@
 import { Stack } from "@mui/joy";
 import { Divider, Grid, Typography, useMediaQuery } from "@mui/material";
 import fotoTwo from '../assets/fotoTwo.jpg'
-import React, { useEffect } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 

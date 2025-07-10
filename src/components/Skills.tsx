@@ -14,6 +14,11 @@ import mongoDBIcon from '../assets/mongodb.svg';
 import sqlIteIcon from '../assets/sqlite.svg';
 import bootstrap from '../assets/bootstrapIcon.svg';
 import trelloIcon from '../assets/trelloIcon.svg';
+import mySQL from '../assets/mysql.svg';
+import django from '../assets/django.png';
+import python from '../assets/python.svg';
+import azure from '../assets/azure.svg';
+import azureStored from '../assets/microsoft-azure-storage.svg'
 import { useTranslation } from "react-i18next";
 
 
@@ -111,6 +116,31 @@ function Skills() {
             icon: mongoDBIcon,
             name: 'mongoDB',
         },
+        {
+            id: 'mySql',
+            icon: mySQL,
+            name: 'mySQL',
+        },
+         {
+            id: 'python',
+            icon: python,
+            name: 'Python',
+        },
+        {
+            id: 'django',
+            icon: django,
+            name: 'Django',
+        },
+        {
+            id: 'azure',
+            icon: azure,
+            name: 'Azure',
+        },
+          {
+            id: 'azure_stored',
+            icon: azureStored,
+            name: 'Azure Stored',
+        },
     ];
 
 
@@ -135,36 +165,36 @@ function Skills() {
                     <Divider sx={{ backgroundColor: '#42a96d' }} />
                 </Stack>
             </Stack>
-                <Stack direction={'row'} flexWrap={'wrap'} width={'60%'} marginLeft={'15vw'} justifyContent={'center'} paddingTop={'2vw'} alignItems={'center'} >
-                    {iconData.map(({ id, icon, name }) => (
-                        <Stack key={id} >
-                            <Stack direction="column" paddingBottom={5} paddingLeft={10} alignItems={'center'}>
-                                <Stack >
-                                    <IconWrapper
-                                        style={{ filter: hoveredIcon !== id ? 'grayscale(100%)' : 'none' }}
-                                        onMouseEnter={() => handleIconMouseEnter(id)}
-                                        onMouseLeave={handleIconMouseLeave}
-                                    >
-                                        <img
-                                            src={icon}
-                                            alt={`${id}Icon`}
-                                            width={100}
-                                            style={{ transform: hoveredIcon === id ? 'scale(1.1)' : 'scale(1)' }}
-                                        />
-                                    </IconWrapper>
-                                </Stack>
-                                <Stack marginTop={5} height={20}>
-                                    {
-                                        hoveredIcon === id ? <Typography color="#42a96d">
-                                            {name}
-                                        </Typography> : ''
-                                    }
-                                </Stack>
+            <Stack direction={'row'} flexWrap={'wrap'} width={'60%'} marginLeft={'15vw'} justifyContent={'center'} paddingTop={'2vw'} alignItems={'center'} >
+                {iconData.map(({ id, icon, name }) => (
+                    <Stack key={id} >
+                        <Stack direction="column" paddingBottom={5} paddingLeft={10} alignItems={'center'}>
+                            <Stack >
+                                <IconWrapper
+                                    style={{ filter: hoveredIcon !== id ? 'grayscale(100%)' : 'none' }}
+                                    onMouseEnter={() => handleIconMouseEnter(id)}
+                                    onMouseLeave={handleIconMouseLeave}
+                                >
+                                    <img
+                                        src={icon}
+                                        alt={`${id}Icon`}
+                                        width={100}
+                                        style={{ transform: hoveredIcon === id ? 'scale(1.1)' : 'scale(1)' }}
+                                    />
+                                </IconWrapper>
                             </Stack>
-
+                            <Stack marginTop={5} height={20}>
+                                {
+                                    hoveredIcon === id ? <Typography color="#42a96d">
+                                        {name}
+                                    </Typography> : ''
+                                }
+                            </Stack>
                         </Stack>
-                    ))}
-                </Stack>
+
+                    </Stack>
+                ))}
+            </Stack>
         </Grid>
     );
 }

@@ -5,8 +5,8 @@ import logo from '../../src/assets/logo.png';
 import githubIcon from '../../src/assets/github.svg';
 import emailIcon from '../../src/assets/emailIcon.svg';
 import linkedingIcon from '../../src/assets/linkedinIcon.svg';
-import { Link as ScrollLink } from "react-scroll";
 import { LanguageSwitcher } from "./languageSwither";
+import ScrollLink from "../utils/ScrollLink";
 
 const simbolHead = () => {
     return <Typography color="#42a96d">#</Typography>;

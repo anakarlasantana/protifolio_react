@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useMemo, useState } from 'react';
-import { Grid, ThemeProvider } from '@mui/material';
+import { Box, Container, ThemeProvider } from '@mui/material';
 
 import { DarkTheme, LightTheme } from '../shared/themes';
 
@@ -15,30 +15,36 @@ export const useAppThemeContext = () => {
 };
 
 interface IAppThemeProviderProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
+
 export const AppThemeProvider: React.FC<IAppThemeProviderProps> = ({ children }) => {
   const [themeName, setThemeName] = useState<'light' | 'dark'>('dark');
-  
-  
 
   const toggleTheme = useCallback(() => {
     setThemeName(oldThemeName => oldThemeName === 'dark' ? 'light' : 'dark');
   }, []);
 
   const theme = useMemo(() => {
-    if (themeName === 'dark') return DarkTheme;
-
-    return LightTheme;
+    return themeName === 'dark' ? DarkTheme : LightTheme;
   }, [themeName]);
-
 
   return (
     <ThemeContext.Provider value={{ themeName, toggleTheme }}>
       <ThemeProvider theme={theme}>
-        <Grid width="100%" height="100%" bgcolor={theme.palette.background.paper}>
-          {children}
-        </Grid>
+        <Box
+          sx={{
+            minHeight: '100vh',
+            bgcolor: theme.palette.background.paper,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Container maxWidth="md">
+            {children}
+          </Container>
+        </Box>
       </ThemeProvider>
     </ThemeContext.Provider>
   );

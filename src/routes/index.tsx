@@ -9,7 +9,7 @@ import ProjectsAll from '../pages/ProjectsAll';
 function AppRoutes() {
     return (
         <Routes>
-            <Route path='/home' element={<Home />} />
+            <Route path='/' element={<Home />} />
             <Route path='/project' element={<Projects/> } />
             <Route path='/skills' element={<Skills/> } />
             <Route path='/about-me' element={<AboutMe/> } />
@@ -18,7 +18,7 @@ function AppRoutes() {
 
 
         
-            <Route path='*' element={<Navigate to='/Home' />} />
+            <Route path='*' element={<Navigate to='/' />} />
         </Routes>
     );
 }

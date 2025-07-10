@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
-  Box,
   Chip,
   Grid,
-  Icon,
   Typography,
   Button,
-  Divider,
   useMediaQuery,
 } from '@mui/material';
 import 'react-vertical-timeline-component/style.min.css';
@@ -27,6 +24,12 @@ import jiraIcon from '../assets/jiraIcon.svg';
 import sqlIcon from '../assets/sqlite.svg';
 import javaIcon from '../assets/javaIcon.png';
 import python from '../assets/python.svg';
+import azure from '../assets/azure.svg';
+import azure_stored from '../assets/microsoft-azure-storage.svg';
+import django from '../assets/django.png';
+import mysql from '../assets/mysql.svg';
+import postgreSql from '../assets/postgresqlIcon.svg'
+
 import { useTranslation } from 'react-i18next';
 
 interface Skill {
@@ -64,12 +67,25 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
 
 
   const CustomLink = () => (
-    <Typography style={{ fontSize: '13px', fontFamily: 'Fira Code' }}>
-      <a href="https://grupoportfolio.com.br/portfolio-tech/pin-mais/" target="_blank">
-        pin+
-      </a>
-      , cronos, Phoenix.
-    </Typography>
+    <Stack direction={"row"}>
+      <Typography style={{ fontSize: '13px', fontFamily: 'Fira Code', paddingRight: "10px" }}>
+        {t("card_product_title")}
+      </Typography>
+      <Typography style={{ fontSize: '13px', fontFamily: 'Fira Code' }}>
+        <a href="https://grupoportfolio.com.br/portfolio-tech/pin-mais/" target="_blank" style={{ marginRight: "10px" }}>
+          Pin+,
+        </a>
+        <a href="https://hairclubbrasil.com.br/" target="_blank" style={{ marginRight: "10px" }}>
+          HairClub,
+        </a>
+        <span style={{ marginRight: "10px" }}>Cronos,</span>
+        <span style={{ marginRight: "10px" }}>Phoenix Service,</span>
+        <span style={{ marginRight: "10px" }}>Site Institucional Portfólio,</span>
+        <span>Mobit</span>
+      </Typography>
+    </Stack>
+
+
   );
 
   return (
@@ -108,13 +124,6 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
       </Stack>
       <Stack direction={'row'}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Typography
-            style={{ fontSize: '15px' }}
-            fontFamily={'Fira Code'}
-            paddingLeft={'20px'}
-          >
-            {description}
-          </Typography>
           {showCustomLink && <CustomLink />}
         </div>
       </Stack>
@@ -123,6 +132,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
           <Chip
             key={index}
             variant="filled"
+            size='medium'
             icon={
               <img src={skill.icon} alt={skill.alt} width={15} />
             }
@@ -193,6 +203,13 @@ export default function ExperienceAndEducation() {
               { icon: muiIcon, alt: 'Material MUI', label: 'Material MUI' },
               { icon: gitIcon, alt: 'Git', label: 'Git' },
               { icon: jiraIcon, alt: 'Jira', label: 'Jira' },
+              { icon: python, alt: 'Python', label: 'Python' },
+              { icon: django, alt: 'Django', label: 'Django' },
+              { icon: postgreSql, alt: 'postgreSql', label: 'PostgreSQL' },
+              { icon: mysql, alt: 'mysql', label: 'MySql' },
+              { icon: azure, alt: 'Azure', label: 'Azure' },
+              { icon: azure_stored, alt: 'Azure-Stored', label: 'Azure Stored' },
+
             ]}
             link="https://www.linkedin.com/in/anakarlasantana/"
             showCustomLink={true}

@@ -9,13 +9,14 @@
         "layout_hi": "Hi",
         "layout_name": "I'm Ana Karla",
         "layout_office": "fullstak developer",
-        "layout_script": "This means I know how to copy and paste, the right code for the right problem.",
+        "layout_script": "I know how to write the right code for the right problem.",
         "layout_button": "Contact me",
 
         "title_expe" : "experience and education",
         "card_button": "See more",
 
         "card_one_title" : "FullStack Developer",
+        "card_product_title": "Products:",
         "card_one_date": "2022 - present",
         "card_one_description" : "I work on projects:",
 
@@ -34,14 +35,17 @@
         "project_btton_link": "Link",
 
 
-        "project_card_one_title" : "Login and API REST",
+        "project_card_one_title" : "User Auth API with Email Recovery",
         "project_card_one_description" : "It is a login application, sending emails to recover passwords for registered users and using a library to encrypt passwords.",
         
-        "project_card_two_title" : "Social network Layout",
-        "project_card_two_description" : "This is a social media layout project. It is a project that simulates the social media feed, with features such as comments, liking and deleting comments.",
+        "project_card_two_title" : "Fullstack Voting System - React + Django + Docker + Nginx",
+        "project_card_two_description" : "In the model of cooperativism, important decisions are made in assemblies through voting. This is a digital platform to modernize this process, allowing members to participate in votes remotely, securely, and transparently.",
         
-        "project_card_tree_title" : "API REST - NodeJs + Typescript",
+        "project_card_tree_title" : "City Search API (Node + TS + JWT)",
         "project_card_tree_description" : "It is a REST API project with cities, people and login endpoints, which will allow GET, POST, PUT, DELETE when searching for people and cities.",
+
+        "project_card_four_title" : "Social network Layout",
+        "project_card_four_description" : "This is a social media layout project. It is a project that simulates the social media feed, with features such as comments, liking and deleting comments.",
 
         "skills_title" : "skills",
 

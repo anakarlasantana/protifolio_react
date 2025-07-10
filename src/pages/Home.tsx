@@ -6,31 +6,29 @@ import Skills from "../components/Skills";
 import AboutMe from "../components/AboutMe";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-import { Element } from 'react-scroll';
+import ScrollElement from '../utils/ScrollElement';
 import ExperienceAndEducation from "../components/ExperienceAndEducation";
-import Background from "../components/Background";
 
 
 
 function Home() {
   return (
-    <Grid >
-      <Background />
+    <Grid>
       <Header />
-      <Element name="home">
+      <ScrollElement name="home">
       <Layout />
-      </Element>
+      </ScrollElement>
       <ExperienceAndEducation />
-      <Element name="projects">
+      <ScrollElement name="projects">
         <Projects />
-      </Element>
+      </ScrollElement>
       <Skills />
-      <Element name="aboutMe">
+      <ScrollElement name="aboutMe">
         <AboutMe />
-      </Element>
-      <Element name="contact">
+      </ScrollElement>
+      <ScrollElement name="contact">
         <Contact />
-      </Element>
+      </ScrollElement>
       <Footer />
     </Grid>
   );

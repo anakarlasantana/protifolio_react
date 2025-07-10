@@ -17,6 +17,7 @@ import login from "../assets/login.png";
 import socialLayout from "../assets/social_layout.png";
 import apiRestNodeJS from "../assets/api_rest_node.png";
 import AddLinkIcon from '@mui/icons-material/AddLink';
+import votingSystem from '../assets/voting_system.png';
 import { useTranslation } from 'react-i18next';
 
 
@@ -88,15 +89,18 @@ function Projects() {
                 </Stack> */}
             </Stack>
 
-            <Grid container width={'100%'} justifyContent={'center'}>
+            <Grid container sm={12} justifyContent={'center'}>
                 <Grid>
-                    {renderProjectCard(login, "Login and API REST", t("project_card_one_description"), "https://send-email-react-js.vercel.app/", "https://github.com/anakarlasantana/send_email_reactJs", 3)}
+                    {renderProjectCard(login, "Login and API REST", t("project_card_one_description"), "https://send-email-react-js.vercel.app/", "https://github.com/anakarlasantana/send_email_reactJs", 1)}
                 </Grid>
                 <Grid >
-                    {renderProjectCard(socialLayout, t("project_card_two_title"), t("project_card_two_description"), null, "https://github.com/anakarlasantana/social_layout", 1)}
+                    {renderProjectCard(votingSystem, t("project_card_two_title"), t("project_card_two_description"), null, "https://github.com/anakarlasantana/voting-system", 2)}
                 </Grid>
                 <Grid >
-                    {renderProjectCard(apiRestNodeJS, t("project_card_tree_title"), t("project_card_tree_description"), null, "https://github.com/anakarlasantana/Api_rest_nodeJS_Typescript", 5)}
+                    {renderProjectCard(apiRestNodeJS, t("project_card_tree_title"), t("project_card_tree_description"), null, "https://github.com/anakarlasantana/Api_rest_nodeJS_Typescript", 3)}
+                </Grid>
+                <Grid >
+                    {renderProjectCard(socialLayout, t("project_card_four_title"), t("project_card_four_description"), null, "https://github.com/anakarlasantana/Api_rest_nodeJS_Typescript", 4)}
                 </Grid>
                 {showMoreProjects ? renderAdditionalProjects() : null}
             </Grid>
@@ -114,7 +118,7 @@ function Projects() {
                         {illustration ? (
                             <CardMedia
                                 component="img"
-                                height="140"
+                                height="auto"
                                 image={illustration}
                                 alt="foto"
                             />
