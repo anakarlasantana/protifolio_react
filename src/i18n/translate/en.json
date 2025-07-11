@@ -47,6 +47,9 @@
         "project_card_four_title" : "Social network Layout",
         "project_card_four_description" : "This is a social media layout project. It is a project that simulates the social media feed, with features such as comments, liking and deleting comments.",
 
+        "project_card_five_title": "SunCine - Film platform",
+        "project_card_five_description": "SunCine is a movie platform designed to provide detailed information about the most popular films, as well as allowing users to like their favorite movies and manage personal preferences.",
+        
         "skills_title" : "skills",
 
         "aboutme_title" : "about me",

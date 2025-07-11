@@ -1,15 +1,10 @@
-import { Stack } from "@mui/joy";
-import { Divider, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Stack, Typography, useMediaQuery } from "@mui/material";
 import fotoTwo from '../assets/fotoTwo.jpg'
 import React from "react";
 import { useTranslation } from "react-i18next";
+import SectionDivider from "./SectionDivider";
+import { Tag } from "@mui/icons-material";
 
-
-const simbolHead = () => {
-    return (
-        <Typography color={'#42a96d'} fontSize={'32px'}>#</Typography>
-    );
-};
 
 function AboutMe() {
     const [isSmallScreen, setIsSmallScreen] = React.useState(window.innerWidth >= 1200);
@@ -33,17 +28,9 @@ function AboutMe() {
 
 
     return (
-        <Grid container width={'100%'}>
-            <Stack spacing={1} direction={'row'} width={'100%'} style={{ alignItems: 'center', marginLeft: '15vw' }}>
-                {simbolHead()}
-                <Stack>
-                    <Typography width={'auto'} fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>{t("aboutme_title")}</Typography>
-                </Stack>
-                <Stack width={'50%'}>
-                    <Divider sx={{ backgroundColor: '#42a96d' }} />
-                </Stack>
-            </Stack>
-            <Stack direction={'row'} spacing={5} width={'65%'} style={{ marginLeft: '15vw', padding: '30px' }}>
+        <Stack spacing={2}>
+            <SectionDivider icon={<Tag sx={{ color: "#42a96d", fontSize: "32px" }} />} title={"aboutme_title"} />
+            <Stack direction={'row'} spacing={5}>
                 <Stack>
                     <Typography
                         fontFamily={'Fira Code'}
@@ -67,7 +54,7 @@ function AboutMe() {
                     </Stack> : <></>
                 }
             </Stack>
-        </Grid>
+        </Stack>
     );
 };
 

@@ -10,9 +10,9 @@ function Footer() {
 
 
     return (
-        <Stack height={'10rem'}>
-            <Divider sx={{ display: 'flex', backgroundColor: '#ABB2BF', width: '100%' }} />
-            <Stack alignSelf={'center'} m={4}>
+        <Stack pt={5} spacing={2}>
+            <Divider sx={{ display: 'flex', backgroundColor: '#ABB2BF'}} />
+            <Stack alignSelf={'center'} >
                 <Box textAlign={'center'}>
                     <Stack direction={'row'} justifyContent={'center'}>
                         <img src={logo} alt="" width={18} height={18} />

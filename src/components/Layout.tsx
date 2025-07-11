@@ -1,4 +1,4 @@
-import { Button, IconButton, Stack, Typography, useMediaQuery } from "@mui/material";
+import { Button, Grid, IconButton, Stack, Typography, useMediaQuery } from "@mui/material";
 import githubIcon from '../../src/assets/github.svg';
 import emailIcon from '../../src/assets/emailIcon.svg';
 import linedingIcon from '../../src/assets/linkedinIcon.svg';
@@ -7,7 +7,6 @@ import dots from '../assets/elementDots.svg';
 import square from '../assets/square.svg';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Grid } from "@mui/joy";
 import { useTranslation } from "react-i18next";
 import './Layout.css'
 

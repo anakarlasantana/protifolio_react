@@ -41,7 +41,7 @@ export const AppThemeProvider: React.FC<IAppThemeProviderProps> = ({ children })
             alignItems: 'center',
           }}
         >
-          <Container maxWidth="md">
+          <Container maxWidth="lg">
             {children}
           </Container>
         </Box>

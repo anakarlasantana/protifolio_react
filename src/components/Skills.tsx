@@ -15,20 +15,13 @@ import sqlIteIcon from '../assets/sqlite.svg';
 import bootstrap from '../assets/bootstrapIcon.svg';
 import trelloIcon from '../assets/trelloIcon.svg';
 import mySQL from '../assets/mysql.svg';
-import django from '../assets/django.png';
+import django from '../assets/django.svg';
 import python from '../assets/python.svg';
 import azure from '../assets/azure.svg';
 import azureStored from '../assets/microsoft-azure-storage.svg'
-import { useTranslation } from "react-i18next";
+import { Tag } from "@mui/icons-material";
+import SectionDivider from "./SectionDivider";
 
-
-
-
-const simbolHead = () => {
-    return (
-        <Typography color={'#42a96d'} fontSize={'32px'}>#</Typography>
-    );
-};
 
 
 const IconWrapper = styled('div')(({ theme }) => ({
@@ -47,8 +40,6 @@ const IconWrapper = styled('div')(({ theme }) => ({
 
 function Skills() {
     const [hoveredIcon, setHoveredIcon] = React.useState('');
-    const { t } = useTranslation();
-
 
     const iconData = [
         {
@@ -121,7 +112,7 @@ function Skills() {
             icon: mySQL,
             name: 'mySQL',
         },
-         {
+        {
             id: 'python',
             icon: python,
             name: 'Python',
@@ -136,7 +127,7 @@ function Skills() {
             icon: azure,
             name: 'Azure',
         },
-          {
+        {
             id: 'azure_stored',
             icon: azureStored,
             name: 'Azure Stored',
@@ -155,17 +146,9 @@ function Skills() {
     const isMobileScreen = useMediaQuery('(max-width: 540px)');
 
     return (
-        <Grid container width={'100%'}>
-            <Stack spacing={1} direction={'row'} width={'100%'} style={{ alignItems: 'center', marginLeft: '15vw' }}>
-                {simbolHead()}
-                <Stack>
-                    <Typography width={'auto'} fontSize={isMobileScreen ? 20 : 32} sx={{ fontFamily: 'Fira Code', textTransform: 'none', color: 'white' }}>{t("skills_title")}</Typography>
-                </Stack>
-                <Stack width={'50%'}>
-                    <Divider sx={{ backgroundColor: '#42a96d' }} />
-                </Stack>
-            </Stack>
-            <Stack direction={'row'} flexWrap={'wrap'} width={'60%'} marginLeft={'15vw'} justifyContent={'center'} paddingTop={'2vw'} alignItems={'center'} >
+        <Stack>
+            <SectionDivider icon={<Tag sx={{ color: "#42a96d", fontSize: "32px" }} />} title={"skills_title"} />
+            <Stack direction={'row'} flexWrap={'wrap'} justifyContent={'center'} paddingTop={'2vw'} alignItems={'center'} >
                 {iconData.map(({ id, icon, name }) => (
                     <Stack key={id} >
                         <Stack direction="column" paddingBottom={5} paddingLeft={10} alignItems={'center'}>
@@ -195,7 +178,7 @@ function Skills() {
                     </Stack>
                 ))}
             </Stack>
-        </Grid>
+        </Stack>
     );
 }
 
