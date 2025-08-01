@@ -11,18 +11,9 @@ interface CardsProps {
 
 export default function Cards({ illustration, title, description, link, linkTitle }: CardsProps) {
 
-    const isMobileScreen = useMediaQuery('(max-width: 540px)');
-
-
-    const customButton = {
-        border: '1px solid #42a96d',
-        borderRadius: '0',
-        fontFamily: 'Fira Code',
-        textTransform: 'none',
-    }
 
     const customCardProject = {
-        border: '1px solid #ABB2BF',
+        border: '1px solid text.secondary',
         borderRadius: '0',
         maxWidth: "300px",
         transition: "transform 0.3s ease, box-shadow 0.3s ease",
@@ -50,40 +41,35 @@ export default function Cards({ illustration, title, description, link, linkTitl
                     />
                 ) : null}
                 <CardContent >
-                    <Typography gutterBottom variant="h5" component="div" color={'white'} fontFamily={'Fira Code'}>
+                    <Typography gutterBottom variant="h5" component="div" color={'text.secondary'} fontFamily={'Fira Code'}>
                         {title}
                     </Typography>
-                    <Typography variant="body2" color="#ABB2BF" fontSize={'15px'} fontFamily={'Fira Code'}>
+                    <Typography variant="body2" color="text.disabled" fontSize={'15px'} fontFamily={'Fira Code'}>
                         {description}
                     </Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions >
-                {/* {link && (
-                    <Button
-                        variant="contained"
-                        sx={customButton}
-                        color="primary"
-                        href={link}
-                        component="a"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Stack direction="row" spacing={1} alignItems="center" >
-                            <Typography sx={{ fontFamily: 'Fira Code' }}>{linkTitle}</Typography>
-                            <AddLink fontSize="small" />
-                        </Stack>
-                    </Button>
-                )} */}
                 {link && (
                     <Button
                         variant="contained"
-                        sx={customButton}
                         color="primary"
                         href={link}
                         component="a"
                         target="_blank"
                         rel="noopener noreferrer"
+                        sx={{
+                            fontFamily: 'Fira Code',
+                            textTransform: 'none',
+                            color: '#42a96d',
+                            border: '1px solid #42a96d',
+                            borderRadius: '4px',
+                            backgroundColor: 'transparent',
+                            px: 2,
+                            '&:hover': {
+                                backgroundColor: '#42a96d22',
+                            },
+                        }}
                     >
                         {linkTitle}
                     </Button>

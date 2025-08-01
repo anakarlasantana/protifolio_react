@@ -1,4 +1,4 @@
-import { useMediaQuery } from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import {
   Chip,
@@ -9,7 +9,7 @@ import {
 import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
-import { CalendarMonth, Tag } from '@mui/icons-material';
+import { CalendarMonth, School, Tag, Work } from '@mui/icons-material';
 
 
 interface Skill {
@@ -26,6 +26,7 @@ interface ExperienceProps {
   skills: Skill[];
   link: string;
   showCustomLink: boolean,
+  type: 'work' | 'education';
 }
 
 const ExperienceCard: React.FC<ExperienceProps> = ({
@@ -36,29 +37,24 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
   skills,
   link,
   showCustomLink,
+  type
 }) => {
 
   const isMobileScreen = useMediaQuery('(max-width: 540px)');
   const { t } = useTranslation();
-
+  const theme = useTheme();
 
   const CustomLink = () => (
-    <Stack direction={"row"}>
-      <Typography style={{ fontSize: '13px', fontFamily: 'Fira Code', paddingRight: "10px" }}>
-        {t("card_product_title")}
-      </Typography>
-      <Typography style={{ fontSize: '13px', fontFamily: 'Fira Code' }}>
-        <a href="https://grupoportfolio.com.br/portfolio-tech/pin-mais/" target="_blank" style={{ marginRight: "10px" }}>
+    <Stack direction="row" spacing={1} mb={2} alignItems="center">
+      <Stack direction="row" flexWrap="wrap" spacing={1}>
+        <a href="https://grupoportfolio.com.br/portfolio-tech/pin-mais/" target="_blank" rel="noopener noreferrer" style={{ color: '#42a96d' }}>
           Pin+,
         </a>
-        <a href="https://hairclubbrasil.com.br/" target="_blank" style={{ marginRight: "10px" }}>
+        <a href="https://hairclubbrasil.com.br/" target="_blank" rel="noopener noreferrer" style={{ color: '#42a96d' }}>
           HairClub,
         </a>
-        <span style={{ marginRight: "10px" }}>Cronos,</span>
-        <span style={{ marginRight: "10px" }}>Phoenix Service,</span>
-        <span style={{ marginRight: "10px" }}>Site Institucional Portfólio,</span>
-        <span>Mobit</span>
-      </Typography>
+        <span style={{ color: '#42a96d' }}>Cronos, Phoenix Service, Mobit...</span>
+      </Stack>
     </Stack>
 
 
@@ -68,77 +64,118 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
     <VerticalTimelineElement
       className="vertical-timeline-element--work"
       contentStyle={{
-        background: '#282C33',
+        background: theme.palette.background.paper,
         color: '#ABB2BF',
         border: '1px solid #42a96d',
-        borderBottom: '1px solid white',
+        borderBottom: `1px solid ${theme.palette.divider}`,
+
       }}
-      contentArrowStyle={{ borderRight: '7px solid white' }}
+      icon={
+        type === 'education'
+          ? <School sx={{ fontSize: 18, color: '#ffffff' }} />
+          : <Work sx={{ fontSize: 18, color: '#ffffff' }} />
+      }
+      contentArrowStyle={{
+        borderRight: `7px solid ${theme.palette.secondary.main}`,
+      }}
+
       iconStyle={{
         background: '#42a96d',
-        width: '20px',
-        height: '20px',
-        marginLeft: '-10px',
       }}
     >
-      <Stack direction={isMobileScreen ? 'column' : 'row'} fontFamily={'Fira Code'} justifyContent={'space-between'}>
-        <Stack direction="row" alignItems="center">
-          <Tag style={{ color: '#42a96d' }} />
-          <Stack paddingTop={'20px'} fontSize={'18px'}>
-            <h3 color={'white'} className="vertical-timeline-element-title">
+      <Stack
+        direction={isMobileScreen ? 'column' : 'row'}
+        justifyContent="space-between"
+        alignItems={isMobileScreen ? 'flex-start' : 'center'}
+      >
+        <Stack direction="row" spacing={1} alignItems="center" >
+          <Tag sx={{ color: '#42a96d' }} />
+          <Stack spacing={0.3}>
+            <Typography
+              variant="h6"
+              fontFamily="Fira Code"
+              color={theme.palette.text.secondary}
+              fontWeight={600}
+            >
               {title}
-            </h3>
-            <h5 className="vertical-timeline-element-subtitle">{company}</h5>
+            </Typography>
+            <Typography
+              variant="subtitle2"
+              fontFamily="Fira Code"
+              color="#ccc"
+            >
+              {company}
+            </Typography>
           </Stack>
         </Stack>
-        <Stack direction="row" alignItems="center" spacing={1}>
-          <CalendarMonth fontSize='small' style={{ color: '#42a96d' }} />
-          <Typography style={{ fontSize: '15px' }} fontFamily={'Fira Code'}>
+        <Stack direction="row" spacing={1} alignItems="center" justifyContent={"end"}>
+          <CalendarMonth sx={{ color: '#42a96d' }} fontSize="small" />
+          <Typography fontSize={14} fontFamily="Fira Code" color="#ccc">
             {date}
           </Typography>
         </Stack>
+      </Stack>
+      <Stack>
+        <Typography
+          variant="body2"
+          fontFamily="Fira Code"
+          color="#ABB2BF"
+          sx={{ mb: 2 }}
+        >
+          {description}
+        </Typography>
       </Stack>
       <Stack direction={'row'}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           {showCustomLink && <CustomLink />}
         </div>
       </Stack>
-      <Stack direction={'row'} flexWrap={'wrap'} paddingLeft={'20px'} marginTop={'5px'} fontFamily={'Fira Code'}>
+      <Stack
+        direction="row"
+        flexWrap="wrap"
+        gap={1}
+        sx={{ mb: 2, pt: 2 }}
+      >
         {skills.map((skill, index) => (
           <Chip
             key={index}
-            variant="filled"
-            size='medium'
-            icon={
-              <img src={skill.icon} alt={skill.alt} width={15} />
-            }
+            icon={<img src={skill.icon} alt={skill.alt} width={18} />}
             label={skill.label}
-            style={{
+            sx={{
               color: '#42a96d',
-              margin: '2px',
-              fontFamily: 'Fire Code',
+              backgroundColor: '#1e1e1e',
+              border: '1px solid #42a96d',
+              fontFamily: 'Fira Code',
+              height: '32px',
             }}
           />
         ))}
       </Stack>
-      <Stack alignItems={'end'} paddingTop={1}>
+
+
+      <Stack alignItems="flex-end">
         <Button
           sx={{
             fontFamily: 'Fira Code',
             textTransform: 'none',
             color: '#42a96d',
-            width: '100px',
             border: '1px solid #42a96d',
-            borderRadius: '0',
+            borderRadius: '4px',
+            backgroundColor: 'transparent',
+            px: 2,
+            '&:hover': {
+              backgroundColor: '#42a96d22',
+            },
           }}
           href={link}
           target="_blank"
-          variant="contained"
+          variant="outlined"
           size="small"
         >
           {t("card_button")}
         </Button>
       </Stack>
+
     </VerticalTimelineElement>
   );
 };

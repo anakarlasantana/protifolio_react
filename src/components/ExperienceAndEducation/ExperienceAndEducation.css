@@ -1,10 +1,12 @@
 /* Em seu arquivo CSS ou em um estilo global */
-.custom-timeline::before {
-    background: #ABB2BF; 
+.vertical-timeline::before {
+  background: #42a96d;
 }
-  
-.vertical-timeline-element-title {
-    color: white;
-    font-family: 'Fire Code', monospace; 
 
+.vertical-timeline-element-content {
+  box-shadow: none !important;
+}
+
+.vertical-timeline-element-icon {
+  box-shadow: none !important;
 }

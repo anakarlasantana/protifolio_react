@@ -16,7 +16,7 @@ export default function SectionDivider({ title, icon }: SectionDividerProps) {
             <Typography width={'auto'} fontSize={isMobileScreen ? 20 : 32} sx={{
                 fontFamily: 'Fira Code',
                 textTransform: 'none',
-                color: 'white',
+                color: "text.secondary",
                 alignItems: 'center',
                 display: 'flex',
                 gap: 1,

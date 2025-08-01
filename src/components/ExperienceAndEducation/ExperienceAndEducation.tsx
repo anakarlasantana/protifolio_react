@@ -10,7 +10,6 @@ import {
 import 'react-vertical-timeline-component/style.min.css';
 import {
   VerticalTimeline,
-  VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import './ExperienceAndEducation.css';
 import { CalendarMonth, Tag } from '@mui/icons-material';
@@ -33,39 +32,37 @@ import { useTranslation } from 'react-i18next';
 import SectionDivider from '../SectionDivider';
 import ExperienceCard from './ExperienceCard';
 
+const skillsData = [
+  { icon: javascriptIcon, alt: 'Javascript', label: 'Javascript' },
+  { icon: reactIcon, alt: 'React', label: 'React' },
+  { icon: typescriptIcon, alt: 'Typescript', label: 'Typescript' },
+  { icon: nodejsIcon, alt: 'Node.js', label: 'Node.js' },
+  { icon: muiIcon, alt: 'Material MUI', label: 'Material MUI' },
+  { icon: gitIcon, alt: 'Git', label: 'Git' },
+  { icon: jiraIcon, alt: 'Jira', label: 'Jira' },
+  { icon: python, alt: 'Python', label: 'Python' },
+  { icon: django, alt: 'Django', label: 'Django' },
+  { icon: postgreSql, alt: 'postgreSql', label: 'PostgreSQL' },
+  { icon: mysql, alt: 'mysql', label: 'MySql' },
+  { icon: azure, alt: 'Azure', label: 'Azure' },
+  { icon: azure_stored, alt: 'Azure-Stored', label: 'Azure Stored' },
+]
 
 export default function ExperienceAndEducation() {
-
-  const isMobileScreen = useMediaQuery('(max-width: 540px)');
   const { t } = useTranslation();
-
 
   return (
     <Grid container width={'100%'}>
-      <Stack width={'100%'}>
+      <Stack width={'100%'} spacing={5}>
         <SectionDivider icon={<Tag sx={{ color: "#42a96d", fontSize: "32px" }} />} title={"title_expe"} />
-        <VerticalTimeline className="custom-timeline">
+        <VerticalTimeline>
           <ExperienceCard
             title={t("card_one_title")}
             company="Grupo Portfólio"
             date={t("card_one_date")}
             description={t("card_one_description")}
-            skills={[
-              { icon: javascriptIcon, alt: 'Javascript', label: 'Javascript' },
-              { icon: reactIcon, alt: 'React', label: 'React' },
-              { icon: typescriptIcon, alt: 'Typescript', label: 'Typescript' },
-              { icon: nodejsIcon, alt: 'Node.js', label: 'Node.js' },
-              { icon: muiIcon, alt: 'Material MUI', label: 'Material MUI' },
-              { icon: gitIcon, alt: 'Git', label: 'Git' },
-              { icon: jiraIcon, alt: 'Jira', label: 'Jira' },
-              { icon: python, alt: 'Python', label: 'Python' },
-              { icon: django, alt: 'Django', label: 'Django' },
-              { icon: postgreSql, alt: 'postgreSql', label: 'PostgreSQL' },
-              { icon: mysql, alt: 'mysql', label: 'MySql' },
-              { icon: azure, alt: 'Azure', label: 'Azure' },
-              { icon: azure_stored, alt: 'Azure-Stored', label: 'Azure Stored' },
-
-            ]}
+            type='work'
+            skills={skillsData}
             link="https://www.linkedin.com/in/anakarlasantana/"
             showCustomLink={true}
           />
@@ -77,6 +74,8 @@ export default function ExperienceAndEducation() {
             skills={[]}
             link="https://www.linkedin.com/in/anakarlasantana/"
             showCustomLink={false}
+            type='education'
+
           />
           <ExperienceCard
             title="Rocketseat"
@@ -93,6 +92,7 @@ export default function ExperienceAndEducation() {
             ]}
             link="https://www.linkedin.com/in/anakarlasantana/"
             showCustomLink={false}
+            type='education'
 
           />
           <ExperienceCard
@@ -106,6 +106,8 @@ export default function ExperienceAndEducation() {
             ]}
             link="https://www.linkedin.com/in/anakarlasantana/"
             showCustomLink={false}
+            type='education'
+
           />
         </VerticalTimeline>
       </Stack>

@@ -3,13 +3,14 @@
 
         "header_home": "home",
         "header_projects": "projetos",
+        "header_skills": "tecnologias",
         "header_aboutme": "sobre mim",
         "header_contact": "contatos",
 
         "layout_hi": "Oi",
         "layout_name": "Eu sou Ana Karla",
         "layout_office": "desenvolvedora fullstack",
-        "layout_script": "Eu sei como escrever o código certo para o problema certo.",
+        "layout_script": "Isso significa que sei como escrever o código certo para o problema certo.",
         "layout_button": "Contato",
 
         "title_expe" : "experiência e educação",
@@ -21,7 +22,7 @@
         "card_one_description" : "Eu trabalho em projetos:",
 
         "card_two_title" : "Análise e desenvolvimento de sistemas",
-        "card_two_date": "2022 - presente",
+        "card_two_date": "2022 - 2025",
         "card_two_description" : "Bacharel em análise e desenvolvimento de sistemas.",
 
         "card_tree_description" : "Plataforma educacional sobre a mais moderna tecnologia de desenvolvimento web e mobile do Brasil.",

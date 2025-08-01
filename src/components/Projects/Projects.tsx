@@ -1,6 +1,5 @@
 import {
     Box,
-    Grid,
     Stack,
 } from "@mui/material";
 import login from "../../assets/login.png";
@@ -13,42 +12,74 @@ import SectionDivider from '../SectionDivider';
 import { Tag } from '@mui/icons-material';
 import Cards from './Cards';
 
+const projects = [
+    {
+        illustration: login,
+        titleKey: "project_card_one_title",
+        descriptionKey: "project_card_one_description",
+        link: "https://github.com/anakarlasantana/voting-system",
+    },
+    {
+        illustration: votingSystem,
+        titleKey: "project_card_two_title",
+        descriptionKey: "project_card_two_description",
+        link: "https://github.com/anakarlasantana/voting-system",
+    },
+    {
+        illustration: apiRestNodeJS,
+        titleKey: "project_card_tree_title",
+        descriptionKey: "project_card_tree_description",
+        link: "https://github.com/anakarlasantana/Api_rest_nodeJS_Typescript",
+    },
+    {
+        illustration: socialLayout,
+        titleKey: "project_card_four_title",
+        descriptionKey: "project_card_four_description",
+        link: "https://github.com/anakarlasantana/Api_rest_nodeJS_Typescript",
+    },
+    {
+        illustration: suncine,
+        titleKey: "project_card_five_title",
+        descriptionKey: "project_card_five_description",
+        link: "https://github.com/anakarlasantana/SunCine",
+    },
+];
+
 
 
 function Projects() {
     const { t } = useTranslation();
 
-
     return (
-        <Grid container width={'100%'}>
-            <Stack spacing={2}>
-                <SectionDivider icon={<Tag sx={{ color: "#42a96d", fontSize: "32px" }} />} title={"project_title"} />
-                <Box
-                    sx={{
-                        columnCount: { xs: 1, sm: 2, md: 3, lg: 4 },
-                        columnGap: "30px",
-                    }}
-                >
-                    <Box sx={{ breakInside: "avoid", mb: 2 }}>
-                        <Cards illustration={login} title={t("project_card_one_title")} description={t("project_card_one_description")} link={"https://github.com/anakarlasantana/voting-system"} linkTitle={t("project_btton")} />
+        <Stack spacing={5}>
+            <SectionDivider icon={<Tag sx={{ color: "#42a96d", fontSize: "32px" }} />} title={"project_title"} />
+            <Box
+                sx={{
+                    columnCount: { xs: 1, sm: 2, md: 3, lg: 4 },
+                    columnGap: "30px",
+                    '@media (max-width:600px)': {
+                        paddingLeft: "10vh",
+                    },
+                    '@media (max-width:500px)': {
+                        paddingLeft: "5vh",
+                    }
+                }}
+            >
+                {projects.map((project, index) => (
+                    <Box key={index} sx={{ breakInside: "avoid", mb: 2 }}>
+                        <Cards
+                            illustration={project.illustration}
+                            title={t(project.titleKey)}
+                            description={t(project.descriptionKey)}
+                            link={project.link}
+                            linkTitle={t("project_btton")}
+                        />
                     </Box>
-                    <Box sx={{ breakInside: "avoid", mb: 2 }}>
-                        <Cards illustration={votingSystem} title={t("project_card_two_title")} description={t("project_card_two_description")} linkTitle={t("project_btton")} link={"https://github.com/anakarlasantana/voting-system"} />
-                    </Box>
-                    <Box sx={{ breakInside: "avoid", mb: 2 }}>
-                        <Cards illustration={apiRestNodeJS} title={t("project_card_tree_title")} description={t("project_card_tree_description")} linkTitle={t("project_btton")} link={"https://github.com/anakarlasantana/Api_rest_nodeJS_Typescript"} />
-                    </Box>
-                    <Box sx={{ breakInside: "avoid", mb: 2 }}>
+                ))}
 
-                        <Cards illustration={socialLayout} title={t("project_card_four_title")} description={t("project_card_four_description")} linkTitle={t("project_btton")} link={"https://github.com/anakarlasantana/Api_rest_nodeJS_Typescript"} />
-                    </Box>
-                    <Box sx={{ breakInside: "avoid", mb: 2 }}>
-                        <Cards illustration={suncine} title={t("project_card_five_title")} description={t("project_card_five_description")} linkTitle={t("project_btton")} link={"https://github.com/anakarlasantana/SunCine"} />
-                    </Box>
-                </Box>
-            </Stack>
+            </Box>
+        </Stack >
 
-        </Grid>
     );
 
 

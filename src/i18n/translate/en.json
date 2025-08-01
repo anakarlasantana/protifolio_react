@@ -3,13 +3,14 @@
 
         "header_home": "home",
         "header_projects": "projects",
+        "header_skills": "skills",
         "header_aboutme": "about me",
         "header_contact": "contact",
 
         "layout_hi": "Hi",
         "layout_name": "I'm Ana Karla",
         "layout_office": "fullstak developer",
-        "layout_script": "I know how to write the right code for the right problem.",
+        "layout_script": "This means I know how to write the right code for the right problem.",
         "layout_button": "Contact me",
 
         "title_expe" : "experience and education",
@@ -21,7 +22,7 @@
         "card_one_description" : "I work on projects:",
 
         "card_two_title" : "Analysis and systems development",
-        "card_two_date": "2022 - present",
+        "card_two_date": "2022 - 2025",
         "card_two_description" : "Bachelor's degree in systems analysis and development.",
 
         "card_tree_description" : "Education platform on the most modern web and mobile development technology in Brazil.",

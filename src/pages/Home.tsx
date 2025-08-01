@@ -2,7 +2,7 @@ import { Grid } from "@mui/material";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
 import Projects from "../components/Projects/Projects";
-import Skills from "../components/Skills";
+import Skills from "../components/Skills/Skills";
 import AboutMe from "../components/AboutMe";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
@@ -16,13 +16,15 @@ function Home() {
     <Grid>
       <Header />
       <ScrollElement name="home">
-      <Layout />
+        <Layout />
       </ScrollElement>
       <ExperienceAndEducation />
       <ScrollElement name="projects">
         <Projects />
       </ScrollElement>
-      <Skills />
+      <ScrollElement name="skills">
+        <Skills />
+      </ScrollElement>
       <ScrollElement name="aboutMe">
         <AboutMe />
       </ScrollElement>
