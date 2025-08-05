@@ -24,7 +24,7 @@ function Layout() {
 
     return (
         <Grid container width={'100%'} justifyContent={'center'}>
-            <Stack padding={'10%'} marginTop={3}>
+            <Stack padding={'10%'} marginTop={isSmallScreen ? 8 : 3}>
                 <Stack direction={'row'} justifyContent={'center'} alignItems={'center'} spacing={isMobileScreen || isSmallScreen ? 0 : 5}>
                     <Stack>
                         <Stack>

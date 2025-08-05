@@ -1,12 +1,13 @@
-import { Button, IconButton, List, ListItem, ListItemText, Stack, SwipeableDrawer, Typography } from "@mui/material";
+import { Button, IconButton, List, ListItem, ListItemText, Stack, SwipeableDrawer, Typography, useTheme } from "@mui/material";
 import React, { useState } from "react";
-import { Close, Menu as MenuIcon } from '@mui/icons-material';
+import { Brightness4, Brightness7, Close, Menu as MenuIcon } from '@mui/icons-material';
 import logo from '../../src/assets/logo.png';
 import githubIcon from '../../src/assets/github.svg';
 import emailIcon from '../../src/assets/emailIcon.svg';
 import linkedingIcon from '../../src/assets/linkedinIcon.svg';
 import { LanguageSwitcher } from "./languageSwither";
 import ScrollLink from "../utils/ScrollLink";
+import { useAppThemeContext } from "../context/ThemeContext";
 
 const simbolHead = () => {
     return <Typography color="#42a96d">#</Typography>;
@@ -20,6 +21,9 @@ const MenuMobile: React.FC = () => {
 
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
+    const { themeName, toggleTheme } = useAppThemeContext();
+    const theme = useTheme();
+
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
@@ -41,7 +45,7 @@ const MenuMobile: React.FC = () => {
 
 
     const itemText = {
-        color: 'white'
+        color: theme.palette.text.secondary
     }
 
     return (
@@ -93,7 +97,10 @@ const MenuMobile: React.FC = () => {
                                 <ListItemText primary="contact" style={itemText} />
                             </ListItem>
                         </ScrollLink>
-                        <LanguageSwitcher/>
+                        <IconButton onClick={toggleTheme}>
+                            {themeName === 'dark' ? < Brightness7 /> : <Brightness4 color='secondary' />}
+                        </IconButton>
+                        <LanguageSwitcher />
                         <Stack direction={'row'} alignSelf={'center'}>
                             <IconButton href=" https://github.com/anakarlasantana"><img src={githubIcon} alt="" /></IconButton>
                             <IconButton href="mailto:anakarla.p.santana@gmail.com"><img src={emailIcon} alt="" /></IconButton>
