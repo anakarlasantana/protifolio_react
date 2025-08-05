@@ -17,7 +17,7 @@ const projects = [
         illustration: login,
         titleKey: "project_card_one_title",
         descriptionKey: "project_card_one_description",
-        link: "https://github.com/anakarlasantana/voting-system",
+        link: "https://send-email-react-js.vercel.app/",
     },
     {
         illustration: votingSystem,
@@ -35,7 +35,7 @@ const projects = [
         illustration: socialLayout,
         titleKey: "project_card_four_title",
         descriptionKey: "project_card_four_description",
-        link: "https://github.com/anakarlasantana/Api_rest_nodeJS_Typescript",
+        link: "https://github.com/anakarlasantana/social_layout",
     },
     {
         illustration: suncine,

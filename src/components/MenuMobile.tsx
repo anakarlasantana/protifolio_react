@@ -75,12 +75,6 @@ const MenuMobile: React.FC = () => {
                         </Stack>
                     </Stack>
                     <Stack>
-                        <ScrollLink to="home" smooth={true} duration={500} offset={-80}>
-                            <ListItem button onClick={handleClose}>
-                                {simbolHead()}
-                                <ListItemText primary="home" style={itemText} />
-                            </ListItem>
-                        </ScrollLink>
                         <ScrollLink to="projects" smooth={true} duration={500} offset={-70}>
                             <ListItem button onClick={handleClose}>
                                 {simbolHead()}
